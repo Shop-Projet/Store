@@ -30,7 +30,7 @@ function HomeProduct ( props ) {
             setLoadMoreLoading( false );
         }, 500 );
     }
-
+    
     return (
         <Tabs defaultIndex={ 0 } selectedTabClassName="show">
             <div className="container">
@@ -38,7 +38,7 @@ function HomeProduct ( props ) {
                     <h2 className="title">PRODUITS </h2>
                     <TabList className="nav nav-pills nav-border-anim justify-content-center">
                         <Tab className="nav-item">
-                            <span className="nav-link">All</span>
+                            <span className="nav-link" >All</span>
                         </Tab>
                         <Tab className="nav-item">
                             <span className="nav-link">Toys</span>
@@ -74,6 +74,132 @@ function HomeProduct ( props ) {
                                     )
                                     :
                                     items.map( ( item, index ) =>
+                                        <div className="col-6 col-md-4 col-lg-3" key={ index }>
+                                            <ProductHomePage
+                                                product={ item } />
+                                        </div>
+                                    )
+                            }
+                        </div>
+                    </div>
+                </TabPanel>
+                <TabPanel>
+                    <div className="products">
+                        <div className="row justify-content-center">
+                            {
+                                ( loading || items.length == 0 ) ?
+                                    [ 1, 2, 3, 4, 5, 6, 7, 8 ].map( ( item, index ) =>
+                                        <div className="col-6 col-md-4 col-lg-3" key={ index }>
+                                            <div className="skel-pro"></div>
+                                        </div>
+                                    )
+                                    :
+                                    catFilter( items, [ 'toys' ] ).map( ( item, index ) =>
+                                        <div className="col-6 col-md-4 col-lg-3" key={ index }>
+                                            <ProductHomePage
+                                                product={ item } />
+                                        </div>
+                                    )
+                            }
+                        </div>
+                    </div>
+                </TabPanel>
+                <TabPanel>
+                    <div className="products">
+                        <div className="row justify-content-center">
+                            {
+                                ( loading || items.length == 0 ) ?
+                                    [ 1, 2, 3, 4, 5, 6, 7, 8 ].map( ( item, index ) =>
+                                        <div className="col-6 col-md-4 col-lg-3" key={ index }>
+                                            <div className="skel-pro"></div>
+                                        </div>
+                                    )
+                                    :
+                                    catFilter( items, [ 'Feeding' ] ).map( ( item, index ) =>
+                                        <div className="col-6 col-md-4 col-lg-3" key={ index }>
+                                            <ProductHomePage
+                                                product={ item } />
+                                        </div>
+                                    )
+                            }
+                        </div>
+                    </div>
+                </TabPanel>
+                <TabPanel>
+                    <div className="products">
+                        <div className="row justify-content-center">
+                            {
+                                ( loading || items.length == 0 ) ?
+                                    [ 1, 2, 3, 4, 5, 6, 7, 8 ].map( ( item, index ) =>
+                                        <div className="col-6 col-md-4 col-lg-3" key={ index }>
+                                            <div className="skel-pro"></div>
+                                        </div>
+                                    )
+                                    :
+                                    catFilter( items, [ 'clothing' ] ).map( ( item, index ) =>
+                                        <div className="col-6 col-md-4 col-lg-3" key={ index }>
+                                            <ProductHomePage
+                                                product={ item } />
+                                        </div>
+                                    )
+                            }
+                        </div>
+                    </div>
+                </TabPanel>
+                <TabPanel>
+                    <div className="products">
+                        <div className="row justify-content-center">
+                            {
+                                ( loading || items.length == 0 ) ?
+                                    [ 1, 2, 3, 4, 5, 6, 7, 8 ].map( ( item, index ) =>
+                                        <div className="col-6 col-md-4 col-lg-3" key={ index }>
+                                            <div className="skel-pro"></div>
+                                        </div>
+                                    )
+                                    :
+                                    catFilter( items, [ 'For babies' ] ).map( ( item, index ) =>
+                                        <div className="col-6 col-md-4 col-lg-3" key={ index }>
+                                            <ProductHomePage
+                                                product={ item } />
+                                        </div>
+                                    )
+                            }
+                        </div>
+                    </div>
+                </TabPanel>
+                <TabPanel>
+                    <div className="products">
+                        <div className="row justify-content-center">
+                            {
+                                ( loading || items.length == 0 ) ?
+                                    [ 1, 2, 3, 4, 5, 6, 7, 8 ].map( ( item, index ) =>
+                                        <div className="col-6 col-md-4 col-lg-3" key={ index }>
+                                            <div className="skel-pro"></div>
+                                        </div>
+                                    )
+                                    :
+                                    catFilter( items, [ 'Activity' ] ).map( ( item, index ) =>
+                                        <div className="col-6 col-md-4 col-lg-3" key={ index }>
+                                            <ProductHomePage
+                                                product={ item } />
+                                        </div>
+                                    )
+                            }
+                        </div>
+                    </div>
+                </TabPanel>
+                <TabPanel>
+                    <div className="products">
+                        <div className="row justify-content-center">
+                            {
+                                ( loading || items.length == 0 ) ?
+                                    [ 1, 2, 3, 4, 5, 6, 7, 8 ].map( ( item, index ) =>
+                                        <div className="col-6 col-md-4 col-lg-3" key={ index }>
+                                            <div className="skel-pro"></div>
+                                        </div>
+                                    )
+                                    :
+                                    catFilter( items, [ 'gifts' ] ).map( ( item, index ) =>
                                         <div className="col-6 col-md-4 col-lg-3" key={ index }>
                                             <ProductHomePage
                                                 product={ item } />

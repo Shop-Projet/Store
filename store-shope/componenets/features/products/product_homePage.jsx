@@ -7,11 +7,11 @@ import ALink from '../alink.jsx';
 import { actions as wishlistAction } from '../../../store/wishlist';
 import { actions as cartAction } from '../../../store/cart';
 import { actions as compareAction } from '../../../store/compare';
-// import { actions as demoAction } from '~/store/demo';
+// import { actions as demoAction } from '../../../store/demo';
 
 import { isInWishlist, isInCompare } from '../../../utils/index';
 
-export default function ProductHomePage( props ) {
+function ProductHomePage( props ) {
     const router = useRouter();
     const { product, wishlist } = props;
     
@@ -21,20 +21,19 @@ export default function ProductHomePage( props ) {
         props.addToCart( product );
     }
 
-    // function onWishlistClick ( e ) {
-    //     e.preventDefault();
-    //     if ( !isInWishlist( props.wishlist, product ) ) {
-    //         props.addToWishlist( product );
-    //     } else {
-    //         router.push( '/pages/wishlist' );
-    //     }
-    // }
-
+    function onWishlistClick ( e ) {
+        e.preventDefault();
+        if ( !isInWishlist( props.wishlist, product ) ) {
+            props.addToWishlist( product );
+        } else {
+            router.push( '/pages/wishlist' );
+        }
+    }
 
 
     function onQuickView ( e ) {
         e.preventDefault();
-        props.showQuickView( product.slug );
+        props.showQuickView( product.id );
     }
 
     return (
@@ -63,13 +62,13 @@ export default function ProductHomePage( props ) {
 
 
                 <div className="product-action-vertical">
-                    {/* {
+                    {
                         isInWishlist( wishlist, product ) ?
                             <ALink href="#" className="btn-product-icon btn-wishlist btn-expandable added-to-wishlist"><span>go to wishlist</span></ALink>
                             :
                             <a href="#" className="btn-product-icon btn-wishlist btn-expandable" onClick={ onWishlistClick }><span>add to wishlist</span></a>
 
-                    } */}
+                    }
                     <a href="#" className="btn-product-icon btn-quickview" title="Quick View" onClick={ onQuickView }><span>quick view</span></a>
                 </div>
             </figure>
@@ -96,11 +95,11 @@ export default function ProductHomePage( props ) {
     )
 }
 
-// const mapStateToProps = ( state ) => {
-//     return {
-//         wishlist: state.wishlist.data,
-//         comparelist: state.comparelist.data
-//     }
-// }
+const mapStateToProps = ( state ) => {
+    return {
+        wishlist: state.wishlist.data,
+        comparelist: state.comparelist.data
+    }
+}
 
-// export default connect( mapStateToProps, { ...wishlistAction, ...cartAction, ...compareAction, ...demoAction } )( ProductHomePage );
+export default connect( mapStateToProps, { ...wishlistAction, ...cartAction, ...compareAction } )( ProductHomePage );

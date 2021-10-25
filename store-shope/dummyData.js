@@ -6,14 +6,16 @@ export const  product = [
         nom_du_produit: "Sous-vêtement de ski/ femme",
         description: 'couleur : noir, taille : s',
         prix: 5,
-        categorie : "femme"
+        categorie : "toys",
+        status :'vendu'
     },
     {   id:2,
         image: 'https://i.pinimg.com/236x/46/f9/f6/46f9f6a13227253b8535e6c6c888823f.jpg',
         nom_du_produit: 'Sweet',
         description: 'Sweat zippé london blanc femme/taille M',
         prix: 25,
-        categorie : "femme"
+        categorie : "feeding",
+        status : 'disponible'
 
     },
     {   id:3,
@@ -21,7 +23,9 @@ export const  product = [
         nom_du_produit: 'collection',
         description: 'Quality silverware, this 40 piece flatware set is made of premium high quality stainless steel which ensures your health, rust resistant, sturdy and durable for years to come',
         prix: 35,
-        categorie : "femme"
+        categorie : "toys",
+        status : 'disponible'
+
 
     },
     {   id:4,
@@ -29,7 +33,9 @@ export const  product = [
         nom_du_produit: 'Robe',
         description: 'It"s just a dummy data I do"t have to write description',
         prix: 55,
-        categorie : "femme"
+        categorie : "femme",
+        status : 'disponible'
+
 
     },
     {   id:5,
@@ -37,7 +43,9 @@ export const  product = [
         nom_du_produit: 'pantalon de survetement',
         description: 'pantalon-de-survetement-adicolor-classics-primeblue',
         prix: 95,
-        categorie : "homme"
+        categorie : "homme",
+        status : 'disponible'
+
 
     },
     {   id:6,
@@ -45,7 +53,8 @@ export const  product = [
         nom_du_produit: 'Slip',
         description: 'Jamais utilisés, believe me',
         prix: 53,
-        categorie : "homme"
+        categorie : "homme",
+        status : 'disponible'
 
     },
     {   id:7,
@@ -53,7 +62,8 @@ export const  product = [
         nom_du_produit: 'Veste',
         description: 'Utilisée deux fois, de taille L',
         prix: 59,
-        categorie : "mixte"
+        categorie : "mixte",
+        status : 'disponible'
 
     },
     {   id:8,
@@ -61,7 +71,9 @@ export const  product = [
         nom_du_produit: 'Chemise',
         description: 'Quelles que soient les circonstances, PINEL vous présente un choix très important de modèles et de marques Tout pour satisfaire votre goût et convenir à votre morphologie..',
         prix: 5,
-        categorie : "homme"
+        categorie : "Clothing",
+        status : 'disponible'
+
 
     },
     {   id:9,
@@ -69,15 +81,18 @@ export const  product = [
         nom_du_produit: 'Robe avec ruchés et nœuds',
         description: 'Couleur:	Bordeaux, Style:Bohème, Type de motif:	imprimé floral, Longueur:	Court',
         prix: 115,
-        categorie : "femme"
+        categorie : "Clothing",
+        status : 'vendu'
 
     },
-    {
+    {   id:18,
         image: 'https://i.pmdstatic.net/fac/2021/03/19/b5d272bc-0b54-4e59-a8cf-41102467b329.jpeg',
         nom_du_produit: 'Sac ',
         description: 'sac sac sac sac',
         prix: 10.5,
-        categorie : "autre"
+        categorie : "toys",
+        status : 'vendu'
+
 
     },
     {   id:10,
@@ -85,7 +100,9 @@ export const  product = [
         nom_du_produit: 'Ceinture',
         description: 'It don"t need it anymore, buy it',
         prix: 5,
-        categorie : "mixte"
+        categorie : "Clothing",
+        status : 'disponible'
+
 
     },
     {   id:11,
@@ -93,7 +110,8 @@ export const  product = [
         nom_du_produit: 'Converse',
         description: 'It"s a converse you know bro right ?',
         prix: 5,
-        categorie : "mixte"
+        categorie : "mixte",
+        status : 'disponible'
 
     },
     {   id:12,
@@ -101,7 +119,9 @@ export const  product = [
         nom_du_produit: 'Sac',
         description: 'No description',
         prix: 5,
-        categorie : "femme"
+        categorie : "femme",
+        status : 'disponible'
+
 
     },
     {   id:13,
@@ -109,7 +129,9 @@ export const  product = [
         nom_du_produit: 'Slip',
         description: 'Jamais utilisés, believe me',
         prix: 53,
-        categorie : "homme"
+        categorie : "homme",
+        status : 'disponible'
+
 
     },
     {   id:14,
@@ -117,7 +139,9 @@ export const  product = [
         nom_du_produit: 'Veste',
         description: 'Utilisée deux fois, de taille L',
         prix: 59,
-        categorie : "mixte"
+        categorie : "mixte",
+        status : 'disponible'
+
 
     },
     {   id:15,
@@ -125,7 +149,8 @@ export const  product = [
         nom_du_produit: 'Chemise',
         description: 'Quelles que soient les circonstances, PINEL vous présente un choix très important de modèles et de marques Tout pour satisfaire votre goût et convenir à votre morphologie..',
         prix: 5,
-        categorie : "homme"
+        categorie : "gifts",
+        status : 'disponible'
 
     },
     {   id:16,
@@ -133,7 +158,8 @@ export const  product = [
         nom_du_produit: 'Slip',
         description: 'Jamais utilisés, believe me',
         prix: 53,
-        categorie : "homme"
+        categorie : "gifts",
+        status : 'disponible'
 
     },
     {   id:17,
@@ -141,7 +167,7 @@ export const  product = [
         nom_du_produit: 'Veste',
         description: 'Utilisée deux fois, de taille L',
         prix: 59,
-        categorie : "mixte"
-
+        categorie : "gifts",
+        status : 'disponible'
     }
 ]
