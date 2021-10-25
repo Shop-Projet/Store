@@ -1,4 +1,4 @@
-import Footer from './footer.jsx'
+import Footer from './parts/footer.jsx'
 
 const Layout = ({children}) => {
     return (  

@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import React, { useState, useEffect } from 'react';
 
-import ALink from './features/alink.jsx';
+import ALink from '../features/alink.jsx';
 
 function Footer () {
     const router = useRouter( "" );
@@ -51,20 +51,17 @@ function Footer () {
 
                         <div className="col-sm-6 col-lg-3">
                             <div className="widget">
-                                <h4 className="widget-title">Useful Links</h4>
+                                <h4 className="widget-title">Liens rapides</h4>
 
                                 <ul className="widget-list">
                                     <li>
-                                        <ALink href="/pages/about">About Molla</ALink>
+                                        <ALink href="/pages/about">Accueil</ALink>
                                     </li>
                                     <li>
-                                        <ALink href="#">How to shop on Molla</ALink>
+                                        <ALink href="#">About us</ALink>
                                     </li>
                                     <li>
-                                        <ALink href="#">FAQ</ALink>
-                                    </li>
-                                    <li>
-                                        <ALink href="/pages/contact">Contact us</ALink>
+                                        <ALink href="/pages/contact">Contact</ALink>
                                     </li>
                                     <li>
                                         <ALink href="/pages/login">Log in</ALink>
@@ -75,26 +72,20 @@ function Footer () {
 
                         <div className="col-sm-6 col-lg-3">
                             <div className="widget">
-                                <h4 className="widget-title">Customer Service</h4>
+                                <h4 className="widget-title">Mon Compte</h4>
 
                                 <ul className="widget-list">
                                     <li>
-                                        <ALink href="#">Payment Methods</ALink>
+                                        <ALink href="#">Mes Produits</ALink>
                                     </li>
                                     <li>
-                                        <ALink href="#">Money-back guarantee!</ALink>
+                                        <ALink href="#">Mes achats</ALink>
                                     </li>
                                     <li>
-                                        <ALink href="#">Returns</ALink>
+                                        <ALink href="#">Mes ventes</ALink>
                                     </li>
                                     <li>
-                                        <ALink href="#">Shipping</ALink>
-                                    </li>
-                                    <li>
-                                        <ALink href="#">Terms and conditions</ALink>
-                                    </li>
-                                    <li>
-                                        <ALink href="#">Privacy Policy</ALink>
+                                        <ALink href="#">Panier</ALink>
                                     </li>
                                 </ul>
                             </div>
@@ -102,23 +93,17 @@ function Footer () {
 
                         <div className="col-sm-6 col-lg-3">
                             <div className="widget">
-                                <h4 className="widget-title">My Account</h4>
+                                <h4 className="widget-title">Autres</h4>
 
                                 <ul className="widget-list">
                                     <li>
-                                        <ALink href="#">Sign In</ALink>
+                                        <ALink href="#"> Politique de confidentialité</ALink>
                                     </li>
                                     <li>
-                                        <ALink href="/shop/cart">View Cart</ALink>
+                                        <ALink href="#">Termes et conditions</ALink>
                                     </li>
                                     <li>
-                                        <ALink href="/shop/wishlist">My Wishlist</ALink>
-                                    </li>
-                                    <li>
-                                        <ALink href="/shop/dashboard">Track My Order</ALink>
-                                    </li>
-                                    <li>
-                                        <ALink href="#">Help</ALink>
+                                        <ALink href="#">FAQ</ALink>
                                     </li>
                                 </ul>
                             </div>
@@ -131,7 +116,7 @@ function Footer () {
                 <div className={ `pb-2 pt-2 ${containerClass}` }>
                     <p
                         className="footer-copyright"
-                    >Copyright © { new Date().getFullYear() } Nom du store. All Rights Reserved.</p>
+                    >Copyright © { new Date().getFullYear() } Sghyrna. All Rights Reserved.</p>
 
                 </div>
             </div>
