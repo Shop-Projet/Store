@@ -109,10 +109,9 @@ export const getIndex = function ( element ) {
  */
 export const catFilter = function ( products = [], category, flag = false ) {
     if ( category[ 0 ] === 'All' ) return products;
-
     return products.filter( item => {
         for ( let i = 0; i < category.length; i++ ) {
-            if ( item.category.find( cat => cat.slug == category[ i ] ) ) {
+            if ( item.categorie.toLowerCase() == category[i].toLowerCase() ) {
                 if ( !flag ) return true;
             } else {
                 if ( flag ) return false;

@@ -1,5 +1,5 @@
-import Footer from "./footer.jsx";
 import Header from "./header/header.jsx";
+import Footer from "./parts/footer.jsx";
 
 const Layout = ({ children }) => {
   return (
