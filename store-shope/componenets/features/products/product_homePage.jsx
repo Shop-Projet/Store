@@ -7,9 +7,9 @@ import ALink from '../alink.jsx';
 import { actions as wishlistAction } from '../../../store/wishlist';
 import { actions as cartAction } from '../../../store/cart';
 import { actions as compareAction } from '../../../store/compare';
-// import { actions as demoAction } from '../../../store/demo';
+import { actions as demoAction } from '../../../store/demo';
 
-import { isInWishlist, isInCompare } from '../../../utils/index';
+import { isInWishlist } from '../../../utils/index';
 
 function ProductHomePage( props ) {
     const router = useRouter();
@@ -26,7 +26,7 @@ function ProductHomePage( props ) {
         if ( !isInWishlist( props.wishlist, product ) ) {
             props.addToWishlist( product );
         } else {
-            router.push( '/pages/wishlist' );
+            router.push( '/wishlist' );
         }
     }
 
@@ -64,7 +64,7 @@ function ProductHomePage( props ) {
                 <div className="product-action-vertical">
                     {
                         isInWishlist( wishlist, product ) ?
-                            <ALink href="#" className="btn-product-icon btn-wishlist btn-expandable added-to-wishlist"><span>go to wishlist</span></ALink>
+                            <ALink href="/wishlist" className="btn-product-icon btn-wishlist btn-expandable added-to-wishlist"><span>go to wishlist</span></ALink>
                             :
                             <a href="#" className="btn-product-icon btn-wishlist btn-expandable" onClick={ onWishlistClick }><span>add to wishlist</span></a>
 
@@ -81,7 +81,7 @@ function ProductHomePage( props ) {
                     <ALink href={ `#` }>{ product.nom_du_produit }</ALink>
                 </h3>
                 <div className="product-price">
-                    <span className="product-price">{ product.prix.toFixed( 2 )} DT</span>
+                    <span className="product-price">{ product.prix} DT</span>
                 </div>
             </div>
             <div className="product-action">

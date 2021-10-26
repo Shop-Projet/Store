@@ -8,9 +8,19 @@ import { actions as wishlistAction } from '../store/wishlist';
 import { actions as cartAction } from '../store/cart';
 
 function Wishlist ( props ) {
-    const [ wishItems, setWishItems ] = useState( product );
- console.log (props)
+    const [ wishItems, setWishItems ] = useState( [] );
     
+
+    useEffect( () => {
+        setWishItems( props.wishlist.reduce( ( acc, product ) => {
+            return [
+                ...acc,
+                {
+                    ...product,
+                }
+            ];
+        }, [] ) );
+    }, [ props.wishlist ] )
 
     function moveToCart ( product ) {
         props.removeFromWishlist( product );
@@ -99,7 +109,7 @@ function Wishlist ( props ) {
                                                 <td className="remove-col">
                                                     <button
                                                         className="btn-remove"
-                                                        onClick={ e => props.removeFromWishlist( product ) }
+                                                        onClick={ e => (props.removeFromWishlist( product )) }
                                                     >
                                                         <i className="icon-close"></i>
                                                     </button>

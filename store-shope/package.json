@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/react-hooks": "^4.0.0",
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.5.0",
     "font-awesome": "^4.7.0",
