@@ -35,28 +35,28 @@ function HomeProduct ( props ) {
         <Tabs defaultIndex={ 0 } selectedTabClassName="show">
             <div className="container">
                 <div className="heading heading-center mb-2">
-                    <h2 className="title">PRODUITS </h2>
+                    <h2 className="title">Produits </h2>
                     <TabList className="nav nav-pills nav-border-anim justify-content-center">
                         <Tab className="nav-item">
                             <span className="nav-link" >All</span>
                         </Tab>
                         <Tab className="nav-item">
-                            <span className="nav-link">Toys</span>
+                            <span className="nav-link">Jeux</span>
                         </Tab>
                         <Tab className="nav-item">
-                            <span className="nav-link">Feeding</span>
+                            <span className="nav-link">SPORT ET ACTIVITÉS EN PLEIN AIR</span>
                         </Tab>
                         <Tab className="nav-item">
-                            <span className="nav-link">Clothing</span>
+                            <span className="nav-link">DECORATION</span>
                         </Tab>
                         <Tab className="nav-item">
-                            <span className="nav-link">For babies</span>
+                            <span className="nav-link">NAISSANCE</span>
                         </Tab>
                         <Tab className="nav-item">
-                            <span className="nav-link">Activity</span>
+                            <span className="nav-link">SCOLAIRE</span>
                         </Tab>
                         <Tab className="nav-item">
-                            <span className="nav-link">gifts</span>
+                            <span className="nav-link">LIVRES</span>
                         </Tab>
                         
                     </TabList>

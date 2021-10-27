@@ -31,10 +31,10 @@ function ProductHomePage( props ) {
     }
 
 
-    function onQuickView ( e ) {
-        e.preventDefault();
-        props.showQuickView( product.id );
-    }
+    // function onQuickView ( e ) {
+    //     e.preventDefault();
+    //     props.showQuickView( product.id );
+    // }
 
     return (
         <div className="product product-11 text-center">
@@ -59,17 +59,15 @@ function ProductHomePage( props ) {
                             : ""
                     }
                 </ALink>
-
-
                 <div className="product-action-vertical">
                     {
                         isInWishlist( wishlist, product ) ?
-                            <ALink href="/wishlist" className="btn-product-icon btn-wishlist btn-expandable added-to-wishlist"><span>go to wishlist</span></ALink>
+                            <ALink href="/wishlist" className="btn-product-icon btn-wishlist btn-expandable added-to-wishlist"><span>Afficher mes favoris</span></ALink>
                             :
-                            <a href="#" className="btn-product-icon btn-wishlist btn-expandable" onClick={ onWishlistClick }><span>add to wishlist</span></a>
+                            <a href="#" className="btn-product-icon btn-wishlist btn-expandable" onClick={ onWishlistClick }><span>Ajouter aux favoris</span></a>
 
                     }
-                    <a href="#" className="btn-product-icon btn-quickview" title="Quick View" onClick={ onQuickView }><span>quick view</span></a>
+                    {/* <a href="#" className="btn-product-icon btn-quickview" title="Quick View" onClick={ onQuickView }><span>quick view</span></a> */}
                 </div>
             </figure>
 
@@ -102,4 +100,4 @@ const mapStateToProps = ( state ) => {
     }
 }
 
-export default connect( mapStateToProps, { ...wishlistAction, ...cartAction, ...compareAction } )( ProductHomePage );
+export default connect( mapStateToProps, { ...wishlistAction, ...cartAction, ...compareAction, ...demoAction } )( ProductHomePage );
