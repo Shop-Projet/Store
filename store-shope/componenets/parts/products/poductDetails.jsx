@@ -72,12 +72,12 @@ function DetailTwo ( props ) {
 
             <div className="product-details-footer">
                 <div className="product-cat">
-                    <span>Category:</span>
+                    <span>Categorie:</span>
                     { product.categorie }
                 </div >
 
                 <div className="social-icons social-icons-sm">
-                    <span className="social-label">Share:</span>
+                    <span className="social-label">Partager sur:</span>
                     <ALink href="#" className="social-icon" title="Facebook">
                         <i className="icon-facebook-f"></i>
                     </ALink>

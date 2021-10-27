@@ -14,10 +14,10 @@ function OneProductPage () {
             <div className={ 'd-flex align-items-center container-fluid' }>
                 <ol className="breadcrumb">
                     <li className="breadcrumb-item">
-                        <ALink href="/">Home</ALink>
+                        <ALink href="/">Accueil</ALink>
                     </li>
                     <li className="breadcrumb-item">
-                        Product
+                        Produit
                     </li>
                     <li className="breadcrumb-item active">{ product[slug-1].nom_du_produit }</li>
                 </ol>
@@ -27,7 +27,7 @@ function OneProductPage () {
                 <div className="container skeleton-body">
                     <div className="product-details-top">
                         <div className={ `row skel-pro-single loaded` }>
-                            <div className="col-md-4">
+                            <div className="col-md-5">
                                 <div className="skel-product-gallery"></div>
                                 <GalleryDefault product={ product[slug-1] } />
                             </div>

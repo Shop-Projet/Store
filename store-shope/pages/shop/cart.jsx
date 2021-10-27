@@ -7,15 +7,11 @@ import { cartPriceTotal } from '../../utils/index';
 
 function Cart ( props ) {
     const [ cartList, setCartList ] = useState( [] );
-    const [ paimentMethode, setPaimentMethode ] = useState( '' );
 
     useEffect( () => {
         setCartList( props.cartItems );
     }, [ props.cartItems ] )
 
-    function onChangeShipping ( value ) {
-        setPaimentMethode( value );
-    }
 
     function updateCart ( e ) {
         let button = e.currentTarget;
@@ -33,16 +29,15 @@ function Cart ( props ) {
                 <div className="container">
                     <ol className="breadcrumb">
                         <li className="breadcrumb-item">
-                            <ALink href="/">Home</ALink>
+                            <ALink href="/">Accueil</ALink>
                         </li>
                         <li className="breadcrumb-item">
-                            <ALink href="/shop/sidebar/list">Shop</ALink>
+                            <ALink href="/shop/sidebar/list">Boutique</ALink>
                         </li>
-                        <li className="breadcrumb-item active">Shopping Cart</li>
+                        <li className="breadcrumb-item active">Panier</li>
                     </ol>
                 </div>
             </nav>
-
             <div className="page-content pb-5">
                 <div className="cart">
                     <div className="container">
@@ -59,7 +54,6 @@ function Cart ( props ) {
                                                     <th></th>
                                                 </tr>
                                             </thead>
-
                                             <tbody>
                                                 { cartList.length > 0 ?
                                                     cartList.map( ( item, index ) =>
@@ -94,7 +88,6 @@ function Cart ( props ) {
                                                         </td>
                                                     </tr>
                                                 }
-
                                             </tbody>
                                         </table>
                                         <div className="cart-bottom">
@@ -114,21 +107,19 @@ function Cart ( props ) {
                                                     <tr className="summary-total">
                                                         <td>Total:</td>
                                                         <td>
-                                                            ${ ( cartPriceTotal( props.cartItems ) ).toLocaleString( undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 } ) }
+                                                            { ( cartPriceTotal( props.cartItems ) ).toLocaleString( undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 } ) }DT
                                                         </td>
                                                     </tr>
                                                 </tbody>
                                             </table>
-
                                             <ALink
                                                 className="btn btn-outline-primary-2 btn-order btn-block"
-                                                href="/shop/checkout"
+                                                href="/shop/paiement"
                                             >
                                                 PASSER À LA CAISSE
                                             </ALink>
                                         </div>
-
-                                        <ALink href="/shop/sidebar/list" className="btn btn-outline-dark-2 btn-block mb-3"><span>CONTINUE SHOPPING</span><i className="icon-refresh"></i></ALink>
+                                        <ALink href="/" className="btn btn-outline-dark-2 btn-block mb-3"><span>CONTINUER VOS ACHATS</span><i className="icon-refresh"></i></ALink>
                                     </aside>
                                 </div>
                                 :
@@ -136,12 +127,12 @@ function Cart ( props ) {
                                     <div className="col-12">
                                         <div className="cart-empty-page text-center">
                                             <i className="cart-empty icon-shopping-cart" style={ { lineHeight: 1, fontSize: '15rem' } }></i>
-                                            <p className="px-3 py-2 cart-empty mb-3">No products added to the cart</p>
+                                            <p className="px-3 py-2 cart-empty mb-3">Panier vide</p>
                                             <p className="return-to-shop mb-0">
                                                 <ALink
                                                     href="/shop/sidebar/list"
                                                     className="btn btn-primary"
-                                                >RETURN TO SHOP</ALink>
+                                                >Boutique</ALink>
                                             </p>
                                         </div>
                                     </div>
