@@ -31,7 +31,7 @@ function Footer () {
                     <div className="row">
                         <div className="col-sm-6 col-lg-3">
                             <div className="widget widget-about">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/RPC-JP_Logo.png" className="footer-logo" alt="Footer Logo" width="55" height="25" />
+                                <img src="images/home/logo.PNG" className="footer-logo" alt="Footer Logo" width="85" height="25" />
                                 <p>Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.</p>
 
                                 <div className="social-icons">
@@ -85,7 +85,7 @@ function Footer () {
                                         <ALink href="#">Mes ventes</ALink>
                                     </li>
                                     <li>
-                                        <ALink href="#">Panier</ALink>
+                                        <ALink href="/shop/cart">Panier</ALink>
                                     </li>
                                 </ul>
                             </div>

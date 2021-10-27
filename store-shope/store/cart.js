@@ -20,7 +20,7 @@ const cartReducer = ( state = initialState, action ) => {
             var findIndex = state.data.findIndex( item => item.id == action.payload.product.id );
             let qty = action.payload.qty ? action.payload.qty : 1;
             if ( findIndex !== -1 ) {
-                findIndex = state.data.findIndex( item => item.nom == action.payload.product.nom );
+                findIndex = state.data.findIndex( item => item.nom_du_produit == action.payload.product.nom_du_produit );
             }
 
             if ( findIndex !== -1 ) {
@@ -29,9 +29,7 @@ const cartReducer = ( state = initialState, action ) => {
                         ...state.data.reduce( ( acc, product, index ) => {
                             if ( findIndex == index ) {
                                 acc.push( {
-                                    ...product,
-                                    qty: product.qty + qty,
-                                    sum: action.payload.product.prix  
+                                    ...product, 
                                 } );
                             } else {
                                 acc.push( product );

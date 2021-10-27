@@ -5,7 +5,7 @@ export default class MyDocument extends Document {
         return (
             <Html lang="en">
                 <Head>
-                    <base href={ process.env.PUBLIC_URL } />
+                    {/* <base href={ process.env.PUBLIC_URL } /> */}
                     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Manrope:400,500,600,700,800,900" />
                     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
                     <link rel="stylesheet" type="text/css" href="css/fonts-molla.min.css" />

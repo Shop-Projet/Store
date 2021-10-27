@@ -75,8 +75,7 @@ function HomeProduct ( props ) {
                                     :
                                     items.map( ( item, index ) =>
                                         <div className="col-6 col-md-4 col-lg-3" key={ index }>
-                                            <ProductHomePage
-                                                product={ item } />
+                                            <ProductHomePage product={ item } />
                                         </div>
                                     )
                             }
@@ -213,7 +212,7 @@ function HomeProduct ( props ) {
                     ( loadMoreLoading || hasMore ) ?
                         <div className="load-more-container text-center mt-0 mb-7">
                             <a href="#" className="btn btn-outline-darker btn-load-more" onClick={ loadMore }>
-                                <span className="mr-3">Load more products</span>
+                                <span className="mr-3">Charger plus de produits</span>
                                 <i className={ `icon-refresh ${loadMoreLoading ? 'load-more-rotating' : ''}` }></i>
                             </a>
                         </div>
