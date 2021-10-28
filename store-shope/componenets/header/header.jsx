@@ -107,9 +107,9 @@ function Header() {
             </div>
 
             <div className="header-right">
-              {/* <HeaderSearch /> */}
+              <HeaderSearch />
 
-              <CartMenu />
+              {/* <CartMenu /> */}
             </div>
           </div>
         </div>
