@@ -34,13 +34,13 @@ function DetailTwo ( props ) {
     }
 
     return (
-        <div className="product-details product-details-centered">
+        <div className="product-details product-details-centered pt-2">
             <h1 className="product-title">{ product.nom_du_produit }</h1>
             {
                 product.status == "disponible" ?
                     <div className="product-price">
                         <span className="out-price">
-                            <span>${ product.prix.toFixed( 2 ) }</span>
+                            <span>{ product.prix.toFixed( 2 ) }DT</span>
                         </span>
                     </div>
                     :
