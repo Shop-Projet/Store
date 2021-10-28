@@ -1,5 +1,6 @@
 import { persistReducer } from "redux-persist";
 import storage from 'redux-persist/lib/storage';
+import {product} from '../dummyData'
 
 export const actionTypes = {
     showQuick: 'SHOW_QUICKVIEW',
@@ -21,7 +22,7 @@ const demoReducer = ( state = initialState, action ) => {
         case actionTypes.showQuick:
             return {
                 ...state,
-                single: action.payload.slug,
+                single: action.payload.id,
                 quickShow: true,
             }
 
@@ -59,10 +60,10 @@ export const actions = {
         }
     } ),
 
-    showQuickView: slug => ( {
+    showQuickView: id => ( {
         type: actionTypes.showQuick,
         payload: {
-            slug: slug
+            id: id
         }
     } ),
 

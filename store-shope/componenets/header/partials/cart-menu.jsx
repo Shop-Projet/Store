@@ -29,7 +29,7 @@ function CartMenu(props) {
         }`}
       >
         {0 === cartlist.length ? (
-          <p>No products in the cart.</p>
+          <p>Panier vide.</p>
         ) : (
           <>
             <div className="dropdown-cart-products">
@@ -37,31 +37,18 @@ function CartMenu(props) {
                 <div className="product justify-content-between" key={index}>
                   <div className="product-cart-details">
                     <h4 className="product-title">
-                      <ALink href={`/product/default/${item.slug}`}>
-                        {item.name}
+                      <ALink href={`/product/default/${item.id}`}>
+                        {item.nom_du_produit}
                       </ALink>
                     </h4>
-
-                    <span className="cart-product-info">
-                      <span className="cart-product-qty">{item.qty} </span>x $
-                      {item.sale_price
-                        ? item.sale_price.toFixed(2)
-                        : item.price.toFixed(2)}
-                    </span>
                   </div>
 
                   <figure className="product-image-container ml-2">
                     <ALink
-                      href={`/product/default/${item.slug}`}
+                      href={`/product/default/${item.id}`}
                       className="product-image"
                     >
-                      <img
-                        src={
-                          process.env.NEXT_PUBLIC_ASSET_URI +
-                          item.sm_pictures[0].url
-                        }
-                        alt="product"
-                      />
+                      <img src={item.image} alt="product"/>
                     </ALink>
                   </figure>
                   <button
@@ -88,13 +75,13 @@ function CartMenu(props) {
 
             <div className="dropdown-cart-action">
               <ALink href="/shop/cart" className="btn btn-primary">
-                View Cart
+              Voir le panier
               </ALink>
               <ALink
-                href="/shop/checkout"
+                href="/paiement"
                 className="btn btn-outline-primary-2"
               >
-                <span>Checkout</span>
+                <span>Caisse</span>
                 <i className="icon-long-arrow-right"></i>
               </ALink>
             </div>

@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { useLazyQuery } from "@apollo/react-hooks";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import ALink from "../../../componenets/features/alink.jsx";
 
-// import { GET_PRODUCTS } from '~/server/queries';
-// import withApollo from '~/server/apollo';
-// import { safeContent } from '~/utils';
+
 
 function HeaderSearch() {
   const router = useRouter("");
@@ -167,10 +164,10 @@ function HeaderSearch() {
                       key={`search-result-${index}`}
                     >
                       <LazyLoadImage
-                        src={
-                          process.env.NEXT_PUBLIC_ASSET_URI +
-                          product.sm_pictures[0].url
-                        }
+                        // src={
+                        //   process.env.NEXT_PUBLIC_ASSET_URI +
+                        //   product.sm_pictures[0].url
+                        // }
                         width={40}
                         height={40}
                         alt="product"

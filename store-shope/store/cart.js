@@ -19,8 +19,8 @@ const cartReducer = ( state = initialState, action ) => {
         case actionTypes.addToCart:
             var findIndex = state.data.findIndex( item => item.id == action.payload.product.id );
             let qty = action.payload.qty ? action.payload.qty : 1;
-            if ( findIndex !== -1 && action.payload.product.variants.length > 0 ) {
-                findIndex = state.data.findIndex( item => item.name == action.payload.product.name );
+            if ( findIndex !== -1 ) {
+                findIndex = state.data.findIndex( item => item.nom_du_produit == action.payload.product.nom_du_produit );
             }
 
             if ( findIndex !== -1 ) {
@@ -29,9 +29,7 @@ const cartReducer = ( state = initialState, action ) => {
                         ...state.data.reduce( ( acc, product, index ) => {
                             if ( findIndex == index ) {
                                 acc.push( {
-                                    ...product,
-                                    qty: product.qty + qty,
-                                    sum: ( action.payload.product.sale_price ? action.payload.product.sale_price : action.payload.product.price ) * ( product.qty + qty )
+                                    ...product, 
                                 } );
                             } else {
                                 acc.push( product );
@@ -48,8 +46,8 @@ const cartReducer = ( state = initialState, action ) => {
                         {
                             ...action.payload.product,
                             qty: qty,
-                            price: action.payload.product.sale_price ? action.payload.product.sale_price : action.payload.product.price,
-                            sum: qty * ( action.payload.product.sale_price ? action.payload.product.sale_price : action.payload.product.price )
+                            price: action.payload.product.prix,
+                            sum:  action.payload.product.prix 
                         }
                     ]
                 };

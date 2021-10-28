@@ -35,28 +35,28 @@ function HomeProduct ( props ) {
         <Tabs defaultIndex={ 0 } selectedTabClassName="show">
             <div className="container">
                 <div className="heading heading-center mb-2">
-                    <h2 className="title">PRODUITS </h2>
+                    <h2 className="title">Produits </h2>
                     <TabList className="nav nav-pills nav-border-anim justify-content-center">
                         <Tab className="nav-item">
                             <span className="nav-link" >All</span>
                         </Tab>
                         <Tab className="nav-item">
-                            <span className="nav-link">Toys</span>
+                            <span className="nav-link">Jeux</span>
                         </Tab>
                         <Tab className="nav-item">
-                            <span className="nav-link">Feeding</span>
+                            <span className="nav-link">SPORT ET ACTIVITÉS EN PLEIN AIR</span>
                         </Tab>
                         <Tab className="nav-item">
-                            <span className="nav-link">Clothing</span>
+                            <span className="nav-link">DECORATION</span>
                         </Tab>
                         <Tab className="nav-item">
-                            <span className="nav-link">For babies</span>
+                            <span className="nav-link">NAISSANCE</span>
                         </Tab>
                         <Tab className="nav-item">
-                            <span className="nav-link">Activity</span>
+                            <span className="nav-link">SCOLAIRE</span>
                         </Tab>
                         <Tab className="nav-item">
-                            <span className="nav-link">gifts</span>
+                            <span className="nav-link">LIVRES</span>
                         </Tab>
                         
                     </TabList>
@@ -75,8 +75,7 @@ function HomeProduct ( props ) {
                                     :
                                     items.map( ( item, index ) =>
                                         <div className="col-6 col-md-4 col-lg-3" key={ index }>
-                                            <ProductHomePage
-                                                product={ item } />
+                                            <ProductHomePage product={ item } />
                                         </div>
                                     )
                             }
@@ -213,7 +212,7 @@ function HomeProduct ( props ) {
                     ( loadMoreLoading || hasMore ) ?
                         <div className="load-more-container text-center mt-0 mb-7">
                             <a href="#" className="btn btn-outline-darker btn-load-more" onClick={ loadMore }>
-                                <span className="mr-3">Load more products</span>
+                                <span className="mr-3">Charger plus de produits</span>
                                 <i className={ `icon-refresh ${loadMoreLoading ? 'load-more-rotating' : ''}` }></i>
                             </a>
                         </div>

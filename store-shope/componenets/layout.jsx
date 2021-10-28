@@ -1,14 +1,59 @@
 import Header from "./header/header.jsx";
 import Footer from "./parts/footer.jsx";
+// import QuickViewModal from "./features/modals/quickview-modal-two";
+import { useRouter } from 'next/router';
+import { useEffect } from "react";
+import { connect } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
+import { isSafariBrowser, isEdgeBrowser } from "../utils/index";
 
-const Layout = ({ children }) => {
+
+const Layout = ({ children, hideQuick }) => {
+  const router = useRouter( "" );
+  let scrollTop;
+
+  useEffect( () => {
+    // hideQuick();
+    scrollTop = document.querySelector( '#scroll-top' );
+    window.addEventListener( 'scroll', scrollHandler, false );
+}, [] )
+
+function toScrollTop () {
+  if ( isSafariBrowser() || isEdgeBrowser() ) {
+      let pos = window.pageYOffset;
+      let timerId = setInterval( () => {
+          if ( pos <= 0 ) clearInterval( timerId );
+          window.scrollBy( 0, -120 );
+          pos -= 120;
+      }, 1 );
+  } else {
+      window.scrollTo( {
+          top: 0,
+          behavior: 'smooth'
+      } );
+  }
+}
+
+function scrollHandler () {
+  if ( window.pageYOffset >= 400 ) {
+      scrollTop.classList.add( 'show' );
+  } else {
+      scrollTop.classList.remove( 'show' );
+  }
+}
+
   return (
+    <>
     <div>
       <Header />
-
       {children}
       <Footer />
     </div>
+    <button id="scroll-top" title="Back to top" onClick={ toScrollTop }>
+        <i className="icon-arrow-up"></i>
+    </button>
+    {/* <QuickViewModal /> */}
+   </>
   );
 };
 
