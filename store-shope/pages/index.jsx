@@ -200,12 +200,11 @@ export default function Home() {
                         <Reveal keyframes={ fadeInRightShorter } delay={ 150 } duration={ 1000 } triggerOnce>
                             <div className="icon-box px-0 icon-box-card text-center bg-white">
                                 <span className="icon-box-icon text-dark">
-                                    <i className="icon-rocket"></i>
+                                    <i className="icon-heartbeat"></i>
                                 </span>
                                 <div className="icon-box-content">
-                                    <h3 className="icon-box-title">Payment & Delivery</h3>
-
-                                    <p>Free shipping for orders over $50</p>
+                                    <h3 className="icon-box-title">Garantie hygiène </h3>
+                                    <p>Protocole strict de désinfection de chaque article</p>
                                 </div>
                             </div>
                         </Reveal>
@@ -217,8 +216,8 @@ export default function Home() {
                                     <i className="icon-rotate-left"></i>
                                 </span>
                                 <div className="icon-box-content">
-                                    <h3 className="icon-box-title">Return & Refund</h3>
-                                    <p>Free 100% money back guarantee</p>
+                                    <h3 className="icon-box-title">Retour et réclamation</h3>
+                                    <p>En cas de non conformité, l&apos;acheteur aura 24H pour réclamer a partir de la date de la livraison.</p>
                                 </div>
                             </div>
                         </Reveal>
@@ -230,8 +229,8 @@ export default function Home() {
                                     <i className="icon-life-ring"></i>
                                 </span>
                                 <div className="icon-box-content">
-                                    <h3 className="icon-box-title">Quality Support</h3>
-                                    <p>Alway online feedback 24/7</p>
+                                    <h3 className="icon-box-title">Garantie qualité </h3>
+                                    <p>La conformité de l&apos;article par rapport à la description du vendeur est vérifié avant l&apos;envoi à l&apos;acheteur.</p>
                                 </div>
                             </div>
                         </Reveal>

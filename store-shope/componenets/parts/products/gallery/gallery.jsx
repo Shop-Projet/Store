@@ -41,7 +41,7 @@ function GalleryDefault ( props ) {
 
     return (
         <>
-            <div className={ `product-gallery ${adClass}` }>
+            <div className={ `product-gallery ${adClass} pt-2` }>
                 <div className="row m-0">
                     <figure className="product-main-image" index="0">
                         <Magnifier
