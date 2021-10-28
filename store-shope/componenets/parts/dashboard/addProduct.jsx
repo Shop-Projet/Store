@@ -1,13 +1,13 @@
 import React, { useState }  from 'react'
 
+
 export default function AddProduct() {
     const [image, setImage] = useState('')
-    const defaultBtn = document.querySelector("#default--btn");
+    const [nomProduit, setNomProduit]= useState('')
+    const [description, setDescription] = useState('')
+    const [prix, setprix] = useState(0)
+    const [categorie, setCategorie] = useState('')
 
-    function deafultBtnActive () {
-        defaultBtn.click()
-    }
-    
     const imageHandler = (e) => {
         if (e.target.files && e.target.files.length > 0) {
             let src = URL.createObjectURL(e.target.files[0])
@@ -19,7 +19,7 @@ export default function AddProduct() {
         <div className="tm-bg-primary-dark tm-block tm-block-h-auto">
             <div className="row">
               <div className="col-12">
-              <h2 className="title-lg text-center mb-4">Mon nouveau article</h2>
+              <h2 className="title-lg text-center mb-4">Ajouter un nouveau article</h2>
               </div>
             </div>
             <div className="row tm-edit-product-row">
@@ -27,15 +27,15 @@ export default function AddProduct() {
                 <form action="" className="tm-edit-product-form">
                   <div className="form-group mb-3">
                     <label htmlFor="name">Nom du produit </label> <br/>
-                    <input id="name" name="name" type="text" className="form-control validate" required=""/>
+                    <input id="name" name="name" type="text" className="form-control validate" required="" onChange={e=>setNomProduit(e.target.value)}/>
                   </div>
                   <div className="form-group mb-3">
                     <label htmlFor="description">Description</label>
-                    <textarea className="form-control validate" rows="3" required=""></textarea>
+                    <textarea className="form-control validate" rows="3" required="" onChange={e=> setDescription(e.target.value)}></textarea>
                   </div>
                   <div className="form-group mb-3">
                     <label htmlFor="category">Catégorie</label>
-                    <select className="custom-select tm-select-accounts" id="category">
+                    <select className="custom-select tm-select-accounts" id="category" onChange={e => {setCategorie(e.target.value);}}>
                       <option selected="">Séléctionner une catégorie</option>
                       <option value="1">Naissance</option>
                       <option value="2">Jeux d&apos;éveil</option>
@@ -51,7 +51,7 @@ export default function AddProduct() {
                   </div>
                   <div className="form-group mb-3">
                     <label htmlFor="name">Prix </label> <br/>
-                    <input id="price" name="name" type="number" className="form-control validate" required=""/>
+                    <input id="price" name="name" type="number" className="form-control validate" required="" onChange={e=>setprix(e.target.value)}/>
                   </div>
               </form></div>
               <div className="col-xl-6 col-lg-6 col-md-12 mx-auto mb-5">
@@ -61,7 +61,6 @@ export default function AddProduct() {
                    :
                    <div> <img  src={image} alt="" className="rounded mx-auto d-block img-fluid img-thumbnail" style={{height:"280px", width:"400px"}}/></div>
                    } 
-        
                     <div className="custom-file">
                         <input type="file" className="custom-file-input" id="customFileLang" lang="fr" onChange={ imageHandler}/>
                         <label className="custom-file-label" htmlFor="customFileLang">Ajouter votre image</label>
