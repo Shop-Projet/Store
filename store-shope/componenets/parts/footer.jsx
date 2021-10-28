@@ -55,7 +55,7 @@ function Footer () {
 
                                 <ul className="widget-list">
                                     <li>
-                                        <ALink href="/pages/about">Accueil</ALink>
+                                        <ALink href="/">Accueil</ALink>
                                     </li>
                                     <li>
                                         <ALink href="#">About us</ALink>
@@ -64,7 +64,7 @@ function Footer () {
                                         <ALink href="/pages/contact">Contact</ALink>
                                     </li>
                                     <li>
-                                        <ALink href="/pages/login">Log in</ALink>
+                                        <ALink href="/login">Log in</ALink>
                                     </li>
                                 </ul>
                             </div>

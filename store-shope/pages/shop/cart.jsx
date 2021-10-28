@@ -114,7 +114,7 @@ function Cart ( props ) {
                                             </table>
                                             <ALink
                                                 className="btn btn-outline-primary-2 btn-order btn-block"
-                                                href="/shop/paiement"
+                                                href="/paiement"
                                             >
                                                 PASSER À LA CAISSE
                                             </ALink>

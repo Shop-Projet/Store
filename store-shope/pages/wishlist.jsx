@@ -133,30 +133,9 @@ function Wishlist ( props ) {
                                     <ALink
                                         href="#"
                                         className="social-icon"
-                                        title="Twitter"
-                                    >
-                                        <i className="icon-twitter"></i>
-                                    </ALink>
-                                    <ALink
-                                        href="#"
-                                        className="social-icon"
                                         title="Instagram"
                                     >
                                         <i className="icon-instagram"></i>
-                                    </ALink>
-                                    <ALink
-                                        href="#"
-                                        className="social-icon"
-                                        title="Youtube"
-                                    >
-                                        <i className="icon-youtube"></i>
-                                    </ALink>
-                                    <ALink
-                                        href="#"
-                                        className="social-icon"
-                                        title="Pinterest"
-                                    >
-                                        <i className="icon-pinterest"></i>
                                     </ALink>
                                 </div>
                             </div>

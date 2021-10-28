@@ -2,12 +2,12 @@ import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import SlideToggle from 'react-slide-toggle';
 
-import ALink from '../../componenets/features/alink';
-import Accordion from '../../componenets/features/accordion/accordion';
-import Card from '../../componenets/features/accordion/card';
+import ALink from '../componenets/features/alink';
+import Accordion from '../componenets/features/accordion/accordion';
+import Card from '../componenets/features/accordion/card';
 // import PageHeader from '~/components/features/page-header';
 
-import { cartPriceTotal } from '../../utils/index';
+import { cartPriceTotal } from '../utils/index';
 
 function Checkout ( props ) {
     const { cartlist } = props;
@@ -87,7 +87,7 @@ function Checkout ( props ) {
 
                                                 { cartlist.map( ( item, index ) =>
                                                     <tr key={ index }>
-                                                        <td>{ item.name_du_produit }</td>
+                                                        <td>{ item.nom_du_produit}</td>
                                                         <td> { item.prix.toLocaleString( undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 } ) }DT</td>
                                                     </tr>
                                                 ) }

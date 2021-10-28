@@ -78,7 +78,7 @@ function CartMenu(props) {
               Voir le panier
               </ALink>
               <ALink
-                href="/shop/paiement"
+                href="/paiement"
                 className="btn btn-outline-primary-2"
               >
                 <span>Caisse</span>
