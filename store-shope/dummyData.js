@@ -171,3 +171,83 @@ export const  product = [
         status : 'disponible'
     }
 ]
+
+export const achat  = [
+    {   id:1,
+        image: 'https://contents.mediadecathlon.com/p1691845/k$ea7ac2b43e3d08cb55754cd7a6d353aa/sous-vetement-de-ski-femme-100-haut-noir.jpg?&f=452x452',
+        nom_du_produit: "Sous-vêtement de ski/ femme",
+        description: 'couleur : noir, taille : s',
+        prix: 5,
+        categorie : "toys",
+        status :'annulé'
+    },
+    {   id:2,
+        image: 'https://i.pinimg.com/236x/46/f9/f6/46f9f6a13227253b8535e6c6c888823f.jpg',
+        nom_du_produit: 'Sweet',
+        description: 'Sweat zippé london blanc femme/taille M',
+        prix: 25,
+        categorie : "feeding",
+        status : 'en cours'
+
+    },
+    {   id:3,
+        image: 'https://i.pinimg.com/originals/7d/9b/b6/7d9bb6b39a7e8e9f6adf2abcf4dc3e44.png',
+        nom_du_produit: 'collection',
+        description: 'Quality silverware, this 40 piece flatware set is made of premium high quality stainless steel which ensures your health, rust resistant, sturdy and durable for years to come',
+        prix: 35,
+        categorie : "toys",
+        status : 'livré'
+
+
+    },
+    {   id:4,
+        image: 'https://i.pinimg.com/236x/30/d1/f9/30d1f99bfced5c8bf43882f35c8b6863.jpg',
+        nom_du_produit: 'Robe',
+        description: 'It"s just a dummy data I do"t have to write description',
+        prix: 55,
+        categorie : "femme",
+        status : 'en cours'
+
+
+    },
+    {   id:5,
+        image: 'https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/3d0133cc40a74fd8824ead12014ca896_9366/pantalon-de-survetement-adicolor-classics-primeblue-sst.jpg',
+        nom_du_produit: 'pantalon de survetement',
+        description: 'pantalon-de-survetement-adicolor-classics-primeblue',
+        prix: 95,
+        categorie : "homme",
+        status : 'livré'
+
+
+    }]
+
+
+    export const vente =  [
+        {   id:1,
+            image: 'https://contents.mediadecathlon.com/p1691845/k$ea7ac2b43e3d08cb55754cd7a6d353aa/sous-vetement-de-ski-femme-100-haut-noir.jpg?&f=452x452',
+            nom_du_produit: "Sous-vêtement de ski/ femme",
+            description: 'couleur : noir, taille : s',
+            prix: 5,
+            categorie : "toys",
+            status :'vendu'
+        },
+        {   id:2,
+            image: 'https://i.pinimg.com/236x/46/f9/f6/46f9f6a13227253b8535e6c6c888823f.jpg',
+            nom_du_produit: 'Sweet',
+            description: 'Sweat zippé london blanc femme/taille M',
+            prix: 25,
+            categorie : "feeding",
+            status : 'vendu'
+    
+        },
+        {   id:3,
+            image: 'https://i.pinimg.com/originals/7d/9b/b6/7d9bb6b39a7e8e9f6adf2abcf4dc3e44.png',
+            nom_du_produit: 'collection',
+            description: 'Quality silverware, this 40 piece flatware set is made of premium high quality stainless steel which ensures your health, rust resistant, sturdy and durable for years to come',
+            prix: 35,
+            categorie : "toys",
+            status : 'vendu'
+    
+    
+        }
+    ]

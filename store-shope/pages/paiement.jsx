@@ -97,7 +97,7 @@ function Checkout ( props ) {
                                                 </tr>
                                                 <tr className="summary-total">
                                                     <td>Total:</td>
-                                                    <td>${ cartPriceTotal( cartlist ).toLocaleString( undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 } ) }</td>
+                                                    <td>{ cartPriceTotal( cartlist ).toLocaleString( undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 } ) }DT</td>
                                                 </tr>
                                             </tbody>
                                         </table>
