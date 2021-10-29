@@ -52,7 +52,7 @@ export default function Vendre() {
                                 <label htmlFor="description">Description</label>
                                 <textarea className="form-control validate" rows="3" required="" onChange={e=> setDescription(e.target.value)}></textarea>
                             </div>
-                            <div className="row d-flex justify-content-between">
+                            <div>
                             <div className="dropdown show">
                                 <label htmlFor="etat">Etat</label>
                                 <br/>
