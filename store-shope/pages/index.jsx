@@ -101,7 +101,7 @@ export default function Home() {
                                     />
                                 </figure>
                                 <div className="banner-content banner-content-center">
-                                    <ALink className="banner-link" href="/shop/sidebar/3cols?category=decoration">
+                                    <ALink className="banner-link" href="/">
                                         <h3 className="banner-title mb-0">Jeux</h3>
                                         <span className="banner-link-text">Boutique<i className="icon-long-arrow-right ml-2"></i> </span>
                                     </ALink>
@@ -124,7 +124,7 @@ export default function Home() {
                                     />
                                 </figure>
                                 <div className="banner-content banner-content-center">
-                                    <ALink className="banner-link" href="/shop/sidebar/3cols?category=living-room">
+                                    <ALink className="banner-link" href="/">
                                         <h3 className="banner-title mb-0">Décoration</h3>
                                         <span className="banner-link-text">Boutique<i className="icon-long-arrow-right ml-2"></i></span>
                                     </ALink>
@@ -152,7 +152,7 @@ export default function Home() {
                                         </figure>
                                         <div className="banner-content banner-content-center">
                                             <div className="banner-content banner-content-center">
-                                                <ALink className="banner-link" href="/shop/sidebar/3cols?category=kitchen-and-utensil">
+                                                <ALink className="banner-link" href="/">
                                                     <h3 className="banner-title mb-0">Naissance</h3>
                                                     <span className="banner-link-text">Boutique<i className="icon-long-arrow-right ml-2"></i></span>
                                                 </ALink>
@@ -177,7 +177,7 @@ export default function Home() {
                                             />
                                         </figure>
                                         <div className="banner-content banner-content-center">
-                                            <ALink className="banner-link" href="/shop/sidebar/3cols?category=lighting">
+                                            <ALink className="banner-link" href="/">
                                                 <h3 className="banner-title mb-0">Scolaire </h3>
                                                 <span className="banner-link-text">Boutique<i className="icon-long-arrow-right ml-2"></i></span>
                                             </ALink>

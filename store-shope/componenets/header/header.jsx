@@ -32,7 +32,9 @@ function Header() {
               <li>
                 <ALink href="#">Links</ALink>
                 <ul>
-                  <WishlistMenu />
+                  <li>
+                  <ALink href="/monCompte">Mon compte</ALink>
+                  </li>
                   <LoginModal />
                 </ul>
               </li>

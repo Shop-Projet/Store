@@ -1,15 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { useRouter } from "next/router";
 
 import ALink from '../../../componenets/features/alink';
 
 function WishlistMenu ( props ) {
     const { wishlist } = props;
+    const router = useRouter();
+    let path = router.asPath;
 
     return (
-        <li>
+        <li className={path.indexOf("/wishlist") > -1 ? "active" : ""}>
             <ALink href="/wishlist" title="Wishlist">
-                <i className="icon-heart-o"></i>Mes Favoris
+                <i className="icon-heart-o"></i>Coups de coeur
                 <span>( { wishlist.length } )</span>
             </ALink>
         </li>

@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-
+import WishlistMenu from "./wishlist-menu.jsx";
 import ALink from "../../../componenets/features/alink.jsx";
 
 function MainMenu() {
@@ -28,25 +28,16 @@ function MainMenu() {
           id="menu-home"
         >
           <ALink href="/" className="pr-2">
-            Home
+          Comment ça marche ?
           </ALink>
         </li>
         <li className={path.indexOf("/shop") > -1 ? "active" : ""}>
           <ALink
-            href="/shop/"
+            href="/"
             className="pr-2"
             scroll={false}
           >
-            Shop
-          </ALink>
-        </li>
-        <li className={path.indexOf("/monCompte") > -1 ? "active" : ""}>
-          <ALink
-            href="/monCompte"
-            className="pr-2"
-            scroll={false}
-          >
-            Mon compte
+            J&apos;achète
           </ALink>
         </li>
         <li className={path.indexOf("/vendre") > -1 ? "active" : ""}>
@@ -58,6 +49,7 @@ function MainMenu() {
             Je vends
           </ALink>
         </li>
+        <WishlistMenu />
       </ul>
     </nav>
   );
