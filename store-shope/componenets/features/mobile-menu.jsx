@@ -45,6 +45,12 @@ function MobileMenu () {
                     <ul className="mobile-menu">
                         <li>
                             <ALink href="/">
+                            Accueil
+                            <span className="mmenu-btn"></span>
+                            </ALink>
+                        </li>
+                        <li>
+                            <ALink href="/comment-ça-marche">
                             Comment ça marche ?
                             <span className="mmenu-btn"></span>
                             </ALink>
@@ -63,7 +69,7 @@ function MobileMenu () {
                         </li>
                         <li>
                             <ALink href="/wishlist">
-                            Coups de ceur
+                            Mes coups de coeur
                             <span className="mmenu-btn"></span>
                             </ALink>
                         </li>

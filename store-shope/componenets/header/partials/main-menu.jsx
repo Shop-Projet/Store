@@ -23,11 +23,21 @@ function MainMenu() {
   return (
     <nav className="main-nav">
       <ul className="menu sf-arrows">
-        <li
+      <li
           className={`megamenu-container ${path === "/" ? "active" : ""}`}
           id="menu-home"
         >
+          
           <ALink href="/" className="pr-2">
+          Accueil
+          </ALink>
+        </li>
+        <li
+          className={`megamenu-container ${path === "/comment-ça-marche" ? "active" : ""}`}
+          id="menu-home"
+        >
+          
+          <ALink href="/comment-ça-marche" className="pr-2">
           Comment ça marche ?
           </ALink>
         </li>

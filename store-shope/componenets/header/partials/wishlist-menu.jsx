@@ -12,7 +12,7 @@ function WishlistMenu ( props ) {
     return (
         <li className={path.indexOf("/wishlist") > -1 ? "active" : ""}>
             <ALink href="/wishlist" title="Wishlist">
-                <i className="icon-heart-o"></i>Coups de coeur
+                Mes coups de coeur
                 <span>( { wishlist.length } )</span>
             </ALink>
         </li>

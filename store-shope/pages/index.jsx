@@ -20,22 +20,58 @@ export default function Home() {
                         <div className="col-lg-8">
                             <div className="intro-slider-container slider-container-ratio slider-container-1 mb-2 mb-lg-0">
                                 <OwlCarousel adClass="intro-slider intro-slider-1 owl-simple owl-light owl-nav-inside" options={ introSlider }>
-                                    <div className="intro-slide" style={ { backgroundImage: 'url(images/home/banners/banner2.webp)'} }>
-                                        <figure className="slide-image mb-0"></figure>
+                                <div className="intro-slide" style={ { backgroundColor: '#b2bec3' } }>
+                                        <figure className="slide-image mb-0">
+                                            <picture>
+                                                <img
+                                                    src="images/home/banners/banner4.png"
+                                                    alt="Banner"
+                                                    style={ { marginLeft: '25%', marginTop: '2%' } }
+                                                />
+                                            </picture>
+                                        </figure>
+
                                         <div className="intro-content">
                                             <Reveal keyframes={ fadeInUpShorter } delay={ 100 } duration={ 1000 }>
                                                 <>
-                                                    <h3 className="intro-subtitle">Bienvenue dans </h3>
-                                                    <h1 className="intro-title">
-                                                    Votre boutique  d&apos;occasion
-                                                    </h1>
-                                                    <ALink
-                                                        href="/shop/sidebar/list"
-                                                        className="btn btn-outline-white"
-                                                    >
-                                                        <span>Boutique</span>
-                                                        <i className="icon-long-arrow-right"></i>
-                                                    </ALink>
+                                                    <div className="pb-5 col-10">
+                                                        <h3 className="intro-subtitle">  Accompagner son enfant dans son développement. </h3>
+                                                    </div>
+                                                    <div className="pb-4 col-10">
+                                                        <h3 className="intro-subtitle">  Gagner de l'argent. </h3>
+                                                    </div>
+                                                    <div className="pt-1 col-10">
+                                                        <h3 className="intro-subtitle">  S&apos;inscrire dans une démarche éco-responsable. </h3>
+                                                    </div>
+                                                </>
+                                                
+                                            </Reveal>
+                                        </div>
+                                    </div>
+                                    <div className="intro-slide" style={ { backgroundColor: '#C29763' } }>
+                                        <figure className="slide-image mb-0">
+                                            <picture>
+                                                <img
+                                                    src="images/home/banners/banner5.png"
+                                                    alt="Banner"
+                                                    style={ { marginLeft: '38%', marginTop: '1%' } }
+
+                                                />
+                                            </picture>
+                                        </figure>
+
+                                        <div className="intro-content">
+                                            <Reveal keyframes={ fadeInUpShorter } delay={ 100 } duration={ 1000 }>
+                                            <>
+                                                    <div className="pb-5 col-10">
+                                                        <h3 className="intro-subtitle">  Accompagner son enfant dans son développement. </h3>
+                                                    </div>
+                                                    <div className="pb-4 col-10">
+                                                        <h3 className="intro-subtitle">  Gagner de l'argent. </h3>
+                                                    </div>
+                                                    <div className="pt-1 col-10">
+                                                        <h3 className="intro-subtitle"> S&apos;inscrire dans une démarche éco-responsable. </h3>
+                                                    </div>
                                                 </>
                                             </Reveal>
                                         </div>
@@ -53,25 +89,45 @@ export default function Home() {
 
                                                 <LazyLoadImage
                                                     alt="banner"
-                                                    src="images/home/banners/banner1.jpg"
+                                                    src="images/home/banners/banner9.jpg"
                                                     threshold={ 200 }
                                                     width="370"
                                                     height="auto"
-                                                    effect="blur"
                                                 />
+
+                                                <div className="intro-content">
+                                                    <ALink
+                                                        href="/vendre"
+                                                        className="btn btn-white"
+                                                    >
+                                                        <span>JE VENDS</span>
+                                                        <i className="icon-long-arrow-right"></i>
+                                                    </ALink>
+                                                </div>
                                             </div>
                                         </div>
+
                                         <div className="col-md-6 col-lg-12">
                                             <div className="banner lazy-media">
                                                 <div className="lazy-overlay" style={ { backgroundColor: 'rgb(229, 231, 218)' } }></div>
+
                                                 <LazyLoadImage
                                                     alt="banner"
-                                                    src="images/home/banners/banner3.jpg"
+                                                    src="images/home/banners/banner8.jpg"
                                                     threshold={ 200 }
                                                     width="370"
                                                     height="auto"
-                                                    effect="blur"
                                                 />
+
+                                                <div className="intro-content">
+                                                    <ALink
+                                                        href="#"
+                                                        className="btn btn-white"
+                                                    >
+                                                        <span>J&apos;ACHÈTE</span>
+                                                        <i className="icon-long-arrow-right"></i>
+                                                    </ALink>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -84,7 +140,7 @@ export default function Home() {
             </div>
             <div className="mb-4"></div>
             <div className="container pt-6">
-                <h2 className="title-lg text-center mb-4">Top Catégories</h2>
+                <h2 className="title-lg text-center mb-4">Catégories</h2>
                 <div className="row">
                     <div className="col-sm-6 col-lg-4">
                         <Reveal keyframes={ fadeInLeftShorter } delay={ 150 } duration={ 1000 } triggerOnce>
@@ -110,27 +166,59 @@ export default function Home() {
                         </Reveal>
                     </div>
                     <div className="col-sm-6 col-lg-4 order-lg-last">
-                        <Reveal keyframes={ fadeInRightShorter } delay={ 150 } duration={ 1000 } triggerOnce>
-                            <div className="banner banner-display banner-lg banner-badge lazy-media">
-                                <figure className="mb-0">
-                                    <div className="lazy-overlay"></div>
-                                    <LazyLoadImage
-                                        alt="banner"
-                                        src="images/home/categories/image-deco-cat.jpg"
-                                        threshold={ 200 }
-                                        width="376"
-                                        height="auto"
-                                        effect="blur"
-                                    />
-                                </figure>
-                                <div className="banner-content banner-content-center">
-                                    <ALink className="banner-link" href="/">
-                                        <h3 className="banner-title mb-0">Décoration</h3>
-                                        <span className="banner-link-text">Boutique<i className="icon-long-arrow-right ml-2"></i></span>
-                                    </ALink>
+                        <Reveal keyframes={ fadeIn } delay={ 150 } duration={ 1000 } triggerOnce>
+                            <div className="row">
+                                <div className="col-lg-12 col-sm-6 col-xs-12">
+                                    <div
+                                        className="banner banner-display banner-badge banner-sm lazy-media"
+                                    >
+                                        <figure className="mb-0">
+                                            <div className="lazy-overlay"></div>
+                                            <LazyLoadImage
+                                                alt="banner"
+                                                src="images/home/categories/image-vet-cat.PNG"
+                                                threshold={ 200 }
+                                                width="376"
+                                                height="auto"
+                                                effect="blur"
+                                            />
+                                        </figure>
+                                        <div className="banner-content banner-content-center">
+                                            <div className="banner-content banner-content-center">
+                                                <ALink className="banner-link" href="/">
+                                                    <h3 className="banner-title mb-0">Vêtements</h3>
+                                                    <span className="banner-link-text">Boutique<i className="icon-long-arrow-right ml-2"></i></span>
+                                                </ALink>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+                                <div className="col-lg-12 col-sm-6 col-xs-12">
+                                    <div
+                                        className="banner banner-display banner-badge banner-sm lazy-media"
+                                    >
+                                        <figure className="mb-0">
+                                            <div className="lazy-overlay"></div>
+                                                <LazyLoadImage
+                                                    alt="banner"
+                                                    src="images/home/categories/image-deco-cat.jpg"
+                                                    threshold={ 200 }
+                                                    width="376"
+                                                     height="auto"
+                                                    effect="blur"
+                                                />
+                                        </figure>
+                                        <div className="banner-content banner-content-center">
+                                            <ALink className="banner-link" href="/">
+                                                <h3 className="banner-title mb-0">Décoration</h3>
+                                                <span className="banner-link-text">Boutique<i className="icon-long-arrow-right ml-2"></i></span>
+                                            </ALink>
+                                        </div>
+                                    </div>
+                                </div>
+                                
                             </div>
-                        </Reveal>
+                            </Reveal>
                     </div>
                     <div className="col-sm-12 col-lg-4">
                         <Reveal keyframes={ fadeIn } delay={ 150 } duration={ 1000 } triggerOnce>
@@ -184,6 +272,7 @@ export default function Home() {
                                         </div>
                                     </div>
                                 </div>
+                                
                             </div>
                         </Reveal>
                     </div>
