@@ -41,9 +41,9 @@ function MainMenu() {
           Comment ça marche ?
           </ALink>
         </li>
-        <li className={path.indexOf("/shop") > -1 ? "active" : ""}>
+        <li className={path.indexOf("/shop/list") > -1 ? "active" : ""}>
           <ALink
-            href="/"
+            href="/shop/list"
             className="pr-2"
             scroll={false}
           >

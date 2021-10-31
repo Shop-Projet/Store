@@ -159,7 +159,7 @@ function HeaderSearch() {
                 {searchTerm.length > 2 &&
                   products.map((product, index) => (
                     <ALink
-                      href={`/product/default/${product.slug}`}
+                      href={`/product/${product.id}`}
                       className="autocomplete-suggestion"
                       key={`search-result-${index}`}
                     >

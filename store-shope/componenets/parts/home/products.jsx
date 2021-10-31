@@ -96,7 +96,7 @@ function HomeProduct ( props ) {
                                         </div>
                                     )
                                     :
-                                    catFilter( items, [ 'toys' ] ).map( ( item, index ) =>
+                                    catFilter( items, [ 'Jeux de construction', 'Jeux créatifs', 'Jeux éducatifs', "Jeux d'éveil" ] ).map( ( item, index ) =>
                                         <div className="col-6 col-md-4 col-lg-3" key={ index }>
                                             <ProductHomePage
                                                 product={ item } />
@@ -117,7 +117,7 @@ function HomeProduct ( props ) {
                                         </div>
                                     )
                                     :
-                                    catFilter( items, [ 'Feeding' ] ).map( ( item, index ) =>
+                                    catFilter( items, [ 'Sport et activités en plein air' ] ).map( ( item, index ) =>
                                         <div className="col-6 col-md-4 col-lg-3" key={ index }>
                                             <ProductHomePage
                                                 product={ item } />
@@ -138,7 +138,7 @@ function HomeProduct ( props ) {
                                         </div>
                                     )
                                     :
-                                    catFilter( items, [ 'clothing' ] ).map( ( item, index ) =>
+                                    catFilter( items, [ 'Décoration' ] ).map( ( item, index ) =>
                                         <div className="col-6 col-md-4 col-lg-3" key={ index }>
                                             <ProductHomePage
                                                 product={ item } />
@@ -159,7 +159,7 @@ function HomeProduct ( props ) {
                                         </div>
                                     )
                                     :
-                                    catFilter( items, [ 'For babies' ] ).map( ( item, index ) =>
+                                    catFilter( items, [ 'Naissance' ] ).map( ( item, index ) =>
                                         <div className="col-6 col-md-4 col-lg-3" key={ index }>
                                             <ProductHomePage
                                                 product={ item } />
@@ -180,7 +180,7 @@ function HomeProduct ( props ) {
                                         </div>
                                     )
                                     :
-                                    catFilter( items, [ 'Activity' ] ).map( ( item, index ) =>
+                                    catFilter( items, [ 'Vêtements' ] ).map( ( item, index ) =>
                                         <div className="col-6 col-md-4 col-lg-3" key={ index }>
                                             <ProductHomePage
                                                 product={ item } />
@@ -201,7 +201,7 @@ function HomeProduct ( props ) {
                                         </div>
                                     )
                                     :
-                                    catFilter( items, [ 'gifts' ] ).map( ( item, index ) =>
+                                    catFilter( items, [ 'Scolaire' ] ).map( ( item, index ) =>
                                         <div className="col-6 col-md-4 col-lg-3" key={ index }>
                                             <ProductHomePage
                                                 product={ item } />
@@ -222,7 +222,7 @@ function HomeProduct ( props ) {
                                         </div>
                                     )
                                     :
-                                    catFilter( items, [ 'vêtements' ] ).map( ( item, index ) =>
+                                    catFilter( items, [ 'Livres' ] ).map( ( item, index ) =>
                                         <div className="col-6 col-md-4 col-lg-3" key={ index }>
                                             <ProductHomePage
                                                 product={ item } />
@@ -242,7 +242,7 @@ function HomeProduct ( props ) {
                         </div>
                         : 
                         <div className="load-more-container text-center mt-0 mb-7">
-                        <ALink href="/" className="btn btn-outline-darker btn-load-more">
+                        <ALink href="/shop/list" className="btn btn-outline-darker btn-load-more">
                             <span className="mr-3">Visiter la boutique</span>
                             <i className={ `icon-arrow-right ${loadMoreLoading ? 'load-more-rotating' : ''}` }></i>
                         </ALink>

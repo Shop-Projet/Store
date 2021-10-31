@@ -37,7 +37,7 @@ function CartMenu(props) {
                 <div className="product justify-content-between" key={index}>
                   <div className="product-cart-details">
                     <h4 className="product-title">
-                      <ALink href={`/product/default/${item.id}`}>
+                      <ALink href={`/product/${item.id}`}>
                         {item.nom_du_produit}
                       </ALink>
                     </h4>
@@ -45,7 +45,7 @@ function CartMenu(props) {
 
                   <figure className="product-image-container ml-2">
                     <ALink
-                      href={`/product/default/${item.id}`}
+                      href={`/product/${item.id}`}
                       className="product-image"
                     >
                       <img src={item.image} alt="product"/>

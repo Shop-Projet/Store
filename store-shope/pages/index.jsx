@@ -121,7 +121,7 @@ export default function Home() {
 
                                                 <div className="intro-content">
                                                     <ALink
-                                                        href="#"
+                                                        href="/shop/list"
                                                         className="btn btn-white"
                                                     >
                                                         <span>J&apos;ACHÈTE</span>

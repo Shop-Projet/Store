@@ -21,7 +21,7 @@ function Footer () {
     }, [] )
 
     function handleBottomSticky () {
-        setIsBottomSticky( router.pathname.includes( 'product/default' ) && ( window.innerWidth > 991 ) );
+        setIsBottomSticky( router.pathname.includes( 'product' ) && ( window.innerWidth > 991 ) );
     }
 
     return (
