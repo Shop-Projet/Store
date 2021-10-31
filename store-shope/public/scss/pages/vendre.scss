@@ -1,0 +1,51 @@
+.span-vente {
+    font-size: 10px;
+}
+
+.edit-vente-color {
+    color: $primary-color
+}
+
+.dropdown-color-vente {
+    color: azure;
+}
+
+.btn-vente-position {
+    display: flex;
+    align-items: center;
+}
+
+.select-box-sell {
+    width: 280px;
+}
+.select-box-sell select {
+    height: 42px;
+    line-height: 18px;
+    font-size: 14px;
+    width: 100%;
+    border: 1px solid #ccc ;
+    -webkit-appearance: none;
+    appearance: none;
+    padding: 1px 15px;
+    cursor: pointer;
+}
+.select-box-sell:after {
+    content: "";
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    width: 10px;
+    left: 25rem;
+    top: -22px;
+    border-top: 8px solid #ccc;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    cursor: pointer;
+}
+.select-box-sell select:hover{
+    border: 1px solid #cc9966 ;
+}
+.select-box-sell:focus-within::after {
+    border-top: 8px solid #cc9966;
+
+}

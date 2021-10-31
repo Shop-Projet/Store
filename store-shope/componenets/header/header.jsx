@@ -33,16 +33,7 @@ function Header() {
                 <ALink href="#">Links</ALink>
                 <ul>
                   <li>
-                    <a href="tel:#">
-                      <i className="icon-phone"></i>Call: +0123 456 789
-                    </a>
-                  </li>
-                  <WishlistMenu />
-                  <li>
-                    <ALink href="/pages/about">About Us</ALink>
-                  </li>
-                  <li>
-                    <ALink href="/pages/contact-us">Contact Us</ALink>
+                  <ALink href="/monCompte">Mon compte</ALink>
                   </li>
                   <LoginModal />
                 </ul>
@@ -51,7 +42,6 @@ function Header() {
           </div>
         </div>
       </div>
-
       <StickyHeader>
         <div className="header-middle sticky-header">
           <div className={containerClass}>
@@ -60,22 +50,18 @@ function Header() {
                 <span className="sr-only">Toggle mobile menu</span>
                 <i className="icon-bars"></i>
               </button>
-
               <ALink href="/" className="logo">
                 <img
                   src="images/logo.png"
-                  alt="Molla Logo"
+                  alt="Sghyrna Logo"
                   width={105}
                   height={24}
                 />
               </ALink>
-
               <MainMenu />
             </div>
-
             <div className="header-right">
               {/* <HeaderSearch /> */}
-
               <CartMenu />
             </div>
           </div>

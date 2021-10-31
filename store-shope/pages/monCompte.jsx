@@ -1,11 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Tabs, TabList, TabPanel, Tab } from 'react-tabs';
-
+import ProductAccount from '../componenets/parts/dashboard/productAccount'
 import ALink from '../componenets/features/alink';
 import PageHeader from '../componenets/features/page-header';
-import AddProduct from '../componenets/parts/dashboard/addProduct';
+import {product} from '../dummyData';
+import {achat} from '../dummyData'
+import { vente } from '../dummyData';
+import productAccount from '../componenets/parts/dashboard/productAccount';
 
 function DashBoard () {
+    const [mesAchat, setAchat] = useState(achat)
+    const [mesVente, setVente] = useState(vente)
+    const [mesProduits, setMesProduit] = useState(product)
+
+    
+
     function toOrder ( e ) {
         e.preventDefault();
         document
@@ -63,11 +72,6 @@ function DashBoard () {
                                             <Tab className="nav-item">
                                                 <span className="nav-link">Mes ventes</span>
                                             </Tab>
-
-                                            <Tab className="nav-item">
-                                                <span className="nav-link">Ajouter un article</span>
-                                            </Tab>
-
                                             <Tab className="nav-item">
                                                 <span className="nav-link">Détails du compte</span>
                                             </Tab>
@@ -81,23 +85,33 @@ function DashBoard () {
                                     <div className="col-md-8 col-lg-9" style={ { marginTop: "1rem" } }>
                                         <div className="tab-pane">
                                             <TabPanel>
-                                                <p>À partir du tableau de bord de votre compte, vous pouvez ajouter un produit, consulter vos ventes et vos achats, gérer vos adresses de livraison et de facturation et modifier votre mot de passe et les détails de votre compte.</p>
+                                                {
+                                                    !mesProduits.length ? <p>À partir du tableau de bord de votre compte, vous pouvez ajouter un produit, consulter vos ventes et vos achats, gérer vos adresses de livraison et de facturation et modifier votre mot de passe et les détails de votre compte.</p>
+                                                    : <ProductAccount products = {product} remove = {true} />
+                                                }
                                             </TabPanel>
 
                                             <TabPanel>
-                                                <p>No order has been made yet.</p>
-                                                <ALink href="#" className="btn btn-outline-primary-2"><span>Boutique</span><i className="icon-long-arrow-right"></i></ALink>
+                                                {
+                                                    !mesAchat.length? 
+                                                    <div>
+                                                        <p>Aucune commande n&apos;a encore été passée.</p>
+                                                        <ALink href="#" className="btn btn-outline-primary-2"><span>Boutique</span><i className="icon-long-arrow-right"></i></ALink>
+                                                    </div>
+                                                    : <ProductAccount products={achat} remove={false} />
+                                                }
                                             </TabPanel>
 
                                             <TabPanel>
-                                                <p>No downloads available yet.</p>
-                                                <ALink href="/" className="btn btn-outline-primary-2"><span>Ajouter un article</span><i className="icon-long-arrow-right"></i></ALink>
+                                                {
+                                                    !mesVente.length? 
+                                                    <div>
+                                                        <p>Liste vide.</p>
+                                                         <ALink href="/" className="btn btn-outline-primary-2"><span>Ajouter un article</span><i className="icon-long-arrow-right"></i></ALink>
+                                                    </div>
+                                                    : <ProductAccount products={vente} remove={false}/>
+                                                }
                                             </TabPanel>
-
-                                            <TabPanel>
-                                            <AddProduct/>
-                                            </TabPanel>
-
                                             <TabPanel>
                                                 <form action="#">
                                                     <div className="row">
