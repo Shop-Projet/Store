@@ -45,59 +45,68 @@ export default function Vendre() {
                                 <h6 className="mb-1 edit-vente-color pb-2"><i className="icon-long-arrow-down"></i>Décris ton article </h6>
                             </div>
                             <div>
-                                <label htmlFor="name">Nom du produit </label> 
-                                <input id="name" name="name" type="text" className="form-control"  required="" onChange={e=>setNomProduit(e.target.value)}/>
+                                <label htmlFor="name">Objet à vendre </label> 
+                                <input id="name" name="name" type="text" className="form-control" placeholder="Ex: Nounours, Robot mécanique, Robe rouge ..." required="" onChange={e=>setNomProduit(e.target.value)}/>
                             </div>
                             <div>
                                 <label htmlFor="description">Description</label>
-                                <textarea className="form-control validate" rows="3" required="" onChange={e=> setDescription(e.target.value)}></textarea>
+                                <textarea className="form-control validate" rows="3" required=""  placeholder="Ex: Je vends cette poussette avec habillage pluie ..." onChange={e=> setDescription(e.target.value)}></textarea>
                             </div>
                             <div>
                             <div className="dropdown show">
                                 <label htmlFor="etat">Etat</label>
                                 <br/>
-                                <select className="btn btn-secondary dropdown-toggle" id="etat" onChange={e => {setEtat(e.target.value);}}>
-                                    <option selected="" >Etat du produit</option>
-                                    <option value="1" >Neuf sans étiquette</option>
-                                    <option value="2">Trrés bon état</option>
-                                    <option value="3">Bon état</option>
-                                    <option value="4">Satisfaisant</option>
-                                </select>
+                                <div className="select-box-sell">
+                                    <select id="etat" onChange={e => {setEtat(e.target.value);}} >
+                                        <option selected="" >Séléctionner l&apos;état de l&apos;article</option>
+                                        <option value="1" >Neuf sans étiquette</option>
+                                        <option value="2">Trés bon état</option>
+                                        <option value="3">Bon état</option>
+                                        <option value="4">Satisfaisant</option>
+                                    </select>
+                                </div>
                             </div>
                             <div className="dropdown show">
-                                <label htmlFor="category">Catégorie</label>
+                                <label htmlFor="category" className="pt-2">Catégorie</label>
                                 <br/>
-                                <select className="btn btn-secondary dropdown-toggle" id="category" onChange={e => {setCategorie(e.target.value);}}>
-                                    <option selected="">Séléctionner une catégorie</option>
-                                    <option value="1">Naissance</option>
-                                    <option value="2">Jeux d&apos;éveil</option>
-                                    <option value="3">Jeux éducatifs</option>
-                                    <option value="4">Jeux créatifs</option>
-                                    <option value="5">Jeux de construction</option>
-                                    <option value="6">Sport et activités en plein air</option>
-                                    <option value="7">Média et jeux vidéo</option>
-                                    <option value="8">Scolaire</option>
-                                    <option value="9">Décoration</option>
-                                    <option value="10">Livres</option>
-                                    <option value="11">Vêtements</option>
-                                </select>
+                                <div className="select-box-sell">
+                                    <select  id="category" onChange={e => {setCategorie(e.target.value);}}>
+                                        <option selected="">Séléctionner une catégorie</option>
+                                        <option value="1">Naissance</option>
+                                        <option value="2">Jeux d&apos;éveil</option>
+                                        <option value="3">Jeux éducatifs</option>
+                                        <option value="4">Jeux créatifs</option>
+                                        <option value="5">Jeux de construction</option>
+                                        <option value="6">Sport et activités en plein air</option>
+                                        <option value="7">Média et jeux vidéo</option>
+                                        <option value="8">Scolaire</option>
+                                        <option value="9">Décoration</option>
+                                        <option value="10">Livres</option>
+                                        <option value="11">Vêtements</option>
+                                    </select>
+                                </div>
                             </div>
                             <div className="dropdown show">
-                                <label htmlFor="age">Age</label>
+                                <label htmlFor="age" className="pt-2">Age</label>
                                 <br/>
-                                <select className="btn btn-dark dropdown-toggle" id="age" onChange={e => {setAge(e.target.value);}}>
-                                    <option selected="">Séléctionner une tranche d&apos;âge</option>
-                                    <option value="1">De 0 à 6 Mois</option>
-                                    <option value="2">De 6 Mois à 12 Mois</option>
-                                    <option value="3">De 12 Mois à 18 Mois</option>
-                                    <option value="4">De 18 Mois à 24 Mois</option>
-                                    <option value="5">De 24 Mois à 36 Mois </option>
-                                    <option value="6">3-4 ans</option>
-                                    <option value="7">5-7 ans</option>
-                                    <option value="8">8-11 ans</option>
-                                    <option value="9">12-14 ans</option>
-                                    <option value="10">14 +</option>
-                                </select>
+                                <div className="select-box-sell">
+                                    <select id="age" onChange={e => {setAge(e.target.value);}}>
+                                        <option selected="">Séléctionner une tranche d&apos;âge</option>
+                                        <option value="1">De 0 à 6 Mois</option>
+                                        <option value="2">De 6 Mois à 12 Mois</option>
+                                        <option value="3">De 12 Mois à 18 Mois</option>
+                                        <option value="4">De 18 Mois à 24 Mois</option>
+                                        <option value="5">De 24 Mois à 36 Mois </option>
+                                        <option value="6">3-4 ans</option>
+                                        <option value="7">5-7 ans</option>
+                                        <option value="8">8-11 ans</option>
+                                        <option value="9">12-14 ans</option>
+                                        <option value="10">14 +</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div className="pt-2">
+                                <span className="span-vente">*ETAT CATEGORIE ET ÂGE (choisir parmi les listes ci-dessus)</span>
                             </div>
                             </div>
                             <div className="about-text text-center mt-3">
