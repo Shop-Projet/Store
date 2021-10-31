@@ -3,16 +3,12 @@ import { connect } from 'react-redux';
 import { Magnifier } from 'react-image-magnifiers';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import React, { useState, useEffect } from 'react';
-import { useQuery } from '@apollo/react-hooks';
 import { useRouter } from 'next/router';
+import {product} from '../../../dummyData'
+import OwlCarousel from '../owl-carousel';
+// import DetailOne from '~/components/partials/product/details/detail-one';
 
-import OwlCarousel from '~/components/features/owl-carousel';
-import DetailOne from '~/components/partials/product/details/detail-one';
-
-import withApollo from '~/server/apollo';
-import { GET_PRODUCT } from '~/server/queries';
-
-import { actions as demoAction } from '~/store/demo';
+import { actions as demoAction } from '../../../store/demo';
 
 const customStyles = {
     overlay: {
@@ -24,12 +20,12 @@ const customStyles = {
 Modal.setAppElement( 'body' );
 
 function QuickViewModalTwo ( props ) {
-    const { slug } = props;
-    if ( !slug ) {
+    const { id } = props;
+    if ( !id ) {
         return <div></div>
     }
-    const { data, loading, error } = useQuery( GET_PRODUCT, { variables: { slug, onlyData: true } } );
-    const product = data && data.product.single;
+
+    const [view, setView] = useState(product)
     const router = useRouter();
     const [ carouselRef, setCarouselRef ] = useState( null );
     const events = {
@@ -70,10 +66,6 @@ function QuickViewModalTwo ( props ) {
         carouselRef.current.goTo( index );
     }
 
-
-    if ( !slug || error ) {
-        return <div></div>
-    }
     return (
         <>
             <Modal
@@ -89,56 +81,29 @@ function QuickViewModalTwo ( props ) {
             >
                 <div className="modal-content">
                     <div className="quickView-content skeleton-body">
-                        <div className={ `row skel-pro-single skel-quickview mb-0 ${loading ? '' : 'loaded'}` }>
+                        <div className={ `row skel-pro-single skel-quickview mb-0 ${!product.length ? '' : 'loaded'}` }>
                             <div className="col-lg-6 p-0 d-flex flex-lg-row flex-column">
                                 <div className="skel-product-gallery"></div>
 
                                 {
-                                    !loading ?
+                                    product.length ?
                                         <>
                                             <div className="product-sm col-lg-2 row p-0 order-lg-first order-last px-2 p-lg-0 m-lg-0 position-relative" id="owl-dots">
-                                                {
-                                                    product.pictures.map( ( item, index ) =>
-                                                        <a href="#" className={ `product-gallery-item h-auto p-lg-0 mb-0 mb-lg-1 ${0 === index ? 'active' : ''}` } key={ product.id + '-' + index } onClick={ e => changeBgImage( e, index ) }>
+                                                        <a href="#" className={ `product-gallery-item h-auto p-lg-0 mb-0 mb-lg-1 active` }  onClick={ e => changeBgImage( e, index ) }>
                                                             <figure className="mb-0">
                                                                 <LazyLoadImage
                                                                     alt="Thumbnail"
-                                                                    src={ process.env.NEXT_PUBLIC_ASSET_URI + product.sm_pictures[ index ].url }
+                                                                    src={product.image}
                                                                     width="100%"
                                                                     height={ 100 }
                                                                     className="d-block"
                                                                 />
                                                             </figure>
                                                         </a>
-                                                    )
-                                                }
                                             </div>
 
                                             <div className="product-lg mb-1 mb-lg-0 col-lg-10 pl-lg-3 pl-0 pr-0 pr-lg-3 order-lg-last order-first">
-                                                {
-                                                    product.new ?
-                                                        <span className="product-label label-new">New</span>
-                                                        : ""
-                                                }
-
-                                                {
-                                                    product.sale_price ?
-                                                        <span className="product-label label-sale">Sale</span>
-                                                        : ""
-                                                }
-
-                                                {
-                                                    product.top ?
-                                                        <span className="product-label label-top">Top</span>
-                                                        : ""
-                                                }
-
-                                                {
-                                                    product.stock == 0 ?
-                                                        <span className="product-label label-out">Out of Stock</span>
-                                                        : ""
-                                                }
-                                                <OwlCarousel adClass="product-gallery-carousel owl-full owl-nav-dark cols-1 cols-md-2 cols-lg-3" onChangeRef={ setCarouselRef } events={ events } options={ { 'dots': false, 'nav': false } }>
+                                                {/* <OwlCarousel adClass="product-gallery-carousel owl-full owl-nav-dark cols-1 cols-md-2 cols-lg-3" onChangeRef={ setCarouselRef } events={ events } options={ { 'dots': false, 'nav': false } }>
                                                     { product.pictures.map( ( item, index ) =>
                                                         <Magnifier
                                                             imageSrc={ process.env.NEXT_PUBLIC_ASSET_URI + item.url }
@@ -152,7 +117,7 @@ function QuickViewModalTwo ( props ) {
                                                             key={ "gallery-" + index }
                                                         />
                                                     ) }
-                                                </OwlCarousel>
+                                                </OwlCarousel> */}
                                             </div>
                                         </>
                                         : ""
@@ -170,8 +135,9 @@ function QuickViewModalTwo ( props ) {
 
                                 <div className="product-summary pr-4">
                                     {
-                                        !loading ?
-                                            <DetailOne product={ product } />
+                                        product.length ?
+                                            // <DetailOne product={ product } />
+                                            ""
                                             : ""
                                     }
                                 </div>
@@ -188,9 +154,9 @@ function QuickViewModalTwo ( props ) {
 
 const mapStateToProps = ( state ) => {
     return {
-        slug: state.demo.single,
+        id: state.demo.single,
         modalShow: state.demo.quickShow,
     }
 }
 
-export default withApollo( { ssr: typeof window == 'undefined' } )( connect( mapStateToProps, { ...demoAction } )( QuickViewModalTwo ) );
+export default ( connect( mapStateToProps, { ...demoAction } )( QuickViewModalTwo ) );
