@@ -6,7 +6,7 @@ import PageHeader from '../componenets/features/page-header';
 import {product} from '../dummyData';
 import {achat} from '../dummyData'
 import { vente } from '../dummyData';
-import productAccount from '../componenets/parts/dashboard/productAccount';
+
 
 function DashBoard () {
     const [mesAchat, setAchat] = useState(achat)

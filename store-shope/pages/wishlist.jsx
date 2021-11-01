@@ -30,19 +30,19 @@ function Wishlist ( props ) {
     return (
         <main className="main">
             <PageHeader
-                title="Wishlist"
-                subTitle="Shop"
+                title="Mes coups de coeur"
+                subTitle="Boutique"
             />
             <nav className="breadcrumb-nav">
                 <div className="container">
                     <ol className="breadcrumb">
                         <li className="breadcrumb-item">
-                            <ALink href="/">Home</ALink>
+                            <ALink href="/">Accueil</ALink>
                         </li>
                         <li className="breadcrumb-item">
-                            <ALink href="/shop/sidebar/list">Shop</ALink>
+                            <ALink href="/list">J&apos;achète</ALink>
                         </li>
-                        <li className="breadcrumb-item active">Wishlist</li>
+                        <li className="breadcrumb-item active">Mes coups de coeur</li>
                     </ol>
                 </div>
             </nav>
@@ -73,19 +73,19 @@ function Wishlist ( props ) {
                                                 <td className="product-col">
                                                     <div className="product">
                                                         <figure className="product-media">
-                                                            <ALink href="#" className="product-image">
-                                                                <img src={product.image} alt="product" />
+                                                            <ALink href={`product/${product.id}`} className="product-image">
+                                                                <img src={product.image[0]} alt="product" />
                                                             </ALink>
                                                         </figure>
 
                                                         <h4 className="product-title">
-                                                            <ALink href="#">{ product.name }</ALink>
+                                                            <ALink href={`product/${product.id}`}>{ product.name }</ALink>
                                                         </h4>
                                                     </div>
                                                 </td>
                                                 <td className="price-col">
                                                             <div className="product-price d-inline-block mb-0">
-                                                                <span className="out-price">${ product.prix}</span>
+                                                                <span className="out-price">{ product.prix}DT</span>
                                                             </div>
                                                 </td>
                                                 <td className="stock-col">
@@ -101,7 +101,7 @@ function Wishlist ( props ) {
                                                                 :
                                                                 <button className="btn btn-block btn-outline-primary-2" onClick={ e => moveToCart( product ) }>
                                                                     <i className="icon-cart-plus"></i>
-                                                                    add to cart
+                                                                    Ajouter au panier
                                                                 </button>
                                                         }
                                                     </div>
@@ -146,11 +146,11 @@ function Wishlist ( props ) {
                         >
                             <div className="text-center">
                                 <i className="icon-heart-o wishlist-empty d-block" style={ { fontSize: '15rem', lineHeight: '1' } }></i>
-                                <span className="d-block mt-2">No products added to wishlist</span>
+                                <span className="d-block mt-2">Aucun produit ajouté à la liste de souhaits</span>
                                 <ALink
-                                    href="/shop/sidebar/list"
+                                    href="/list"
                                     className="btn btn-primary mt-2"
-                                >Go Shop</ALink>
+                                >J&apos;achète</ALink>
                             </div>
                         </div>
                 }
