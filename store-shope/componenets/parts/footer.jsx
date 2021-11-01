@@ -31,7 +31,7 @@ function Footer () {
                     <div className="row">
                         <div className="col-sm-6 col-lg-3">
                             <div className="widget widget-about">
-                                <img src="images/home/logo.PNG" className="footer-logo" alt="Footer Logo" width="85" height="25" />
+                                <img src="/images/home/logo.PNG" className="footer-logo" alt="Footer Logo" width="85" height="25" />
                                 <p>Permettre aux parents de fournir plus de  jouets pour leurs enfants à moindre coût dans une démarche responsable.</p>
 
                                 <div className="social-icons">
@@ -85,7 +85,7 @@ function Footer () {
                                         <ALink href="#">Mes ventes</ALink>
                                     </li>
                                     <li>
-                                        <ALink href="/shop/cart">Panier</ALink>
+                                        <ALink href="/cart">Panier</ALink>
                                     </li>
                                 </ul>
                             </div>

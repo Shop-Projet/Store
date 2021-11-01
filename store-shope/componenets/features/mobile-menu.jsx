@@ -56,7 +56,7 @@ function MobileMenu () {
                             </ALink>
                         </li>
                         <li>
-                            <ALink href="/shop/list">
+                            <ALink href="/list">
                             J&apos;achète
                             <span className="mmenu-btn"></span>
                             </ALink>

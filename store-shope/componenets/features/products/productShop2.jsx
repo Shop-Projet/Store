@@ -33,17 +33,16 @@ function ProductEleven ( props ) {
     return (
         <div className="product product-7 text-center w-100">
             <figure className="product-media">
-                <ALink href={ `/product/${product.id}` }>
+                <span className="product-label label-new">{product.etat}</span>
+                <ALink href={ `product/${product.id}` }>
                     <LazyLoadImage
                         alt="product"
-                        src={ product.image }
+                        src={ product.image[0]}
                         threshold={ 500 }
                         effect="black and white"
                         wrapperClassName="product-image"
                     />
                 </ALink>
-
-              
                 <div className="product-action-vertical">
                     {
                         isInWishlist( wishlist, product ) ?
@@ -63,12 +62,13 @@ function ProductEleven ( props ) {
             </figure>
             <div className="product-body">
                 <div className="product-cat">
-                    <ALink href={ "" }>
                         { product.categorie }
-                    </ALink>
+                </div>
+                <div className="product-cat">
+                        { product.etat }
                 </div>
                 <h3 className="product-title">
-                    <ALink href={ `/product/${product.id}` }>{ product.npm_du_produit }</ALink>
+                    <ALink href={ `product/${product.id}` }>{ product.npm_du_produit }</ALink>
                 </h3>
                 <div className="product-price">
                 <span className="new-price">{ product.prix.toFixed( 2 ) }DT</span>

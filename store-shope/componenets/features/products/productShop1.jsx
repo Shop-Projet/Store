@@ -35,10 +35,11 @@ function ProductShop1 ( props ) {
             <div className="row pr-2">
                 <div className="col-lg-3 col-md-3 col-6">
                     <figure className="product-media">
-                        <ALink href={ `/product/${product.id}` }>
+                    <span className="product-label label-new">{product.etat}</span>
+                        <ALink href={ `product/${product.id}` }>
                             <LazyLoadImage
                                 alt="product"
-                                src={ product.image}
+                                src={ product.image[0]}
                                 threshold={ 500 }
                                 effect="black and white"
                                 wrapperClassName="product-image"
@@ -49,13 +50,11 @@ function ProductShop1 ( props ) {
                 <div className="col-md-6 order-last">
                     <div className="product-body product-action-inner">
                         <div className="product-cat">
-                            <ALink href={ ""}>
                                 { product.categorie }
-                            </ALink>
                         </div>
 
                         <h3 className="product-title">
-                            <ALink href={ `/product/${product.id}` }>{ product.nom_du_produit }</ALink>
+                            <ALink href={ `product/${product.id}` }>{ product.nom_du_produit }</ALink>
                         </h3>
 
                         <div className="product-content">

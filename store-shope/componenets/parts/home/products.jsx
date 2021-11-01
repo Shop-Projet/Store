@@ -242,7 +242,7 @@ function HomeProduct ( props ) {
                         </div>
                         : 
                         <div className="load-more-container text-center mt-0 mb-7">
-                        <ALink href="/shop/list" className="btn btn-outline-darker btn-load-more">
+                        <ALink href="/list" className="btn btn-outline-darker btn-load-more">
                             <span className="mr-3">Visiter la boutique</span>
                             <i className={ `icon-arrow-right ${loadMoreLoading ? 'load-more-rotating' : ''}` }></i>
                         </ALink>

@@ -52,7 +52,7 @@ function ShopSidebarOne ( props ) {
                 <div className={ toggle ? 'sidebar-filter-wrapper' : '' }>
                     <div className="widget widget-clean">
                         <label>Filtres:</label>
-                        <ALink href={ { pathname: router.pathname, query: {type: query.type} } } className="sidebar-filter-clear" scroll={ false }>Clean All</ALink>
+                        <ALink href={ { pathname: router.pathname, query: {type: query.type} } } className="sidebar-filter-clear" scroll={ false }>Effacer Tout</ALink>
                     </div>
 
                     <SlideToggle collapsed={ false }>
@@ -97,7 +97,7 @@ function ShopSidebarOne ( props ) {
                                                                     onChange={ e => onAttrClick( e, 'age', item.age ) }
                                                                     checked={ containsAttrInUrl( 'age', item.age ) ? true : false }
                                                                 />
-                                                                <label className="custom-control-label" htmlFor={ `age-${index + 1}` }>{ item.age }</label>
+                                                                <label className="custom-control-label" htmlFor={ `age-${index + 1}` }>{ item.age=== "14 plus"? "14 +" : item.age}</label>
                                                             </div>
                                                         </div>
                                                     ) )
@@ -109,7 +109,7 @@ function ShopSidebarOne ( props ) {
                             )
                         }
                     </SlideToggle>
-                    <SlideToggle collapsed={ false }>
+                    {/* <SlideToggle collapsed={ false }>
                         {
                             ( { onToggle, setCollapsibleElement, toggleState } ) => (
                                 <div className="widget widget-collapsible">
@@ -138,7 +138,7 @@ function ShopSidebarOne ( props ) {
                                 </div>
                             )
                         }
-                    </SlideToggle>
+                    </SlideToggle> */}
                 </div>
             </aside>
         </>

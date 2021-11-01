@@ -49,6 +49,9 @@ function DetailTwo ( props ) {
             <div className="product-content">
                 <p>{ product.description }</p>
             </div>
+            <div className="details-filter-row details-row-size">
+                <span>Etat: {product.etat}</span>
+            </div>
             <div className="product-details-action">
                 <div className="details-action-col">
                     <a
