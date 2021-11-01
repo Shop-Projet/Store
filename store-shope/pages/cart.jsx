@@ -119,7 +119,7 @@ function Cart ( props ) {
                                                 PASSER À LA CAISSE
                                             </ALink>
                                         </div>
-                                        <ALink href="/" className="btn btn-outline-dark-2 btn-block mb-3"><span>CONTINUER VOS ACHATS</span><i className="icon-refresh"></i></ALink>
+                                        <ALink href="/list" className="btn btn-outline-dark-2 btn-block mb-3"><span>CONTINUER VOS ACHATS</span><i className="icon-refresh"></i></ALink>
                                     </aside>
                                 </div>
                                 :
