@@ -14,15 +14,11 @@ function DashBoard() {
   const [mesAchat, setAchat] = useState(achat);
   const [mesVente, setVente] = useState(vente);
   const [mesProduits, setMesProduit] = useState(product);
-  const [cartList, setCartList] = useState([]);
   const [user, setUser] = useState(utilisateur);
-
   const [images, setImages] = React.useState([]);
-  const maxNumber = 3;
 
   const onChange = (imageList, addUpdateIndex) => {
     // data for submit
-    console.log(imageList, addUpdateIndex);
     setImages(imageList);
   };
 
@@ -51,18 +47,6 @@ function DashBoard() {
         ".nav-dashboard .react-tabs__tab-list .nav-item:nth-child(5)"
       )
       .click();
-  }
-
-  function updateCart(e) {
-    let button = e.currentTarget;
-    button.querySelector(".icon-refresh").classList.add("load-more-rotating");
-
-    setTimeout(() => {
-      props.updateCart(cartList);
-      button
-        .querySelector(".icon-refresh")
-        .classList.remove("load-more-rotating");
-    }, 400);
   }
 
   return (
@@ -94,14 +78,14 @@ function DashBoard() {
                   <aside className="col-md-4 col-lg-3 mb-md-0 mb-2">
                     <TabList>
                       <Tab className="nav-item">
-                        <span className="nav-link">Tableau de bord</span>
+                        <span className="nav-link">Mes Articles</span>
                       </Tab>
 
                       <Tab className="nav-item">
-                        <span className="nav-link">Mes achats</span>
+                        <span className="nav-link">Mes Achats</span>
                       </Tab>
                       <Tab className="nav-item">
-                        <span className="nav-link">Mes ventes</span>
+                        <span className="nav-link">Mes Ventes</span>
                       </Tab>
                       <Tab className="nav-item">
                         <span className="nav-link">Mon Profil</span>
@@ -110,7 +94,7 @@ function DashBoard() {
                         <span className="nav-link">Compte Bancaire</span>
                       </Tab>
                       <Tab className="nav-item">
-                        <span className="nav-link">justicatif d identité</span>
+                        <span className="nav-link">Justificatif  D&apos;identité</span>
                       </Tab>
 
                       <Tab className="nav-item">
@@ -141,161 +125,115 @@ function DashBoard() {
                       </TabPanel>
                       <TabPanel>
                         {!mesAchat.length ? (
-                          <div></div>
+                          <div>Aucun article.</div>
                         ) : (
-                          <div className="col-lg-9">
-                            <table className="table table-cart table-mobile">
+                          <div className="col-lg-12">
+                            <table className="table table-cart table-mobile ">
                               <thead>
-                                <tr>
-                                  <th>Produit</th>
+                                <tr style={{textAlign:"center"}}>
+                                  <th>Article</th>
                                   <th>Prix</th>
-
-                                  <th>date</th>
-                                  <th>vendeur</th>
-                                  <th>numero de livraison</th>
+                                  <th>Date</th>
+                                  <th>Vendeur</th>
+                                  <th className="col-lg-2">Numéro de livraison</th>
+                                  <th className="col-lg-2">Progression</th>
                                 </tr>
                               </thead>
-
                               <tbody>
-                                {mesAchat.length > 0 ? (
+                                {
                                   mesAchat.map((item, index) => (
                                     <tr key={index}>
-                                      <td className="product-col">
+                                      <td className="product-col" >
                                         <div className="product">
                                           <figure className="product-media">
-                                            <ALink
-                                              href={`/product/default/${item.slug}`}
-                                              className="product-image"
-                                            >
                                               <img
                                                 src={item.image}
                                                 alt="product"
                                               />
-                                            </ALink>
                                           </figure>
-
                                           <h4 className="product-title">
-                                            <ALink
-                                              href={`/product/default/${item.slug}`}
-                                            >
                                               {item.nom_du_produit}
-                                            </ALink>
                                           </h4>
                                         </div>
                                       </td>
-
                                       <td className="total-col">
-                                        $
                                         {item.prix.toLocaleString(undefined, {
                                           minimumFractionDigits: 2,
                                           maximumFractionDigits: 2,
-                                        })}
+                                        })}DT
                                       </td>
 
                                       <td className="total-col">{item.date}</td>
                                       <td className="total-col">
                                         {item.vendeur}
                                       </td>
-                                      <td className="total-col">
-                                        {item.numeroDeLivraison}
+                                      <td className="total-col" style={{textAlign:'center'}}>
+                                        N°{item.numeroDeLivraison}
+                                      </td>
+                                      <td className="total-col" style={{textAlign:'center'}}>
+                                        {item.progression? item.progression : 'en attente'}
                                       </td>
                                     </tr>
                                   ))
-                                ) : (
-                                  <tr>
-                                    <td>
-                                      <p className="pl-2 pt-1 pb-1">
-                                        {" "}
-                                        No Products in Cart{" "}
-                                      </p>
-                                    </td>
-                                  </tr>
-                                )}
+                                }
                               </tbody>
                             </table>
                           </div>
                         )}
                       </TabPanel>
-
                       <TabPanel>
                         {!mesAchat.length ? (
                           <p>
-                            À partir du tableau de bord de votre compte, vous
-                            pouvez ajouter un produit, consulter vos ventes et
-                            vos achats, gérer vos adresses de livraison et de
-                            facturation et modifier votre mot de passe et les
-                            détails de votre compte.
+                            Auncun article.
                           </p>
                         ) : (
-                          //   <ProductAccount products={product} remove={true} />
-                          <div className="col-lg-9">
+                          <div className="col-lg-12">
                             <table className="table table-cart table-mobile">
                               <thead>
-                                <tr>
-                                  <th>Product</th>
-                                  <th>Price</th>
-                                  <th>date</th>
-                                  <th>acheteur</th>
-                                  <th>gain</th>
-                                  <th>progression</th>
+                                <tr style={{textAlign:"center"}}>
+                                  <th>Article</th>
+                                  <th>Date</th>
+                                  <th>Acheteur</th>
+                                  <th>Gain</th>
+                                  <th className="col-lg-2">Numéro de livraison</th>
+                                  <th className="col-lg-2">Progression</th>
                                 </tr>
                               </thead>
-
                               <tbody>
-                                {mesVente.length > 0 ? (
+                                {
                                   mesVente.map((item, index) => (
                                     <tr key={index}>
                                       <td className="product-col">
                                         <div className="product">
                                           <figure className="product-media">
-                                            <ALink
-                                              href={`/product/default/${item.slug}`}
-                                              className="product-image"
-                                            >
                                               <img
                                                 src={item.image}
                                                 alt="product"
                                               />
-                                            </ALink>
                                           </figure>
-
                                           <h4 className="product-title">
-                                            <ALink
-                                              href={`/product/default/${item.slug}`}
-                                            >
                                               {item.nom_du_produit}
-                                            </ALink>
                                           </h4>
                                         </div>
-                                      </td>
-
-                                      <td className="total-col">
-                                        $
-                                        {item.prix.toLocaleString(undefined, {
-                                          minimumFractionDigits: 2,
-                                          maximumFractionDigits: 2,
-                                        })}
                                       </td>
                                       <td className="total-col">{item.date}</td>
                                       <td className="total-col">
                                         {item.acheteur}
                                       </td>
-                                      <td className="total-col">{item.gain}</td>
                                       <td className="total-col">
+                                      {(item.prix*0.8).toLocaleString(undefined, {
+                                          minimumFractionDigits: 2,
+                                          maximumFractionDigits: 2,
+                                        })}DT</td>
+                                      <td className="total-col" style={{textAlign:"center"}}>
+                                        N°{item.numeroDeLivraison? item.numeroDeLivraison : '12'}
+                                      </td>
+                                      <td className="total-col" style={{textAlign:"center"}}>
                                         {item.progression}
                                       </td>
                                     </tr>
                                   ))
-                                ) : (
-                                  <tr>
-                                    <td>
-                                      <p className="pl-2 pt-1 pb-1">
-                                        {" "}
-                                        No Products in Cart{" "}
-                                      </p>
-                                    </td>
-                                  </tr>
-                                )}
+                                }
                               </tbody>
                             </table>
                           </div>
@@ -306,7 +244,7 @@ function DashBoard() {
                         <form action="#">
                           <div className="row">
                             <div className="col-sm-6">
-                              <label>Nom *</label>
+                              <label>Nom </label>
                               <input
                                 type="text"
                                 className="form-control"
@@ -325,7 +263,7 @@ function DashBoard() {
                               />
                             </div>
                             <div className="col-sm-6">
-                              <label>Nom D'utilisateur *</label>
+                              <label>Nom D&apos;utilisateur *</label>
                               <input
                                 type="text"
                                 className="form-control"
@@ -333,15 +271,16 @@ function DashBoard() {
                                 placeholder={user.userName}
                               />
                             </div>
+                            <div className="col-sm-6">
+                              <label>Téléphone *</label>
+                                <input
+                                  type="number"
+                                  className="form-control"
+                                  required
+                                  placeholder={user.telephone}
+                                />
+                            </div>
                           </div>
-
-                          <label>Telephone *</label>
-                          <input
-                            type="number"
-                            className="form-control"
-                            required
-                            placeholder={user.telephone}
-                          />
                           <label>Adresse Email *</label>
                           <input
                             type="email"
@@ -350,27 +289,34 @@ function DashBoard() {
                             placeholder={user.mail}
                           />
 
-                          <label>Adresse</label>
+                          <label>Adresse *</label>
                           <input
                             type="string"
                             className="form-control"
                             placeholder={user.adress}
                           />
-
-                          <label>Code Postal </label>
-                          <input
-                            type="string"
-                            className="form-control"
-                            placeholder={user.code}
-                          />
-
-                          <label>Ville</label>
-                          <input
-                            type="string"
-                            className="form-control mb-2"
-                            placeholder={user.ville}
-                          />
-
+                          <div className="row">
+                            <div className="col-sm-6">
+                              <label>Code Postal * </label>
+                                <input
+                                  type="string"
+                                  className="form-control"
+                                  placeholder={user.code}
+                                />
+                            </div>
+                            <div className="col-sm-6">
+                              <label>Ville *</label>
+                                <input
+                                type="string"
+                                className="form-control mb-2"
+                                placeholder={user.ville}
+                                />
+                            </div>
+                          </div>
+                          <div className="pb-2">
+                          <i className="icon-info-circle"></i> 
+                          <span>{' '}En tant qu&apos;acheteur ce sera votre adresse de livraison et en tant que vendeur ce sera votre adresse de ramassage. </span>
+                          </div>
                           <button
                             type="submit"
                             className="btn btn-outline-primary-2"
@@ -403,11 +349,12 @@ function DashBoard() {
                                 placeholder={user.RIB}
                               />
                             </div>
+                            <div className="col-sm-6" >
                             <ImageUploading
                               multiple
                               value={images}
                               onChange={onChange}
-                              maxNumber={maxNumber}
+                              maxNumber={1}
                               dataURLKey="data_url"
                             >
                               {({
@@ -418,7 +365,7 @@ function DashBoard() {
                                 isDragging,
                                 dragProps,
                               }) => (
-                                <div>
+                                <div className="row">
                                   <button
                                     style={
                                       isDragging ? { color: "red" } : undefined
@@ -426,10 +373,10 @@ function DashBoard() {
                                     onClick={onImageUpload}
                                     {...dragProps}
                                   >
-                                    <img
+                                   {true ? <img
                                       src="/images/imagePicker/image-picker.PNG"
                                       alt=""
-                                    />
+                                    />: ''}
                                   </button>
                                   &nbsp;
                                   <div className="d-flex justify-content-center ">
@@ -444,7 +391,7 @@ function DashBoard() {
                                           }}
                                           className="rounded mx-auto d-block img-fluid img-thumbnail"
                                         />
-                                        <div className="image-item__btn-wrapper">
+                                        <div className="image-item__btn-wrapper" style={{textAlign:"center"}}>
                                           <button
                                             className="edit-vente-color"
                                             onClick={() => onImageUpdate(index)}
@@ -464,13 +411,17 @@ function DashBoard() {
                                 </div>
                               )}
                             </ImageUploading>
+                            <span style={{fontSize:'0.9rem'}}>*Photo du RIB avec votre nom et votre numéro de compte</span>
+                            </div>
                           </div>
-
-                          <button
-                            type="submit"
-                            className="btn btn-outline-primary-2"
-                          >
-                            <span>SAUVEGARDER LES MODIFICATIONS</span>
+                          <div className="pb-2 pt-2">
+                            <i className="icon-info-circle"></i> 
+                            <span>{' '}En cas de vente, vous recevrez votre virement sur ce compte. <br/>
+                            <i className="icon-info-circle"></i>
+                            Vos informations resteront confidentielles. </span>
+                          </div>
+                          <button type="submit" className="btn btn-outline-primary-2">
+                            <span onClick={()=> setRibImage('')}>SAUVEGARDER LES MODIFICATIONS</span>
                             <i className="icon-long-arrow-right"></i>
                           </button>
                         </form>
@@ -499,7 +450,7 @@ function DashBoard() {
                             </div>
                           </div>
 
-                          <label>Type D'Identité *</label>
+                          <label>Type D&apos;identité *</label>
                           <input
                             type="string"
                             className="form-control"
@@ -518,7 +469,7 @@ function DashBoard() {
                             type="submit"
                             className="btn btn-outline-primary-2"
                           >
-                            <span>SAUVEGARDER LES MODIFICATIONS</span>
+                            <span >SAUVEGARDER LES MODIFICATIONS</span>
                             <i className="icon-long-arrow-right"></i>
                           </button>
                         </form>
