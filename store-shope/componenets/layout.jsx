@@ -8,12 +8,11 @@ import { isSafariBrowser, isEdgeBrowser } from "../utils/index";
 import MobileMenu from "./features/mobile-menu.jsx";
 
 
-const Layout = ({ children, hideQuick }) => {
+const Layout = ({ children }) => {
   const router = useRouter( "" );
   let scrollTop;
 
   useEffect( () => {
-    // hideQuick();
     scrollTop = document.querySelector( '#scroll-top' );
     window.addEventListener( 'scroll', scrollHandler, false );
 }, [] )
@@ -60,7 +59,6 @@ function hideMobileMenu () {
     <button id="scroll-top" title="Back to top" onClick={ toScrollTop }>
         <i className="icon-arrow-up"></i>
     </button>
-    {/* <QuickViewModal /> */}
    </>
   );
 };

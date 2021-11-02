@@ -1,6 +1,4 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import HomeProduct from '../componenets/parts/home/products.jsx'
+import HomeProduct from '../componenets/parts/home/products.jsx';
 import { homeData, introSlider, brandSlider, fadeInUpShorter, fadeInLeftShorter, fadeInRightShorter, fadeIn } from '../utils/data';
 import Reveal from 'react-awesome-reveal';
 import OwlCarousel from '../componenets/features/owl-carousel.jsx';
@@ -35,20 +33,14 @@ export default function Home() {
                                             <Reveal keyframes={ fadeInUpShorter } delay={ 100 } duration={ 1000 }>
                                                 <>
                                                     <div className="pb-5 col-10">
-                                                        <h3 className="intro-subtitle">  Accompagner son enfant dans son développement. </h3>
-                                                    </div>
-                                                    <div className="pb-4 col-10">
-                                                        <h3 className="intro-subtitle">  Gagner de l'argent. </h3>
-                                                    </div>
-                                                    <div className="pt-1 col-10">
-                                                        <h3 className="intro-subtitle">  S&apos;inscrire dans une démarche éco-responsable. </h3>
+                                                        <h3 className="intro-title">  Accompagner son enfant dans son développement. </h3>
                                                     </div>
                                                 </>
                                                 
                                             </Reveal>
                                         </div>
                                     </div>
-                                    <div className="intro-slide" style={ { backgroundColor: '#C29763' } }>
+                                    <div className="intro-slide" style={ { backgroundColor: '#e77f67' } }>
                                         <figure className="slide-image mb-0">
                                             <picture>
                                                 <img
@@ -63,15 +55,30 @@ export default function Home() {
                                         <div className="intro-content">
                                             <Reveal keyframes={ fadeInUpShorter } delay={ 100 } duration={ 1000 }>
                                             <>
-                                                    <div className="pb-5 col-10">
-                                                        <h3 className="intro-subtitle">  Accompagner son enfant dans son développement. </h3>
-                                                    </div>
                                                     <div className="pb-4 col-10">
-                                                        <h3 className="intro-subtitle">  Gagner de l'argent. </h3>
+                                                        <h1 className="intro-title">  Gagner de l&apos;argent. </h1>
                                                     </div>
-                                                    <div className="pt-1 col-10">
-                                                        <h3 className="intro-subtitle"> S&apos;inscrire dans une démarche éco-responsable. </h3>
-                                                    </div>
+                                                </>
+                                            </Reveal>
+                                        </div>
+                                    </div>
+                                    <div className="intro-slide" style={ { backgroundColor: '#574b90' } }>
+                                        <figure className="slide-image mb-0">
+                                            <picture>
+                                                <img
+                                                    src="images/home/banners/banner10.png"
+                                                    alt="Banner"
+                                                    style={ { marginLeft: '18%', marginTop: '-100%'} }
+                                                />
+                                            </picture>
+                                        </figure>
+
+                                        <div className="intro-content">
+                                            <Reveal keyframes={ fadeInUpShorter } delay={ 100 } duration={ 1000 }>
+                                            <>
+                                                <div className="pt-1 col-10">
+                                                    <h3 className="intro-title"> S&apos;inscrire dans une démarche éco-responsable. </h3>
+                                                </div>
                                                 </>
                                             </Reveal>
                                         </div>
@@ -121,7 +128,7 @@ export default function Home() {
 
                                                 <div className="intro-content">
                                                     <ALink
-                                                        href="#"
+                                                        href="/list"
                                                         className="btn btn-white"
                                                     >
                                                         <span>J&apos;ACHÈTE</span>
@@ -157,7 +164,7 @@ export default function Home() {
                                     />
                                 </figure>
                                 <div className="banner-content banner-content-center">
-                                    <ALink className="banner-link" href="/">
+                                    <ALink className="banner-link" href="/list?categorie=Jeux+d%27éveil">
                                         <h3 className="banner-title mb-0">Jeux</h3>
                                         <span className="banner-link-text">Boutique<i className="icon-long-arrow-right ml-2"></i> </span>
                                     </ALink>
@@ -167,8 +174,8 @@ export default function Home() {
                     </div>
                     <div className="col-sm-6 col-lg-4 order-lg-last">
                         <Reveal keyframes={ fadeIn } delay={ 150 } duration={ 1000 } triggerOnce>
-                            <div className="row">
-                                <div className="col-lg-12 col-sm-6 col-xs-12">
+                            <div className="">
+                                <div className="col-lg-12 col-sm-12 col-xs-12">
                                     <div
                                         className="banner banner-display banner-badge banner-sm lazy-media"
                                     >
@@ -185,7 +192,7 @@ export default function Home() {
                                         </figure>
                                         <div className="banner-content banner-content-center">
                                             <div className="banner-content banner-content-center">
-                                                <ALink className="banner-link" href="/">
+                                                <ALink className="banner-link" href="/list?categorie=Vêtements">
                                                     <h3 className="banner-title mb-0">Vêtements</h3>
                                                     <span className="banner-link-text">Boutique<i className="icon-long-arrow-right ml-2"></i></span>
                                                 </ALink>
@@ -193,7 +200,7 @@ export default function Home() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-lg-12 col-sm-6 col-xs-12">
+                                <div className="col-lg-12 col-sm-12 col-xs-12">
                                     <div
                                         className="banner banner-display banner-badge banner-sm lazy-media"
                                     >
@@ -209,7 +216,7 @@ export default function Home() {
                                                 />
                                         </figure>
                                         <div className="banner-content banner-content-center">
-                                            <ALink className="banner-link" href="/">
+                                            <ALink className="banner-link" href="/list?categorie=Décoration">
                                                 <h3 className="banner-title mb-0">Décoration</h3>
                                                 <span className="banner-link-text">Boutique<i className="icon-long-arrow-right ml-2"></i></span>
                                             </ALink>
@@ -220,7 +227,7 @@ export default function Home() {
                             </div>
                             </Reveal>
                     </div>
-                    <div className="col-sm-12 col-lg-4">
+                    <div className="col-sm-12 col-lg-4 ">
                         <Reveal keyframes={ fadeIn } delay={ 150 } duration={ 1000 } triggerOnce>
                             <div className="row">
                                 <div className="col-lg-12 col-sm-6 col-xs-12">
@@ -240,7 +247,7 @@ export default function Home() {
                                         </figure>
                                         <div className="banner-content banner-content-center">
                                             <div className="banner-content banner-content-center">
-                                                <ALink className="banner-link" href="/">
+                                                <ALink className="banner-link" href="/list?categorie=Naissance">
                                                     <h3 className="banner-title mb-0">Naissance</h3>
                                                     <span className="banner-link-text">Boutique<i className="icon-long-arrow-right ml-2"></i></span>
                                                 </ALink>
@@ -265,7 +272,7 @@ export default function Home() {
                                             />
                                         </figure>
                                         <div className="banner-content banner-content-center">
-                                            <ALink className="banner-link" href="/">
+                                            <ALink className="banner-link" href="/list?categorie=Scolaire">
                                                 <h3 className="banner-title mb-0">Scolaire </h3>
                                                 <span className="banner-link-text">Boutique<i className="icon-long-arrow-right ml-2"></i></span>
                                             </ALink>

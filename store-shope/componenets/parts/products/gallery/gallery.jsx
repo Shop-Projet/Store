@@ -1,6 +1,7 @@
 import { Magnifier } from 'react-image-magnifiers';
 import React, { useState, useEffect } from 'react';
 import LightBox from 'react-image-lightbox';
+import image from 'next/image';
 
 function GalleryDefault ( props ) {
     const { product, adClass = "product-gallery-vertical" } = props;
@@ -15,11 +16,11 @@ function GalleryDefault ( props ) {
     }, [ product ] )
 
     function moveNextPhoto () {
-        setPhotoIndex( ( photoIndex + 1 ) % product.pictures.length );
+        setPhotoIndex( ( photoIndex + 1 ) % product.image.length );
     }
 
     function movePrevPhoto () {
-        setPhotoIndex( ( photoIndex + product.pictures.length - 1 ) % product.pictures.length );
+        setPhotoIndex( ( photoIndex + product.image.length - 1 ) % product.image.length );
     }
 
     function openLightBox () {
@@ -35,6 +36,18 @@ function GalleryDefault ( props ) {
         setIsOpen( false );
     }
 
+    function changeBgImage ( e, image, index ) {
+        let imgs = document.querySelectorAll( '.product-main-image img' );
+        for ( let i = 0; i < imgs.length; i++ ) {
+            imgs[ i ].src = image;
+        }
+
+        document.querySelector( '.product-image-gallery .active' ).classList.remove( 'active' );
+
+        document.querySelector( '.product-main-image' ).setAttribute( 'index', index );
+        e.currentTarget.classList.add( 'active' );
+    }
+
     if ( !product ) {
         return <div></div>
     }
@@ -45,9 +58,8 @@ function GalleryDefault ( props ) {
                 <div className="row m-0">
                     <figure className="product-main-image" index="0">
                         <Magnifier
-                            imageSrc={product.image}
+                            imageSrc={product.image[0]}
                             imageAlt="product"
-                            // largeImageSrc={ process.env.NEXT_PUBLIC_ASSET_URI + product.pictures[ 0 ].url } // Optional
                             dragToMove={ false }
                             mouseActivation="hover"
                             cursorStyleActive="crosshair"
@@ -62,12 +74,25 @@ function GalleryDefault ( props ) {
                             <i className="icon-arrows"></i>
                         </button>
                     </figure>
+                    <div id="product-zoom-gallery" className="product-image-gallery pt-4 ">
+                        {
+                            product.image.map( ( item, index ) =>
+                                <button className={ `product-gallery-item ${0 === index ? 'active' : ''}` } key={ product.id + '-' + index } onClick={ e => changeBgImage( e, `${item}`, index ) }>
+                                    <div className="img-wrapper h-100">
+                                        <img src={item} alt="product back" />
+                                    </div>
+                                </button>
+                            )
+                        }
+                    </div>
                 </div>
             </div>
             {
                 isOpen ?
                     <LightBox
-                        mainSrc={product.image}
+                    mainSrc={ product.image[photoIndex] }
+                    nextSrc={ product.image[(photoIndex + 1) % product.image.length] }
+                    prevSrc={ product.image[(photoIndex + product.image.length - 1 ) % product.image.length] }
                         onCloseRequest={ closeLightBox }
                         onMovePrevRequest={ moveNextPhoto }
                         onMoveNextRequest={ movePrevPhoto }

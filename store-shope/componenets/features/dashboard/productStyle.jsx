@@ -20,7 +20,7 @@ function ProductDashboard ( props ) {
                         <span className="product-label label-sale">{product.status}</span> 
                         : <span className="product-label label-out">{product.status}</span> 
                 }
-                <ALink href={ `/product/${product.id}` }>
+                <ALink href={ `product/${product.id}` }>
                     <LazyLoadImage
                         alt="product"
                         src={ product.image }
@@ -45,7 +45,7 @@ function ProductDashboard ( props ) {
                     { product.categorie }
                 </div>
                 <h3 className="product-title">
-                    <ALink href={ `/product/${product.id}` }>{ product.nom_du_produit }</ALink>
+                    <ALink href={ `product/${product.id}` }>{ product.nom_du_produit }</ALink>
                 </h3>
                 <div className="product-price">
                     <span className="out-price">{ product.prix.toFixed( 2 ) }DT</span>

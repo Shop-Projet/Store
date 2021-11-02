@@ -18,8 +18,8 @@ export default function Vendre() {
 
         <div className="main">
             <PageHeader
-                title=""
-                subTitle=""
+                title="Vente"
+                subTitle="Mon article à vendre"
             />
             <nav className="breadcrumb-nav">
                 <div className="container">

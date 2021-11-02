@@ -48,13 +48,13 @@ function MainMenu() {
           id="menu-home"
         >
           
-          <ALink href="/comment-ça-marche" className="pr-2">
+          <ALink href="/comment_ca_marche" className="pr-2">
           Comment ça marche ?
           </ALink>
         </li>
-        <li className={path.indexOf("/shop") > -1 ? "active" : ""}>
+        <li className={path.indexOf("/list") > -1 ? "active" : ""}>
           <ALink
-            href="/"
+            href="/list"
             className="pr-2"
             scroll={false}
           >

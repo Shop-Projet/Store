@@ -52,7 +52,7 @@ function Header() {
               </button>
               <ALink href="/" className="logo">
                 <img
-                  src="images/logo.png"
+                  src="/images/logo.png"
                   alt="Sghyrna Logo"
                   width={105}
                   height={24}

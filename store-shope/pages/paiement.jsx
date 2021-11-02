@@ -22,7 +22,7 @@ function Checkout ( props ) {
                             <ALink href="/">Accueil</ALink>
                         </li>
                         <li className="breadcrumb-item">
-                            <ALink href="/shop/sidebar/list">Boutique</ALink>
+                            <ALink href="/list">J&apos;achète</ALink>
                         </li>
                         <li className="breadcrumb-item active">Paiement</li>
                     </ol>
@@ -51,8 +51,8 @@ function Checkout ( props ) {
                                     <input type="text" className="form-control" required />
 
                                     <label>Addresse *</label>
-                                    <input type="text" className="form-control" placeholder="House number and Street name" required />
-                                    <input type="text" className="form-control" placeholder="Appartments, suite, unit etc ..." required />
+                                    <input type="text" className="form-control" placeholder="102 rue des jasmins" required />
+                                    <input type="text" className="form-control" placeholder="Appartment 12 ..." required />
                                     <div className="row">
                                         <div className="col-sm-6">
                                             <label>Code Postal *</label>
@@ -64,9 +64,6 @@ function Checkout ( props ) {
                                             <input type="tel" className="form-control" required />
                                         </div>
                                     </div>
-
-                                    <label>Address Email  *</label>
-                                    <input type="email" className="form-control" required />
                                     <label>Notes (optionnel)</label>
                                     <textarea className="form-control" cols="30" rows="4" placeholder="Notes sur votre commande, par ex. notes spéciales pour la livraison"></textarea>
                                 </div>

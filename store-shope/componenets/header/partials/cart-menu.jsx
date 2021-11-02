@@ -11,7 +11,7 @@ function CartMenu(props) {
   return (
     <div className="dropdown cart-dropdown">
       <ALink
-        href="/shop/cart"
+        href="/cart"
         className="dropdown-toggle"
         role="button"
         data-toggle="dropdown"
@@ -37,7 +37,7 @@ function CartMenu(props) {
                 <div className="product justify-content-between" key={index}>
                   <div className="product-cart-details">
                     <h4 className="product-title">
-                      <ALink href={`/product/default/${item.id}`}>
+                      <ALink href={`product/${item.id}`}>
                         {item.nom_du_produit}
                       </ALink>
                     </h4>
@@ -45,10 +45,10 @@ function CartMenu(props) {
 
                   <figure className="product-image-container ml-2">
                     <ALink
-                      href={`/product/default/${item.id}`}
+                      href='#'
                       className="product-image"
                     >
-                      <img src={item.image} alt="product" />
+                      <img src={item.image[0]} alt="product"/>
                     </ALink>
                   </figure>
                   <button
@@ -65,17 +65,16 @@ function CartMenu(props) {
               <span>Total</span>
 
               <span className="cart-total-price">
-                $
                 {cartPriceTotal(cartlist).toLocaleString(undefined, {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
-                })}
+                })}DT
               </span>
             </div>
 
             <div className="dropdown-cart-action">
-              <ALink href="/shop/cart" className="btn btn-primary">
-                Voir le panier
+              <ALink href="/cart" className="btn btn-primary">
+              Voir le panier
               </ALink>
               <ALink href="/paiement" className="btn btn-outline-primary-2">
                 <span>Caisse</span>

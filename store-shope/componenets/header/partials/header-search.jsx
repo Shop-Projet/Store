@@ -158,15 +158,14 @@ function HeaderSearch() {
                 {searchTerm.length > 2 &&
                   products.map((product, index) => (
                     <ALink
-                      href={`/product/default/${product.slug}`}
+                      href={`product/${product.id}`}
                       className="autocomplete-suggestion"
                       key={`search-result-${index}`}
                     >
                       <LazyLoadImage
-                        // src={
-                        //   process.env.NEXT_PUBLIC_ASSET_URI +
-                        //   product.sm_pictures[0].url
-                        // }
+                        src={
+                          product.image[0]
+                        }
                         width={40}
                         height={40}
                         alt="product"
