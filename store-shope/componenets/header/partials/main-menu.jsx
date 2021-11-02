@@ -1,11 +1,14 @@
 import { useRouter } from "next/router";
 import WishlistMenu from "./wishlist-menu.jsx";
 import ALink from "../../../componenets/features/alink.jsx";
+import { product } from "../../../dummyData";
+import React, { useState, useEffect } from "react";
 
 function MainMenu() {
   const router = useRouter();
   let path = router.asPath;
   let query = router.query;
+  const [items, setItems] = useState(product);
 
   function showAllDemos(e) {
     let demoItems = document.querySelectorAll(".demo-item.hidden");
@@ -20,12 +23,20 @@ function MainMenu() {
     e.preventDefault();
   }
 
+  let sortCat = (event) => {
+    let sorted = items.filter((cat) => {
+      return cat.categorie === event.target.value;
+    });
+    setItems(sorted);
+  };
+
   return (
     <nav className="main-nav">
       <ul className="menu sf-arrows">
       <li
           className={`megamenu-container ${path === "/" ? "active" : ""}`}
           id="menu-home"
+          link="/"
         >
           
           <ALink href="/" className="pr-2">

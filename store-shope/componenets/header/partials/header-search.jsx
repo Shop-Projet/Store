@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { product } from "../../../dummyData";
 
 import ALink from "../../../componenets/features/alink.jsx";
-
-
 
 function HeaderSearch() {
   const router = useRouter("");
   const [cat, setCat] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const [products, setProducts] = useState([]);
-  const [searchProducts, { data }] = useLazyQuery(GET_PRODUCTS);
+  const [searchProducts, { data }] = useState(product);
   const result = data && data.products.data;
   const [timer, setTimer] = useState(null);
 
@@ -217,4 +216,4 @@ function HeaderSearch() {
   );
 }
 
-export default { ssr: typeof window === "undefined" };
+export default HeaderSearch;
