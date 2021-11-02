@@ -1,11 +1,11 @@
 import Header from "./header/header.jsx";
 import Footer from "./parts/footer.jsx";
-// import QuickViewModal from "./features/modals/quickview-modal-two";
 import { useRouter } from 'next/router';
 import { useEffect } from "react";
 import { connect } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import { isSafariBrowser, isEdgeBrowser } from "../utils/index";
+import MobileMenu from "./features/mobile-menu.jsx";
 
 
 const Layout = ({ children, hideQuick }) => {
@@ -41,6 +41,9 @@ function scrollHandler () {
       scrollTop.classList.remove( 'show' );
   }
 }
+function hideMobileMenu () {
+  document.querySelector( 'body' ).classList.remove( 'mmenu-active' );
+}
 
   return (
     <>
@@ -49,6 +52,11 @@ function scrollHandler () {
       {children}
       <Footer />
     </div>
+    <div className="mobile-menu-overlay" onClick={ hideMobileMenu }></div>
+            <button id="scroll-top" title="Back to top" onClick={ toScrollTop }>
+                <i className="icon-arrow-up"></i>
+            </button>
+            <MobileMenu />
     <button id="scroll-top" title="Back to top" onClick={ toScrollTop }>
         <i className="icon-arrow-up"></i>
     </button>

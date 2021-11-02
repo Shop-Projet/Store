@@ -32,7 +32,7 @@ function Footer () {
                         <div className="col-sm-6 col-lg-3">
                             <div className="widget widget-about">
                                 <img src="images/home/logo.PNG" className="footer-logo" alt="Footer Logo" width="85" height="25" />
-                                <p>Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.</p>
+                                <p>Permettre aux parents de fournir plus de  jouets pour leurs enfants à moindre coût dans une démarche responsable.</p>
 
                                 <div className="social-icons">
                                     <ALink href="#" className="social-icon" title="Facebook">

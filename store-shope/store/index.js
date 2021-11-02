@@ -10,12 +10,14 @@ import cartReducer from "./cart";
 import wishlistReducer from './wishlist';
 import compareReducer from './compare';
 import demoReducer from './demo';
+import myProductReducer from './myProduct'
 
 const rootReducers = combineReducers({
     cartlist: cartReducer,
     wishlist: wishlistReducer,
     comparelist: compareReducer,
     demo: demoReducer,
+    myProduct: myProductReducer,
 });
 
 // const persistConfig = {

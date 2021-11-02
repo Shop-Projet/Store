@@ -99,11 +99,6 @@ function Cart ( props ) {
                                             <h3 className="summary-title">Total</h3>
                                             <table className="table table-summary">
                                                 <tbody>
-                                                    <tr className="summary-shipping-estimate">
-                                                        <td> <ALink href="/shop/dashboard">Changement d&apos;adresse</ALink></td>
-                                                        <td>&nbsp;</td>
-                                                    </tr>
-
                                                     <tr className="summary-total">
                                                         <td>Total:</td>
                                                         <td>
