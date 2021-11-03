@@ -6,64 +6,22 @@ import PageHeader from "../componenets/features/page-header";
 import { product } from "../dummyData";
 import { achat } from "../dummyData";
 import { vente } from "../dummyData";
-import productAccount from "../componenets/parts/dashboard/productAccount";
 import { utilisateur } from "../dummyData";
 import ImageUploading from "react-images-uploading";
 
 function DashBoard() {
   const [mesAchat, setAchat] = useState(achat);
   const [mesVente, setVente] = useState(vente);
-  const [mesProduits, setMesProduit] = useState(product);
-  const [cartList, setCartList] = useState([]);
   const [user, setUser] = useState(utilisateur);
-
   const [images, setImages] = React.useState([]);
-  const maxNumber = 3;
+  const [accountType, setAccountType] = useState('RIB');
+  const [ idType, setIdType] = useState('CIN')
 
   const onChange = (imageList, addUpdateIndex) => {
     // data for submit
-    console.log(imageList, addUpdateIndex);
     setImages(imageList);
   };
 
-  function toOrder(e) {
-    e.preventDefault();
-    document
-      .querySelector(
-        ".nav-dashboard .react-tabs__tab-list .nav-item:nth-child(2)"
-      )
-      .click();
-  }
-
-  function toAddress(e) {
-    e.preventDefault();
-    document
-      .querySelector(
-        ".nav-dashboard .react-tabs__tab-list .nav-item:nth-child(4)"
-      )
-      .click();
-  }
-
-  function toAccount(e) {
-    e.preventDefault();
-    document
-      .querySelector(
-        ".nav-dashboard .react-tabs__tab-list .nav-item:nth-child(5)"
-      )
-      .click();
-  }
-
-  function updateCart(e) {
-    let button = e.currentTarget;
-    button.querySelector(".icon-refresh").classList.add("load-more-rotating");
-
-    setTimeout(() => {
-      props.updateCart(cartList);
-      button
-        .querySelector(".icon-refresh")
-        .classList.remove("load-more-rotating");
-    }, 400);
-  }
 
   return (
     <div className="main">
@@ -94,14 +52,14 @@ function DashBoard() {
                   <aside className="col-md-4 col-lg-3 mb-md-0 mb-2">
                     <TabList>
                       <Tab className="nav-item">
-                        <span className="nav-link">Tableau de bord</span>
+                        <span className="nav-link">Mes Articles</span>
                       </Tab>
 
                       <Tab className="nav-item">
-                        <span className="nav-link">Mes achats</span>
+                        <span className="nav-link">Mes Achats</span>
                       </Tab>
                       <Tab className="nav-item">
-                        <span className="nav-link">Mes ventes</span>
+                        <span className="nav-link">Mes Ventes</span>
                       </Tab>
                       <Tab className="nav-item">
                         <span className="nav-link">Mon Profil</span>
@@ -110,7 +68,7 @@ function DashBoard() {
                         <span className="nav-link">Compte Bancaire</span>
                       </Tab>
                       <Tab className="nav-item">
-                        <span className="nav-link">justicatif d identité</span>
+                        <span className="nav-link">Justificatif  D&apos;identité</span>
                       </Tab>
 
                       <Tab className="nav-item">
@@ -127,186 +85,129 @@ function DashBoard() {
                   >
                     <div className="tab-pane">
                       <TabPanel>
-                        {!mesProduits.length ? (
-                          <p>
-                            À partir du tableau de bord de votre compte, vous
-                            pouvez ajouter un produit, consulter vos ventes et
-                            vos achats, gérer vos adresses de livraison et de
-                            facturation et modifier votre mot de passe et les
-                            détails de votre compte.
-                          </p>
-                        ) : (
-                          <ProductAccount products={product} remove={true} />
-                        )}
+                        <ProductAccount  />
                       </TabPanel>
                       <TabPanel>
                         {!mesAchat.length ? (
-                          <div></div>
+                          <div>Aucun article.</div>
                         ) : (
-                          <div className="col-lg-9">
-                            <table className="table table-cart table-mobile">
+                          <div className="col-lg-12">
+                            <table className="table table-cart table-mobile ">
                               <thead>
-                                <tr>
-                                  <th>Produit</th>
+                                <tr style={{textAlign:"center"}}>
+                                  <th>Article</th>
                                   <th>Prix</th>
-
-                                  <th>date</th>
-                                  <th>vendeur</th>
-                                  <th>numero de livraison</th>
+                                  <th>Date</th>
+                                  <th>Vendeur</th>
+                                  <th className="col-lg-2">Numéro de livraison</th>
+                                  <th className="col-lg-2">Progression</th>
                                 </tr>
                               </thead>
-
                               <tbody>
-                                {mesAchat.length > 0 ? (
+                                {
                                   mesAchat.map((item, index) => (
                                     <tr key={index}>
-                                      <td className="product-col">
+                                      <td className="product-col" >
                                         <div className="product">
                                           <figure className="product-media">
-                                            <ALink
-                                              href={`/product/default/${item.slug}`}
-                                              className="product-image"
-                                            >
                                               <img
                                                 src={item.image}
                                                 alt="product"
                                               />
-                                            </ALink>
                                           </figure>
-
                                           <h4 className="product-title">
-                                            <ALink
-                                              href={`/product/default/${item.slug}`}
-                                            >
                                               {item.nom_du_produit}
-                                            </ALink>
                                           </h4>
                                         </div>
                                       </td>
-
                                       <td className="total-col">
-                                        $
                                         {item.prix.toLocaleString(undefined, {
                                           minimumFractionDigits: 2,
                                           maximumFractionDigits: 2,
-                                        })}
+                                        })}DT
                                       </td>
 
                                       <td className="total-col">{item.date}</td>
                                       <td className="total-col">
                                         {item.vendeur}
                                       </td>
-                                      <td className="total-col">
-                                        {item.numeroDeLivraison}
+                                      <td className="total-col" style={{textAlign:'center'}}>
+                                        N°{item.numeroDeLivraison}
+                                      </td>
+                                      <td className="total-col" style={{textAlign:'center'}}>
+                                        {item.progression? item.progression : 'en attente'}
                                       </td>
                                     </tr>
                                   ))
-                                ) : (
-                                  <tr>
-                                    <td>
-                                      <p className="pl-2 pt-1 pb-1">
-                                        {" "}
-                                        No Products in Cart{" "}
-                                      </p>
-                                    </td>
-                                  </tr>
-                                )}
+                                }
                               </tbody>
                             </table>
                           </div>
                         )}
                       </TabPanel>
-
                       <TabPanel>
                         {!mesAchat.length ? (
                           <p>
-                            À partir du tableau de bord de votre compte, vous
-                            pouvez ajouter un produit, consulter vos ventes et
-                            vos achats, gérer vos adresses de livraison et de
-                            facturation et modifier votre mot de passe et les
-                            détails de votre compte.
+                            Auncun article.
                           </p>
                         ) : (
-                          //   <ProductAccount products={product} remove={true} />
-                          <div className="col-lg-9">
+                          <div className="col-lg-12">
                             <table className="table table-cart table-mobile">
                               <thead>
-                                <tr>
-                                  <th>Product</th>
-                                  <th>Price</th>
-                                  <th>date</th>
-                                  <th>acheteur</th>
-                                  <th>gain</th>
-                                  <th>progression</th>
+                                <tr style={{textAlign:"center"}}>
+                                  <th>Article</th>
+                                  <th>Date</th>
+                                  <th>Acheteur</th>
+                                  <th>Gain</th>
+                                  <th className="col-lg-2">Numéro de livraison</th>
+                                  <th className="col-lg-2">Progression</th>
                                 </tr>
                               </thead>
-
                               <tbody>
-                                {mesVente.length > 0 ? (
+                                {
                                   mesVente.map((item, index) => (
                                     <tr key={index}>
                                       <td className="product-col">
                                         <div className="product">
                                           <figure className="product-media">
-                                            <ALink
-                                              href={`/product/default/${item.slug}`}
-                                              className="product-image"
-                                            >
                                               <img
                                                 src={item.image}
                                                 alt="product"
                                               />
-                                            </ALink>
                                           </figure>
-
                                           <h4 className="product-title">
-                                            <ALink
-                                              href={`/product/default/${item.slug}`}
-                                            >
                                               {item.nom_du_produit}
-                                            </ALink>
                                           </h4>
                                         </div>
-                                      </td>
-
-                                      <td className="total-col">
-                                        $
-                                        {item.prix.toLocaleString(undefined, {
-                                          minimumFractionDigits: 2,
-                                          maximumFractionDigits: 2,
-                                        })}
                                       </td>
                                       <td className="total-col">{item.date}</td>
                                       <td className="total-col">
                                         {item.acheteur}
                                       </td>
-                                      <td className="total-col">{item.gain}</td>
                                       <td className="total-col">
+                                      {(item.prix*0.8).toLocaleString(undefined, {
+                                          minimumFractionDigits: 2,
+                                          maximumFractionDigits: 2,
+                                        })}DT</td>
+                                      <td className="total-col" style={{textAlign:"center"}}>
+                                        N°{item.numeroDeLivraison? item.numeroDeLivraison : '12'}
+                                      </td>
+                                      <td className="total-col" style={{textAlign:"center"}}>
                                         {item.progression}
                                       </td>
                                     </tr>
                                   ))
-                                ) : (
-                                  <tr>
-                                    <td>
-                                      <p className="pl-2 pt-1 pb-1">
-                                        {" "}
-                                        No Products in Cart{" "}
-                                      </p>
-                                    </td>
-                                  </tr>
-                                )}
+                                }
                               </tbody>
                             </table>
                           </div>
                         )}
                       </TabPanel>
-
                       <TabPanel>
                         <form action="#">
                           <div className="row">
                             <div className="col-sm-6">
-                              <label>Nom *</label>
+                              <label>Nom </label>
                               <input
                                 type="text"
                                 className="form-control"
@@ -325,7 +226,7 @@ function DashBoard() {
                               />
                             </div>
                             <div className="col-sm-6">
-                              <label>Nom D'utilisateur *</label>
+                              <label>Nom D&apos;utilisateur *</label>
                               <input
                                 type="text"
                                 className="form-control"
@@ -333,15 +234,16 @@ function DashBoard() {
                                 placeholder={user.userName}
                               />
                             </div>
+                            <div className="col-sm-6">
+                              <label>Téléphone *</label>
+                                <input
+                                  type="number"
+                                  className="form-control"
+                                  required
+                                  placeholder={user.telephone}
+                                />
+                            </div>
                           </div>
-
-                          <label>Telephone *</label>
-                          <input
-                            type="number"
-                            className="form-control"
-                            required
-                            placeholder={user.telephone}
-                          />
                           <label>Adresse Email *</label>
                           <input
                             type="email"
@@ -350,27 +252,34 @@ function DashBoard() {
                             placeholder={user.mail}
                           />
 
-                          <label>Adresse</label>
+                          <label>Adresse *</label>
                           <input
                             type="string"
                             className="form-control"
                             placeholder={user.adress}
                           />
-
-                          <label>Code Postal </label>
-                          <input
-                            type="string"
-                            className="form-control"
-                            placeholder={user.code}
-                          />
-
-                          <label>Ville</label>
-                          <input
-                            type="string"
-                            className="form-control mb-2"
-                            placeholder={user.ville}
-                          />
-
+                          <div className="row">
+                            <div className="col-sm-6">
+                              <label>Code Postal * </label>
+                                <input
+                                  type="string"
+                                  className="form-control"
+                                  placeholder={user.code}
+                                />
+                            </div>
+                            <div className="col-sm-6">
+                              <label>Ville *</label>
+                                <input
+                                type="string"
+                                className="form-control mb-2"
+                                placeholder={user.ville}
+                                />
+                            </div>
+                          </div>
+                          <div className="pb-2">
+                          <i className="icon-info-circle"></i> 
+                          <span>{' '}En tant qu&apos;acheteur ce sera votre adresse de livraison et en tant que vendeur ce sera votre adresse de ramassage. </span>
+                          </div>
                           <button
                             type="submit"
                             className="btn btn-outline-primary-2"
@@ -385,29 +294,41 @@ function DashBoard() {
                         <form action="#">
                           <div className="row">
                             <div className="col-sm-6">
-                              <label>Type de compte Rib *</label>
-                              <input
-                                type="text"
-                                className="form-control"
-                                required
-                                placeholder={user.TypeRIB}
-                              />
+                              <label>Type du compte *</label>
+                              <br/>
+                              <select id="type_du_compte" className="form-control" onChange={(e)=> {setAccountType(e.target.value)}}>
+                                  <option selected="RIB" >RIB</option>
+                                  <option value="EDINAR" >e-DINAR</option>
+                              </select>
                             </div>
-
                             <div className="col-sm-6">
+                              {accountType==="RIB" ?
+                              <>
                               <label>RIB *</label>
                               <input
-                                type="text"
+                                maxLength ="20"
+                                type="tel"
                                 className="form-control"
                                 required
-                                placeholder={user.RIB}
-                              />
+                                placeholder='XX-XXX-XXXXXXXXXXXXX-XX'
+                              /> </> : 
+                              <>
+                              <label>EDINAR *</label>
+                              <input
+                                type="tel"
+                                maxLength ="16"
+                                className="form-control"
+                                required
+                                placeholder="5359 XXXX XXXX XXXX"
+                              /></>
+                              }
                             </div>
+                            <div className=" col-lg-12" >
                             <ImageUploading
                               multiple
                               value={images}
                               onChange={onChange}
-                              maxNumber={maxNumber}
+                              maxNumber={1}
                               dataURLKey="data_url"
                             >
                               {({
@@ -418,7 +339,7 @@ function DashBoard() {
                                 isDragging,
                                 dragProps,
                               }) => (
-                                <div>
+                                <div className="row">
                                   <button
                                     style={
                                       isDragging ? { color: "red" } : undefined
@@ -426,10 +347,10 @@ function DashBoard() {
                                     onClick={onImageUpload}
                                     {...dragProps}
                                   >
-                                    <img
+                                   {true ? <img
                                       src="/images/imagePicker/image-picker.PNG"
                                       alt=""
-                                    />
+                                    />: ''}
                                   </button>
                                   &nbsp;
                                   <div className="d-flex justify-content-center ">
@@ -444,7 +365,7 @@ function DashBoard() {
                                           }}
                                           className="rounded mx-auto d-block img-fluid img-thumbnail"
                                         />
-                                        <div className="image-item__btn-wrapper">
+                                        <div className="image-item__btn-wrapper" style={{textAlign:"center"}}>
                                           <button
                                             className="edit-vente-color"
                                             onClick={() => onImageUpdate(index)}
@@ -464,12 +385,16 @@ function DashBoard() {
                                 </div>
                               )}
                             </ImageUploading>
+                            <span style={{fontSize:'0.8rem'}}>*Photo du RIB avec votre nom et votre numéro de compte</span>
+                            </div>
                           </div>
-
-                          <button
-                            type="submit"
-                            className="btn btn-outline-primary-2"
-                          >
+                          <div className="pb-2 pt-2">
+                            <i className="icon-info-circle"></i> 
+                            <span>{' '}En cas de vente, vous recevrez votre virement sur ce compte. <br/>
+                            <i className="icon-info-circle"></i>
+                            Vos informations resteront confidentielles. </span>
+                          </div>
+                          <button type="submit" className="btn btn-outline-primary-2">
                             <span>SAUVEGARDER LES MODIFICATIONS</span>
                             <i className="icon-long-arrow-right"></i>
                           </button>
@@ -498,27 +423,41 @@ function DashBoard() {
                               />
                             </div>
                           </div>
-
-                          <label>Type D'Identité *</label>
-                          <input
-                            type="string"
-                            className="form-control"
-                            required
-                            placeholder={user.typeId}
-                          />
-                          <label>Numéro de CIN *</label>
-                          <input
-                            type="string"
-                            className="form-control"
-                            required
-                            placeholder={user.CINNum}
-                          />
-
+                          <div className="row"> 
+                            <div className="col-sm-6">
+                              <label>Type d&apos;identité *</label>
+                              <br/>
+                              <select id="type_du_compte" className="form-control" onChange={(e)=> {setIdType(e.target.value)}}>
+                                  <option selected="CIN" >CIN</option>
+                                  <option value="PASSPORT" >PASSEPORT</option>
+                              </select>
+                            </div>
+                            <div className="col-sm-6">
+                              {idType==="CIN" ?
+                              <>
+                              <label>Numéro CIN *</label>
+                              <input
+                                type="tel"
+                                className="form-control"
+                                required
+                                placeholder='01234567'
+                                maxLength ={8}
+                              /> </> : 
+                              <>
+                              <label>Numéro Passeport *</label>
+                              <input
+                                type="text"
+                                className="form-control"
+                                required
+                                placeholder="E0123456"
+                              /></>
+                              }
+                            </div>
+                          </div>
                           <button
                             type="submit"
-                            className="btn btn-outline-primary-2"
-                          >
-                            <span>SAUVEGARDER LES MODIFICATIONS</span>
+                            className="btn btn-outline-primary-2">
+                            <span >SAUVEGARDER LES MODIFICATIONS</span>
                             <i className="icon-long-arrow-right"></i>
                           </button>
                         </form>
