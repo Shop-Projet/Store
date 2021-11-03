@@ -6,48 +6,22 @@ import PageHeader from "../componenets/features/page-header";
 import { product } from "../dummyData";
 import { achat } from "../dummyData";
 import { vente } from "../dummyData";
-import productAccount from "../componenets/parts/dashboard/productAccount";
 import { utilisateur } from "../dummyData";
 import ImageUploading from "react-images-uploading";
 
 function DashBoard() {
   const [mesAchat, setAchat] = useState(achat);
   const [mesVente, setVente] = useState(vente);
-  const [mesProduits, setMesProduit] = useState(product);
   const [user, setUser] = useState(utilisateur);
   const [images, setImages] = React.useState([]);
+  const [accountType, setAccountType] = useState('RIB');
+  const [ idType, setIdType] = useState('CIN')
 
   const onChange = (imageList, addUpdateIndex) => {
     // data for submit
     setImages(imageList);
   };
 
-  function toOrder(e) {
-    e.preventDefault();
-    document
-      .querySelector(
-        ".nav-dashboard .react-tabs__tab-list .nav-item:nth-child(2)"
-      )
-      .click();
-  }
-
-  function toAddress(e) {
-    e.preventDefault();
-    document
-      .querySelector(
-        ".nav-dashboard .react-tabs__tab-list .nav-item:nth-child(4)"
-      )
-      .click();
-  }
-
-  function toAccount(e) {
-    e.preventDefault();
-    document
-      .querySelector(
-        ".nav-dashboard .react-tabs__tab-list .nav-item:nth-child(5)"
-      )
-      .click();
-  }
 
   return (
     <div className="main">
@@ -111,17 +85,7 @@ function DashBoard() {
                   >
                     <div className="tab-pane">
                       <TabPanel>
-                        {!mesProduits.length ? (
-                          <p>
-                            À partir du tableau de bord de votre compte, vous
-                            pouvez ajouter un produit, consulter vos ventes et
-                            vos achats, gérer vos adresses de livraison et de
-                            facturation et modifier votre mot de passe et les
-                            détails de votre compte.
-                          </p>
-                        ) : (
-                          <ProductAccount products={product} remove={true} />
-                        )}
+                        <ProductAccount  />
                       </TabPanel>
                       <TabPanel>
                         {!mesAchat.length ? (
@@ -239,7 +203,6 @@ function DashBoard() {
                           </div>
                         )}
                       </TabPanel>
-
                       <TabPanel>
                         <form action="#">
                           <div className="row">
@@ -331,25 +294,36 @@ function DashBoard() {
                         <form action="#">
                           <div className="row">
                             <div className="col-sm-6">
-                              <label>Type de compte Rib *</label>
-                              <input
-                                type="text"
-                                className="form-control"
-                                required
-                                placeholder={user.TypeRIB}
-                              />
+                              <label>Type du compte *</label>
+                              <br/>
+                              <select id="type_du_compte" className="form-control" onChange={(e)=> {setAccountType(e.target.value)}}>
+                                  <option selected="RIB" >RIB</option>
+                                  <option value="EDINAR" >e-DINAR</option>
+                              </select>
                             </div>
-
                             <div className="col-sm-6">
+                              {accountType==="RIB" ?
+                              <>
                               <label>RIB *</label>
                               <input
-                                type="text"
+                                maxLength ="20"
+                                type="tel"
                                 className="form-control"
                                 required
-                                placeholder={user.RIB}
-                              />
+                                placeholder='XX-XXX-XXXXXXXXXXXXX-XX'
+                              /> </> : 
+                              <>
+                              <label>EDINAR *</label>
+                              <input
+                                type="tel"
+                                maxLength ="16"
+                                className="form-control"
+                                required
+                                placeholder="5359 XXXX XXXX XXXX"
+                              /></>
+                              }
                             </div>
-                            <div className="col-sm-6" >
+                            <div className=" col-lg-12" >
                             <ImageUploading
                               multiple
                               value={images}
@@ -411,7 +385,7 @@ function DashBoard() {
                                 </div>
                               )}
                             </ImageUploading>
-                            <span style={{fontSize:'0.9rem'}}>*Photo du RIB avec votre nom et votre numéro de compte</span>
+                            <span style={{fontSize:'0.8rem'}}>*Photo du RIB avec votre nom et votre numéro de compte</span>
                             </div>
                           </div>
                           <div className="pb-2 pt-2">
@@ -421,7 +395,7 @@ function DashBoard() {
                             Vos informations resteront confidentielles. </span>
                           </div>
                           <button type="submit" className="btn btn-outline-primary-2">
-                            <span onClick={()=> setRibImage('')}>SAUVEGARDER LES MODIFICATIONS</span>
+                            <span>SAUVEGARDER LES MODIFICATIONS</span>
                             <i className="icon-long-arrow-right"></i>
                           </button>
                         </form>
@@ -449,26 +423,40 @@ function DashBoard() {
                               />
                             </div>
                           </div>
-
-                          <label>Type D&apos;identité *</label>
-                          <input
-                            type="string"
-                            className="form-control"
-                            required
-                            placeholder={user.typeId}
-                          />
-                          <label>Numéro de CIN *</label>
-                          <input
-                            type="string"
-                            className="form-control"
-                            required
-                            placeholder={user.CINNum}
-                          />
-
+                          <div className="row"> 
+                            <div className="col-sm-6">
+                              <label>Type d&apos;identité *</label>
+                              <br/>
+                              <select id="type_du_compte" className="form-control" onChange={(e)=> {setIdType(e.target.value)}}>
+                                  <option selected="CIN" >CIN</option>
+                                  <option value="PASSPORT" >PASSEPORT</option>
+                              </select>
+                            </div>
+                            <div className="col-sm-6">
+                              {idType==="CIN" ?
+                              <>
+                              <label>Numéro CIN *</label>
+                              <input
+                                type="tel"
+                                className="form-control"
+                                required
+                                placeholder='01234567'
+                                maxLength ={8}
+                              /> </> : 
+                              <>
+                              <label>Numéro Passeport *</label>
+                              <input
+                                type="text"
+                                className="form-control"
+                                required
+                                placeholder="E0123456"
+                              /></>
+                              }
+                            </div>
+                          </div>
                           <button
                             type="submit"
-                            className="btn btn-outline-primary-2"
-                          >
+                            className="btn btn-outline-primary-2">
                             <span >SAUVEGARDER LES MODIFICATIONS</span>
                             <i className="icon-long-arrow-right"></i>
                           </button>

@@ -306,7 +306,7 @@ export default function Home() {
                         </Reveal>
                     </div>
                     <div className="col-md-4 col-sm-6">
-                        <Reveal keyframes={ fadeIn } delay={ 150 } duration={ 1000 } triggerOnce>
+                        <Reveal keyframes={ fadeInRightShorter } delay={ 150 } duration={ 1000 } triggerOnce>
                             <div className="icon-box px-0 icon-box-card text-center bg-white">
                                 <span className="icon-box-icon text-dark">
                                     <i className="icon-rotate-left"></i>
@@ -319,7 +319,7 @@ export default function Home() {
                         </Reveal>
                     </div>
                     <div className="col-md-4 col-sm-6">
-                        <Reveal keyframes={ fadeInLeftShorter } delay={ 150 } duration={ 1000 } triggerOnce>
+                        <Reveal keyframes={ fadeInRightShorter } delay={ 150 } duration={ 1000 } triggerOnce>
                             <div className="icon-box px-0 icon-box-card text-center bg-white">
                                 <span className="icon-box-icon text-dark">
                                     <i className="icon-life-ring"></i>

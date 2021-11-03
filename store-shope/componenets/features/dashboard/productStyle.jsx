@@ -4,7 +4,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import ALink from '../../../componenets/features/alink';
 
 function ProductDashboard ( props ) {
-    const {product, remove, productId} = props
+    const {product, remove, setRemovedproductId, removedProductId} = props
     const router = useRouter();
     
 
@@ -23,7 +23,7 @@ function ProductDashboard ( props ) {
                 <ALink href={ `product/${product.id}` }>
                     <LazyLoadImage
                         alt="product"
-                        src={ product.image }
+                        src={ product.image[0] }
                         threshold={ 500 }
                         effect="black and white"
                         wrapperClassName="product-image"
@@ -32,7 +32,7 @@ function ProductDashboard ( props ) {
                 {
                     remove ? 
                     <div className="product-action action-icon-top">
-                        <button className="btn-product icon-minus" onClick={()=>{productId(product.id)}}>
+                        <button className="btn-product icon-minus" onClick={()=>{setRemovedproductId(removedProductId=> ([...removedProductId, product.id]))}}>
                         <span>Supprimer</span>
                         </button>
                    </div>
