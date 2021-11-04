@@ -69,8 +69,6 @@ function Achete() {
         } else {
             setMyProduct(product)
         }
-            console.log(filtred_items);
-    console.log(variables);
         scrollToPageContent();
     }, [ query, perPage ] )
 

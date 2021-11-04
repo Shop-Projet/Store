@@ -109,36 +109,6 @@ function ShopSidebarOne ( props ) {
                             )
                         }
                     </SlideToggle>
-                    {/* <SlideToggle collapsed={ false }>
-                        {
-                            ( { onToggle, setCollapsibleElement, toggleState } ) => (
-                                <div className="widget widget-collapsible">
-                                    <h3 className="widget-title mb-2"><a href="#Size" className={ `${toggleState.toLowerCase() == 'collapsed' ? 'collapsed' : ''}` } onClick={ ( e ) => { onToggle( e ); e.preventDefault() } }>Etat</a></h3>
-                                    <div ref={ setCollapsibleElement }>
-                                        <div className="widget-body pt-0">
-                                            <div className="filter-items">
-                                                {
-                                                    etat.map( ( item, index ) => (
-                                                        <div className="filter-item" key={ index }>
-                                                            <div className="custom-control custom-checkbox">
-                                                                <input type="checkbox"
-                                                                    className="custom-control-input"
-                                                                    id={ `etat-${index + 1}` }
-                                                                    onChange={ e => onAttrClick( e, 'etat', item.etat ) }
-                                                                    checked={ containsAttrInUrl( 'etat', item.etat ) ? true : false }
-                                                                />
-                                                                <label className="custom-control-label" htmlFor={ `etat-${index + 1}` }>{ item.etat }</label>
-                                                            </div>
-                                                        </div>
-                                                    ) )
-                                                }
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            )
-                        }
-                    </SlideToggle> */}
                 </div>
             </aside>
         </>

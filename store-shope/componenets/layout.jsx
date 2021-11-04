@@ -1,5 +1,5 @@
 import Header from "./header/header.jsx";
-import Footer from "./parts/footer.jsx";
+import Footer from "./footer/footer.jsx";
 import { useRouter } from 'next/router';
 import { useEffect } from "react";
 import { connect } from 'react-redux';

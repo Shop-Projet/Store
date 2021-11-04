@@ -3,19 +3,21 @@ import { Tabs, TabList, TabPanel, Tab } from "react-tabs";
 import ProductAccount from "../componenets/parts/dashboard/productAccount";
 import ALink from "../componenets/features/alink";
 import PageHeader from "../componenets/features/page-header";
-import { product } from "../dummyData";
 import { achat } from "../dummyData";
 import { vente } from "../dummyData";
 import { utilisateur } from "../dummyData";
 import ImageUploading from "react-images-uploading";
+import Image_profile from "../componenets/features/dashboard/image"
 
 function DashBoard() {
   const [mesAchat, setAchat] = useState(achat);
   const [mesVente, setVente] = useState(vente);
   const [user, setUser] = useState(utilisateur);
   const [images, setImages] = React.useState([]);
+  const [image_CIN, setImage_CIN] = React.useState([]);
   const [accountType, setAccountType] = useState('RIB');
   const [ idType, setIdType] = useState('CIN')
+
 
   const onChange = (imageList, addUpdateIndex) => {
     // data for submit
@@ -324,67 +326,7 @@ function DashBoard() {
                               }
                             </div>
                             <div className=" col-lg-12" >
-                            <ImageUploading
-                              multiple
-                              value={images}
-                              onChange={onChange}
-                              maxNumber={1}
-                              dataURLKey="data_url"
-                            >
-                              {({
-                                imageList,
-                                onImageUpload,
-                                onImageUpdate,
-                                onImageRemove,
-                                isDragging,
-                                dragProps,
-                              }) => (
-                                <div className="row">
-                                  <button
-                                    style={
-                                      isDragging ? { color: "red" } : undefined
-                                    }
-                                    onClick={onImageUpload}
-                                    {...dragProps}
-                                  >
-                                   {true ? <img
-                                      src="/images/imagePicker/image-picker.PNG"
-                                      alt=""
-                                    />: ''}
-                                  </button>
-                                  &nbsp;
-                                  <div className="d-flex justify-content-center ">
-                                    {imageList.map((image, index) => (
-                                      <div key={index} className="pr-3 pt-2">
-                                        <img
-                                          src={image["data_url"]}
-                                          alt=""
-                                          style={{
-                                            width: "180px",
-                                            height: "150px",
-                                          }}
-                                          className="rounded mx-auto d-block img-fluid img-thumbnail"
-                                        />
-                                        <div className="image-item__btn-wrapper" style={{textAlign:"center"}}>
-                                          <button
-                                            className="edit-vente-color"
-                                            onClick={() => onImageUpdate(index)}
-                                          >
-                                            <i className="icon-edit"></i>
-                                          </button>
-                                          <button
-                                            className="edit-vente-color"
-                                            onClick={() => onImageRemove(index)}
-                                          >
-                                            <i className="icon-close"></i>
-                                          </button>
-                                        </div>
-                                      </div>
-                                    ))}
-                                  </div>
-                                </div>
-                              )}
-                            </ImageUploading>
+                            <Image_profile setImages={setImages}  images={images}/>
                             <span style={{fontSize:'0.8rem'}}>*Photo du RIB avec votre nom et votre numéro de compte</span>
                             </div>
                           </div>
@@ -452,6 +394,9 @@ function DashBoard() {
                                 placeholder="E0123456"
                               /></>
                               }
+                            </div>
+                            <div className=" col-lg-12 pb-1" >
+                            <Image_profile setImages={setImage_CIN}  images={image_CIN}/>
                             </div>
                           </div>
                           <button

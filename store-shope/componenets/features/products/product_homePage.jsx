@@ -33,7 +33,6 @@ function ProductHomePage( props ) {
     return (
         <div className="product product-11 text-center">
             <figure className="product-media">
-                <span className="product-label label-new">{product.etat}</span>
                 <ALink href={ `product/${product.id}` }>
                     <LazyLoadImage
                         alt="product"
