@@ -441,8 +441,9 @@ export const age = [
 ];
 
 export const etat = [
-  { id: 1, etat: "Neuf sans étiquette" },
-  { id: 2, etat: "Trés bon état" },
-  { id: 3, etat: "Bon état" },
-  { id: 4, etat: "Satisfaisant" },
+  { id: 1, etat: "Neuf avec étiquette" },
+  { id: 2, etat: "Neuf sans étiquette" },
+  { id: 3, etat: "Trés bon état" },
+  { id: 4, etat: "Bon état" },
+  { id: 5, etat: "Satisfaisant" },
 ];

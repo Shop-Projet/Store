@@ -6,7 +6,6 @@ import ALink from '../alink.jsx';
 
 import { actions as wishlistAction } from '../../../store/wishlist';
 import { actions as cartAction } from '../../../store/cart';
-import { actions as compareAction } from '../../../store/compare';
 
 import { isInWishlist } from '../../../utils/index';
 
@@ -74,7 +73,7 @@ function ProductHomePage( props ) {
             </div>
             <div className="product-action">
                 <button className="btn-product btn-cart" onClick={ onCartClick }>
-                    <span>add to cart</span>
+                    <span>Ajouter au panier</span>
                 </button>
                         
             </div>
@@ -86,8 +85,7 @@ function ProductHomePage( props ) {
 const mapStateToProps = ( state ) => {
     return {
         wishlist: state.wishlist.data,
-        comparelist: state.comparelist.data
     }
 }
 
-export default connect( mapStateToProps, { ...wishlistAction, ...cartAction, ...compareAction } )( ProductHomePage );
+export default connect( mapStateToProps, { ...wishlistAction, ...cartAction } )( ProductHomePage );

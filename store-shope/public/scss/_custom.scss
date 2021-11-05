@@ -169,6 +169,16 @@
 			font-size: 1.4rem;
 		}
 	}
+	.intro-content1 {
+		left: 20rem;
+		top:18.5rem;
+
+		.btn {
+			padding-top: 1.15rem;
+			padding-bottom: 1.15rem;
+			font-size: 1.4rem;
+		}
+	}
 }
 
 @include mq('xl') {
