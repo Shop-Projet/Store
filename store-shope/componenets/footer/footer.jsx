@@ -62,7 +62,7 @@ function Footer () {
                                         <ALink href="/list">J&apos;achète</ALink>
                                     </li>
                                     <li>
-                                        <ALink href="/login">Log in</ALink>
+                                        <ALink href="/login">Connexion</ALink>
                                     </li>
                                 </ul>
                             </div>

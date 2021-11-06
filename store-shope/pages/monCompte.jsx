@@ -7,7 +7,7 @@ import { achat } from "../dummyData";
 import { vente } from "../dummyData";
 import { utilisateur } from "../dummyData";
 import ImageUploading from "react-images-uploading";
-import Image_profile from "../componenets/features/dashboard/image"
+import Image_profile from "../componenets/features/dashboard/image";
 
 function DashBoard() {
   const [mesAchat, setAchat] = useState(achat);
@@ -15,15 +15,13 @@ function DashBoard() {
   const [user, setUser] = useState(utilisateur);
   const [images, setImages] = React.useState([]);
   const [image_CIN, setImage_CIN] = React.useState([]);
-  const [accountType, setAccountType] = useState('RIB');
-  const [ idType, setIdType] = useState('CIN')
-
+  const [accountType, setAccountType] = useState("RIB");
+  const [idType, setIdType] = useState("CIN");
 
   const onChange = (imageList, addUpdateIndex) => {
     // data for submit
     setImages(imageList);
   };
-
 
   return (
     <div className="main">
@@ -70,7 +68,9 @@ function DashBoard() {
                         <span className="nav-link">Compte Bancaire</span>
                       </Tab>
                       <Tab className="nav-item">
-                        <span className="nav-link">Justificatif  D&apos;identité</span>
+                        <span className="nav-link">
+                          Justificatif D&apos;identité
+                        </span>
                       </Tab>
 
                       <Tab className="nav-item">
@@ -87,7 +87,7 @@ function DashBoard() {
                   >
                     <div className="tab-pane">
                       <TabPanel>
-                        <ProductAccount  />
+                        <ProductAccount />
                       </TabPanel>
                       <TabPanel>
                         {!mesAchat.length ? (
@@ -96,52 +96,58 @@ function DashBoard() {
                           <div className="col-lg-12">
                             <table className="table table-cart table-mobile ">
                               <thead>
-                                <tr style={{textAlign:"center"}}>
+                                <tr style={{ textAlign: "center" }}>
                                   <th>Article</th>
                                   <th>Prix</th>
                                   <th>Date</th>
                                   <th>Vendeur</th>
-                                  <th className="col-lg-2">Numéro de livraison</th>
+                                  <th className="col-lg-2">
+                                    Numéro de livraison
+                                  </th>
                                   <th className="col-lg-2">Progression</th>
                                 </tr>
                               </thead>
                               <tbody>
-                                {
-                                  mesAchat.map((item, index) => (
-                                    <tr key={index}>
-                                      <td className="product-col" >
-                                        <div className="product">
-                                          <figure className="product-media">
-                                              <img
-                                                src={item.image}
-                                                alt="product"
-                                              />
-                                          </figure>
-                                          <h4 className="product-title">
-                                              {item.nom_du_produit}
-                                          </h4>
-                                        </div>
-                                      </td>
-                                      <td className="total-col">
-                                        {item.prix.toLocaleString(undefined, {
-                                          minimumFractionDigits: 2,
-                                          maximumFractionDigits: 2,
-                                        })}DT
-                                      </td>
+                                {mesAchat.map((item, index) => (
+                                  <tr key={index}>
+                                    <td className="product-col">
+                                      <div className="product">
+                                        <figure className="product-media">
+                                          <img src={item.image} alt="product" />
+                                        </figure>
+                                        <h4 className="product-title">
+                                          {item.nom_du_produit}
+                                        </h4>
+                                      </div>
+                                    </td>
+                                    <td className="total-col">
+                                      {item.prix.toLocaleString(undefined, {
+                                        minimumFractionDigits: 2,
+                                        maximumFractionDigits: 2,
+                                      })}
+                                      DT
+                                    </td>
 
-                                      <td className="total-col">{item.date}</td>
-                                      <td className="total-col">
-                                        {item.vendeur}
-                                      </td>
-                                      <td className="total-col" style={{textAlign:'center'}}>
-                                        N°{item.numeroDeLivraison}
-                                      </td>
-                                      <td className="total-col" style={{textAlign:'center'}}>
-                                        {item.progression? item.progression : 'en attente'}
-                                      </td>
-                                    </tr>
-                                  ))
-                                }
+                                    <td className="total-col">{item.date}</td>
+                                    <td className="total-col">
+                                      {item.vendeur}
+                                    </td>
+                                    <td
+                                      className="total-col"
+                                      style={{ textAlign: "center" }}
+                                    >
+                                      N°{item.numeroDeLivraison}
+                                    </td>
+                                    <td
+                                      className="total-col"
+                                      style={{ textAlign: "center" }}
+                                    >
+                                      {item.progression
+                                        ? item.progression
+                                        : "en attente"}
+                                    </td>
+                                  </tr>
+                                ))}
                               </tbody>
                             </table>
                           </div>
@@ -149,57 +155,66 @@ function DashBoard() {
                       </TabPanel>
                       <TabPanel>
                         {!mesAchat.length ? (
-                          <p>
-                            Auncun article.
-                          </p>
+                          <p>Auncun article.</p>
                         ) : (
                           <div className="col-lg-12">
                             <table className="table table-cart table-mobile">
                               <thead>
-                                <tr style={{textAlign:"center"}}>
+                                <tr style={{ textAlign: "center" }}>
                                   <th>Article</th>
                                   <th>Date</th>
                                   <th>Acheteur</th>
                                   <th>Gain</th>
-                                  <th className="col-lg-2">Numéro de livraison</th>
+                                  <th className="col-lg-2">
+                                    Numéro de livraison
+                                  </th>
                                   <th className="col-lg-2">Progression</th>
                                 </tr>
                               </thead>
                               <tbody>
-                                {
-                                  mesVente.map((item, index) => (
-                                    <tr key={index}>
-                                      <td className="product-col">
-                                        <div className="product">
-                                          <figure className="product-media">
-                                              <img
-                                                src={item.image}
-                                                alt="product"
-                                              />
-                                          </figure>
-                                          <h4 className="product-title">
-                                              {item.nom_du_produit}
-                                          </h4>
-                                        </div>
-                                      </td>
-                                      <td className="total-col">{item.date}</td>
-                                      <td className="total-col">
-                                        {item.acheteur}
-                                      </td>
-                                      <td className="total-col">
-                                      {(item.prix*0.8).toLocaleString(undefined, {
+                                {mesVente.map((item, index) => (
+                                  <tr key={index}>
+                                    <td className="product-col">
+                                      <div className="product">
+                                        <figure className="product-media">
+                                          <img src={item.image} alt="product" />
+                                        </figure>
+                                        <h4 className="product-title">
+                                          {item.nom_du_produit}
+                                        </h4>
+                                      </div>
+                                    </td>
+                                    <td className="total-col">{item.date}</td>
+                                    <td className="total-col">
+                                      {item.acheteur}
+                                    </td>
+                                    <td className="total-col">
+                                      {(item.prix * 0.8).toLocaleString(
+                                        undefined,
+                                        {
                                           minimumFractionDigits: 2,
                                           maximumFractionDigits: 2,
-                                        })}DT</td>
-                                      <td className="total-col" style={{textAlign:"center"}}>
-                                        N°{item.numeroDeLivraison? item.numeroDeLivraison : '12'}
-                                      </td>
-                                      <td className="total-col" style={{textAlign:"center"}}>
-                                        {item.progression}
-                                      </td>
-                                    </tr>
-                                  ))
-                                }
+                                        }
+                                      )}
+                                      DT
+                                    </td>
+                                    <td
+                                      className="total-col"
+                                      style={{ textAlign: "center" }}
+                                    >
+                                      N°
+                                      {item.numeroDeLivraison
+                                        ? item.numeroDeLivraison
+                                        : "12"}
+                                    </td>
+                                    <td
+                                      className="total-col"
+                                      style={{ textAlign: "center" }}
+                                    >
+                                      {item.progression}
+                                    </td>
+                                  </tr>
+                                ))}
                               </tbody>
                             </table>
                           </div>
@@ -238,12 +253,12 @@ function DashBoard() {
                             </div>
                             <div className="col-sm-6">
                               <label>Téléphone *</label>
-                                <input
-                                  type="number"
-                                  className="form-control"
-                                  required
-                                  placeholder={user.telephone}
-                                />
+                              <input
+                                type="number"
+                                className="form-control"
+                                required
+                                placeholder={user.telephone}
+                              />
                             </div>
                           </div>
                           <label>Adresse Email *</label>
@@ -263,24 +278,29 @@ function DashBoard() {
                           <div className="row">
                             <div className="col-sm-6">
                               <label>Code Postal * </label>
-                                <input
-                                  type="string"
-                                  className="form-control"
-                                  placeholder={user.code}
-                                />
+                              <input
+                                type="string"
+                                className="form-control"
+                                placeholder={user.code}
+                              />
                             </div>
                             <div className="col-sm-6">
                               <label>Ville *</label>
-                                <input
+                              <input
                                 type="string"
                                 className="form-control mb-2"
                                 placeholder={user.ville}
-                                />
+                              />
                             </div>
                           </div>
                           <div className="pb-2">
-                          <i className="icon-info-circle"></i> 
-                          <span>{' '}En tant qu&apos;acheteur ce sera votre adresse de livraison et en tant que vendeur ce sera votre adresse de ramassage. </span>
+                            <i className="icon-info-circle"></i>
+                            <span>
+                              {" "}
+                              En tant qu&apos;acheteur ce sera votre adresse de
+                              livraison et en tant que vendeur ce sera votre
+                              adresse de ramassage.{" "}
+                            </span>
                           </div>
                           <button
                             type="submit"
@@ -297,46 +317,68 @@ function DashBoard() {
                           <div className="row">
                             <div className="col-sm-6">
                               <label>Type du compte *</label>
-                              <br/>
-                              <select id="type_du_compte" className="form-control" onChange={(e)=> {setAccountType(e.target.value)}}>
-                                  <option selected="RIB" >RIB</option>
-                                  <option value="EDINAR" >e-DINAR</option>
+                              <br />
+                              <select
+                                id="type_du_compte"
+                                className="form-control"
+                                onChange={(e) => {
+                                  setAccountType(e.target.value);
+                                }}
+                              >
+                                <option selected="RIB">RIB</option>
+                                <option value="EDINAR">e-DINAR</option>
                               </select>
                             </div>
                             <div className="col-sm-6">
-                              {accountType==="RIB" ?
-                              <>
-                              <label>RIB *</label>
-                              <input
-                                maxLength ="20"
-                                type="tel"
-                                className="form-control"
-                                required
-                                placeholder='XX-XXX-XXXXXXXXXXXXX-XX'
-                              /> </> : 
-                              <>
-                              <label>EDINAR *</label>
-                              <input
-                                type="tel"
-                                maxLength ="16"
-                                className="form-control"
-                                required
-                                placeholder="5359 XXXX XXXX XXXX"
-                              /></>
-                              }
+                              {accountType === "RIB" ? (
+                                <>
+                                  <label>RIB *</label>
+                                  <input
+                                    maxLength="20"
+                                    type="tel"
+                                    className="form-control"
+                                    required
+                                    placeholder="XX-XXX-XXXXXXXXXXXXX-XX"
+                                  />{" "}
+                                </>
+                              ) : (
+                                <>
+                                  <label>EDINAR *</label>
+                                  <input
+                                    type="tel"
+                                    maxLength="16"
+                                    className="form-control"
+                                    required
+                                    placeholder="5359 XXXX XXXX XXXX"
+                                  />
+                                </>
+                              )}
                             </div>
-                            <div className=" col-lg-12" >
-                            <Image_profile setImages={setImages}  images={images}/>
-                            <span style={{fontSize:'0.8rem'}}>*Photo du RIB avec votre nom et votre numéro de compte</span>
+                            <div className=" col-lg-12">
+                              <Image_profile
+                                setImages={setImages}
+                                images={images}
+                              />
+                              <span style={{ fontSize: "0.8rem" }}>
+                                *Photo du RIB avec votre nom et votre numéro de
+                                compte
+                              </span>
                             </div>
                           </div>
                           <div className="pb-2 pt-2">
-                            <i className="icon-info-circle"></i> 
-                            <span>{' '}En cas de vente, vous recevrez votre virement sur ce compte. <br/>
                             <i className="icon-info-circle"></i>
-                            Vos informations resteront confidentielles. </span>
+                            <span>
+                              {" "}
+                              En cas de vente, vous recevrez votre virement sur
+                              ce compte. <br />
+                              <i className="icon-info-circle"></i>
+                              Vos informations resteront confidentielles.{" "}
+                            </span>
                           </div>
-                          <button type="submit" className="btn btn-outline-primary-2">
+                          <button
+                            type="submit"
+                            className="btn btn-outline-primary-2"
+                          >
                             <span>SAUVEGARDER LES MODIFICATIONS</span>
                             <i className="icon-long-arrow-right"></i>
                           </button>
@@ -365,44 +407,57 @@ function DashBoard() {
                               />
                             </div>
                           </div>
-                          <div className="row"> 
+                          <div className="row">
                             <div className="col-sm-6">
                               <label>Type d&apos;identité *</label>
-                              <br/>
-                              <select id="type_du_compte" className="form-control" onChange={(e)=> {setIdType(e.target.value)}}>
-                                  <option selected="CIN" >CIN</option>
-                                  <option value="PASSPORT" >PASSEPORT</option>
+                              <br />
+                              <select
+                                id="type_du_compte"
+                                className="form-control"
+                                onChange={(e) => {
+                                  setIdType(e.target.value);
+                                }}
+                              >
+                                <option selected="CIN">CIN</option>
+                                <option value="PASSPORT">PASSEPORT</option>
                               </select>
                             </div>
                             <div className="col-sm-6">
-                              {idType==="CIN" ?
-                              <>
-                              <label>Numéro CIN *</label>
-                              <input
-                                type="tel"
-                                className="form-control"
-                                required
-                                placeholder='01234567'
-                                maxLength ={8}
-                              /> </> : 
-                              <>
-                              <label>Numéro Passeport *</label>
-                              <input
-                                type="text"
-                                className="form-control"
-                                required
-                                placeholder="E0123456"
-                              /></>
-                              }
+                              {idType === "CIN" ? (
+                                <>
+                                  <label>Numéro CIN *</label>
+                                  <input
+                                    type="tel"
+                                    className="form-control"
+                                    required
+                                    placeholder="01234567"
+                                    maxLength={8}
+                                  />{" "}
+                                </>
+                              ) : (
+                                <>
+                                  <label>Numéro Passeport *</label>
+                                  <input
+                                    type="text"
+                                    className="form-control"
+                                    required
+                                    placeholder="E0123456"
+                                  />
+                                </>
+                              )}
                             </div>
-                            <div className=" col-lg-12 pb-1" >
-                            <Image_profile setImages={setImage_CIN}  images={image_CIN}/>
+                            <div className=" col-lg-12 pb-1">
+                              <Image_profile
+                                setImages={setImage_CIN}
+                                images={image_CIN}
+                              />
                             </div>
                           </div>
                           <button
                             type="submit"
-                            className="btn btn-outline-primary-2">
-                            <span >SAUVEGARDER LES MODIFICATIONS</span>
+                            className="btn btn-outline-primary-2"
+                          >
+                            <span>SAUVEGARDER LES MODIFICATIONS</span>
                             <i className="icon-long-arrow-right"></i>
                           </button>
                         </form>

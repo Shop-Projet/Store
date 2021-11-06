@@ -11,10 +11,12 @@ export const product = [
     nom_du_produit: "3 nounours",
     description: "couleur : marron, ils sont doux et adorables <3",
     prix: 5,
-    categorie: "Jeux de construction",
+    categorie: "Jouets",
+    sousCategorie:"Jeux de construction",
     status: "vendu",
     etat: "Trés bon état",
     age: "8-11 ans",
+    sexe: "Mixte"
   },
   {
     id: 2,
@@ -26,10 +28,13 @@ export const product = [
     nom_du_produit: "Poupée",
     description: "Poupée pour enfant, sans danger",
     prix: 25,
-    categorie: "Jeux de construction",
+    categorie: "Jouets",
+    sousCategorie:"Jeux de construction",
     status: "disponible",
     age: "5-7 ans",
     etat: "Trés bon état",
+    sexe: "Mixte"
+
   },
   {
     id: 3,
@@ -42,10 +47,13 @@ export const product = [
     description:
       "Quality silverware, this 40 piece flatware set is made of premium high quality stainless steel which ensures your health, rust resistant, sturdy and durable for years to come",
     prix: 35,
-    categorie: "Jeux d'éveil",
+    categorie: "Jouets",
+    sousCategorie:"Jeux d'éveil",
     status: "disponible",
     age: "De 6 Mois à 12 Mois",
     etat: "Bon état",
+    sexe: "Fille"
+
   },
   {
     id: 4,
@@ -57,10 +65,13 @@ export const product = [
     nom_du_produit: "Lego",
     description: 'It"s just a dummy data I do"t have to write description',
     prix: 55,
-    categorie: "Jeux de construction",
+    categorie: "Jouets",
     status: "disponible",
     age: "8-11 ans",
     etat: "Bon état",
+    sexe: "Garçon",
+    sousCategorie:"Jeux de construction"
+
   },
   {
     id: 5,
@@ -72,10 +83,13 @@ export const product = [
     nom_du_produit: "Marachitecte",
     description: "pantalon-de-survetement-adicolor-classics-primeblue",
     prix: 95,
-    categorie: "Jeux de construction",
+    categorie: "Jouets",
     status: "disponible",
     age: "12-14 ans",
     etat: "Bon état",
+    sexe: "Fille",
+    sousCategorie:"Jeux de construction"
+
   },
   {
     id: 6,
@@ -87,10 +101,13 @@ export const product = [
     nom_du_produit: "Logo colorés",
     description: "Jamais utilisés, believe me",
     prix: 53,
-    categorie: "Jeux de construction",
+    categorie: "Jouets",
     status: "disponible",
     age: "8-11 ans",
     etat: "Neuf sans étiquette",
+    sexe: "Fille",
+    sousCategorie:"Jeux de construction"
+
   },
   {
     id: 7,
@@ -106,6 +123,8 @@ export const product = [
     status: "disponible",
     age: "De 0 à 6 Mois",
     etat: "Satisfaisant",
+    sexe: "Mixte"
+
   },
   {
     id: 8,
@@ -122,6 +141,8 @@ export const product = [
     status: "disponible",
     age: "De 6 Mois à 12 Mois",
     etat: "Neuf sans étiquette",
+    sexe: "Fille"
+
   },
   {
     id: 9,
@@ -138,6 +159,8 @@ export const product = [
     status: "vendu",
     age: "De 0 à 6 Mois",
     etat: "Neuf sans étiquette",
+    sexe: "Fille"
+
   },
   {
     id: 10,
@@ -149,10 +172,13 @@ export const product = [
     nom_du_produit: "Jouet ",
     description: "sac sac sac sac",
     prix: 10.5,
-    categorie: "Jeux éducatifs",
+    categorie: "Jouets",
     status: "vendu",
     age: "3-4 ans",
     etat: "Bon état",
+    sexe: "Mixte",
+    sousCategorie:"Jeux éducatifs"
+    
   },
   {
     id: 11,
@@ -164,10 +190,13 @@ export const product = [
     nom_du_produit: "MathGame",
     description: 'It don"t need it anymore, buy it',
     prix: 5,
-    categorie: "Jeux éducatifs",
+    categorie: "Jouets",
     status: "disponible",
     age: "5-7 ans",
     etat: "Satisfaisant",
+    sexe: "Mixte",
+    sousCategorie:"Jeux éducatifs"
+
   },
   {
     id: 12,
@@ -183,6 +212,8 @@ export const product = [
     status: "disponible",
     age: "14 plus",
     etat: "Trés bon état",
+    sexe: "Fille"
+
   },
   {
     id: 13,
@@ -195,9 +226,12 @@ export const product = [
     description: "No description",
     prix: 5,
     categorie: "Vêtements",
+    sousCategorie:"Hauts",
     status: "disponible",
     age: "De 24 Mois à 36 Mois",
     etat: "Trés bon état",
+    sexe: "Fille"
+
   },
   {
     id: 14,
@@ -210,9 +244,12 @@ export const product = [
     description: "Jamais utilisés, believe me",
     prix: 53,
     categorie: "Vêtements",
+    sousCategorie:"Hauts",
     status: "disponible",
     age: "De 24 Mois à 36 Mois",
     etat: "Trés bon état",
+    sexe: "Fille"
+
   },
   {
     id: 15,
@@ -228,6 +265,8 @@ export const product = [
     status: "disponible",
     age: "De 24 Mois à 36 Mois",
     etat: "Trés bon état",
+    sexe: "Mixte"
+
   },
   {
     id: 16,
@@ -244,6 +283,8 @@ export const product = [
     status: "disponible",
     age: "14 +",
     etat: "Satisfaisant",
+    sexe: "Mixte"
+
   },
   {
     id: 17,
@@ -259,6 +300,8 @@ export const product = [
     status: "disponible",
     age: "De 0 à 6 Mois",
     etat: "Neuf sans étiquette",
+    sexe: "Garçon"
+
   },
   {
     id: 18,
@@ -274,6 +317,8 @@ export const product = [
     status: "disponible",
     age: "8-11 ans",
     etat: "Bon état",
+    sexe: "Garçon"
+
   },
 ];
 
@@ -290,6 +335,7 @@ export const achat = [
     date: "01/11/21",
     vendeur: "Marwa Zahar",
     numeroDeLivraison: 12,
+
   },
   {
     id: 2,
@@ -415,16 +461,26 @@ export const utilisateur = {
 
 export const categories = [
   { id: 1, categorie: "Naissance", count: 0 },
-  { id: 2, categorie: "Jeux d'éveil", count: 0 },
-  { id: 3, categorie: "Jeux éducatifs", count: 3 },
-  { id: 4, categorie: "Jeux créatifs", count: 5 },
-  { id: 5, categorie: "Jeux de construction", count: 2 },
-  { id: 6, categorie: "Sport et activités en plein air", count: 1 },
+  { id: 2, categorie: "Jouets", count: 0, sousCategorie: [
+    {slug:1, sousCategorie: "Jeux d'éveil", count:3}, {slug:2, sousCategorie:"Jeux éducatifs", count:3},{ slug: 3, sousCategorie: "Jeux créatifs", count: 5 }, 
+    { slug: 4, sousCategorie: "Jeux de construction", count: 2 },
+    { slug: 5, sousCategorie: "Sport et activités en plein air", count: 1 },
+  ]},
   { id: 7, categorie: "Média et jeux vidéo", count: 12 },
   { id: 8, categorie: "Scolaire", count: 3 },
   { id: 9, categorie: "Décoration", count: 3 },
   { id: 10, categorie: "Livres", count: 15 },
-  { id: 11, categorie: "Vêtements", count: 22 },
+  { id: 11, categorie: "Vêtements", count: 22, sousCategorie: [
+    { slug: 6, sousCategorie: "Vêtements bébé", count: 5 },
+    { slug: 7, sousCategorie: "Manteaux et vestes", count: 2 },
+    { slug: 8, sousCategorie: "Hauts", count: 1 },
+    { slug: 9, sousCategorie: "Bas", count: 1 },
+    { slug: 10, sousCategorie: "Robe", count: 1 },
+    { slug: 11, sousCategorie: "Pyjama", count: 1 },
+    { slug: 12, sousCategorie: "Maillots de bain", count: 1 },
+    { slug: 13, sousCategorie: "Chaussures ", count: 1 },
+    { slug: 14, sousCategorie: "Accessoires", count: 1 }
+  ] },
 ];
 
 export const age = [
@@ -447,3 +503,15 @@ export const etat = [
   { id: 4, etat: "Bon état" },
   { id: 5, etat: "Satisfaisant" },
 ];
+
+export const sexe = [
+  { id: 1, sexe: "Mixte" },
+  { id: 2, sexe: "Garçon" },
+  { id: 3, sexe: "Fille" },
+]
+
+export const notifications = [
+  "Livraison complete",
+  "Livraison annulée",
+  "Livraison de l'article N°12 en cours"
+]
