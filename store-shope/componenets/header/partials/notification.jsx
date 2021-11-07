@@ -1,8 +1,7 @@
-import ALink from "../../features/alink";
 import { FaRegBell } from "react-icons/fa";
 import { notifications } from "../../../dummyData";
 
-function Notification(props) {
+function Notification() {
   return (
     <div className="dropdown cart-dropdown">
       <div
