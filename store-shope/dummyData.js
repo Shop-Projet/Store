@@ -15,7 +15,9 @@ export const product = [
     status: "vendu",
     etat: "Trés bon état",
     age: "8-11 ans",
+    sexe: "MF",
   },
+
   {
     id: 2,
     image: [
@@ -30,6 +32,7 @@ export const product = [
     status: "disponible",
     age: "5-7 ans",
     etat: "Trés bon état",
+    sexe: "MF",
   },
   {
     id: 3,
@@ -46,6 +49,7 @@ export const product = [
     status: "disponible",
     age: "De 6 Mois à 12 Mois",
     etat: "Bon état",
+    sexe: "M",
   },
   {
     id: 4,
@@ -61,6 +65,7 @@ export const product = [
     status: "disponible",
     age: "8-11 ans",
     etat: "Bon état",
+    sexe: "F",
   },
   {
     id: 5,
@@ -76,6 +81,7 @@ export const product = [
     status: "disponible",
     age: "12-14 ans",
     etat: "Bon état",
+    sexe: "M",
   },
   {
     id: 6,
@@ -91,6 +97,7 @@ export const product = [
     status: "disponible",
     age: "8-11 ans",
     etat: "Neuf sans étiquette",
+    sexe: "F",
   },
   {
     id: 7,
@@ -106,6 +113,7 @@ export const product = [
     status: "disponible",
     age: "De 0 à 6 Mois",
     etat: "Satisfaisant",
+    sexe: "F",
   },
   {
     id: 8,
@@ -122,6 +130,7 @@ export const product = [
     status: "disponible",
     age: "De 6 Mois à 12 Mois",
     etat: "Neuf sans étiquette",
+    sexe: "M",
   },
   {
     id: 9,
@@ -138,6 +147,7 @@ export const product = [
     status: "vendu",
     age: "De 0 à 6 Mois",
     etat: "Neuf sans étiquette",
+    sexe: "M",
   },
   {
     id: 10,
@@ -153,6 +163,7 @@ export const product = [
     status: "vendu",
     age: "3-4 ans",
     etat: "Bon état",
+    sexe: "MF",
   },
   {
     id: 11,
@@ -168,6 +179,7 @@ export const product = [
     status: "disponible",
     age: "5-7 ans",
     etat: "Satisfaisant",
+    sexe: "F",
   },
   {
     id: 12,
@@ -183,6 +195,7 @@ export const product = [
     status: "disponible",
     age: "14 plus",
     etat: "Trés bon état",
+    sexe: "F",
   },
   {
     id: 13,
@@ -198,6 +211,7 @@ export const product = [
     status: "disponible",
     age: "De 24 Mois à 36 Mois",
     etat: "Trés bon état",
+    sexe: "M",
   },
   {
     id: 14,
@@ -213,6 +227,7 @@ export const product = [
     status: "disponible",
     age: "De 24 Mois à 36 Mois",
     etat: "Trés bon état",
+    sexe: "F",
   },
   {
     id: 15,
@@ -228,6 +243,7 @@ export const product = [
     status: "disponible",
     age: "De 24 Mois à 36 Mois",
     etat: "Trés bon état",
+    sexe: "MF",
   },
   {
     id: 16,
@@ -244,6 +260,7 @@ export const product = [
     status: "disponible",
     age: "14 +",
     etat: "Satisfaisant",
+    sexe: "F",
   },
   {
     id: 17,
@@ -259,6 +276,7 @@ export const product = [
     status: "disponible",
     age: "De 0 à 6 Mois",
     etat: "Neuf sans étiquette",
+    sexe: "M",
   },
   {
     id: 18,
@@ -271,6 +289,7 @@ export const product = [
     status: "disponible",
     age: "8-11 ans",
     etat: "Bon état",
+    sexe: "MF",
   },
 ];
 
@@ -442,4 +461,10 @@ export const etat = [
   { id: 2, etat: "Trés bon état" },
   { id: 3, etat: "Bon état" },
   { id: 4, etat: "Satisfaisant" },
+];
+
+export const sexe = [
+  { id: 1, sexe: "MF" },
+  { id: 2, sexe: "F" },
+  { id: 3, sexe: "M" },
 ];

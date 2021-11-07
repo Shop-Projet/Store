@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { Tabs, TabList, TabPanel, Tab } from "react-tabs";
 import ProductAccount from "../componenets/parts/dashboard/productAccount";
@@ -11,6 +12,8 @@ import { utilisateur } from "../dummyData";
 import ImageUploading from "react-images-uploading";
 
 function DashBoard() {
+  const router = useRouter();
+  const type = router.query.type;
   const [mesAchat, setAchat] = useState(achat);
   const [mesVente, setVente] = useState(vente);
   const [mesProduits, setMesProduit] = useState(product);
