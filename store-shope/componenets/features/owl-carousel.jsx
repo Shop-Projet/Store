@@ -6,20 +6,22 @@ function OwlCarousel ( props ) {
     const carouselRef = useRef( null );
     const defaultOptions = {
         items: 1,
-        loop: true,
+        loop: false,
+        rewind:true,
         margin: 0,
         responsiveClass: "true",
         nav: true,
         navText: [ '<i class="icon-angle-left">', '<i class="icon-angle-right">' ],
         dots: true,
-        smartSpeed: 500,
+        smartSpeed: 200,
         autoplay: true,
+        autoplayTimeout : 3000,
         responsive: {
             320: {
-                nav: false
+                nav: true
             },
             375: {
-                nav: false
+                nav: true
             }
         }
     };

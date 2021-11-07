@@ -50,7 +50,7 @@ function MobileMenu () {
                             </ALink>
                         </li>
                         <li>
-                            <ALink href="/comment-ça-marche">
+                            <ALink href="/comment_ca_marche">
                             Comment ça marche ?
                             <span className="mmenu-btn"></span>
                             </ALink>
