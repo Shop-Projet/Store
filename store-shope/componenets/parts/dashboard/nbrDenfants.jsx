@@ -13,7 +13,7 @@ export default function NbrDenfants() {
     <div>
       <form action="#">
         <div className="row">
-          <div className="col-lg-5">
+          <div className="col-lg-6 col-sm-5 ">
             <label htmlFor="etat">Nombre d'enfants</label>
             <br />
             <select
@@ -25,7 +25,7 @@ export default function NbrDenfants() {
               required
             >
               <option value="" disabled selected hidden>
-                Séléctionner le nombre d'enfants
+                Nombre d'enfants
               </option>
               <option value={1}>1</option>
               <option value={2}>2</option>
@@ -44,15 +44,16 @@ export default function NbrDenfants() {
                   <div className="col-lg-6 col-sm-6" key={index}>
                     <label>Age de votre enfant </label>
                     <input
-                      type="number"
+                      type="telephone"
                       className="form-control"
                       onChange={(e) => {
                         setAge(e.target.value);
                       }}
+                      maxLength={2}
                       required
                     />
                   </div>
-                  <div className="col-lg-4 col-sm-4 ">
+                  <div className="col-lg-5 col-sm-5 ">
                     <label>
                       <br />
                     </label>

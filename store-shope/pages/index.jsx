@@ -109,7 +109,7 @@ export default function Home() {
                 <div className="btn-product-gallery3">
                   <ALink
                     className="banner-link"
-                    href="/list?categorie=Jeux+d%27éveil"
+                    href="/list?categorie=Jouets"
                   >
                     <h3 className="banner-title mb-0">Jouets</h3>
                     <span className="banner-link-text">
