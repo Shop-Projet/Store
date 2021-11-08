@@ -64,7 +64,7 @@ function Pagination ( props ) {
                 }
                 {
                     lastPage > 3 ?
-                        <li className="page-item-total">of { lastPage }</li>
+                        <li className="page-item-total">sur { lastPage }</li>
                         : ""
 
                 }

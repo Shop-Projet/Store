@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { ImagePicker } from "../componenets/features/dashboard/JeVends/imagePicker";
 import ALink from "../componenets/features/alink";
 import PageHeader from "../componenets/features/page-header";
+import { categories } from "../dummyData";
 
 export default function Vendre() {
   const [nomProduit, setNomProduit] = useState("");
@@ -10,6 +11,9 @@ export default function Vendre() {
   const [categorie, setCategorie] = useState("");
   const [age, setAge] = useState("");
   const [etat, setEtat] = useState("");
+  const [sex, setSex] = useState("");
+  const [sousCategoriejeux, setSousCategorieJeux] = useState("");
+  const [vetements, setSousCategorieVetements] = useState("");
 
   return (
     <div className="main">
@@ -42,91 +46,170 @@ export default function Vendre() {
                     <i className="icon-long-arrow-down"></i>Décris ton article{" "}
                   </h6>
                 </div>
-                <div>
-                  <label htmlFor="name">Objet à vendre </label>
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    className="form-control"
-                    placeholder="Ex: Nounours, Robot mécanique, Robe rouge ..."
-                    required=""
-                    onChange={(e) => setNomProduit(e.target.value)}
-                  />
-                </div>
-                <div>
-                  <label htmlFor="description">Description</label>
-                  <textarea
-                    className="form-control validate"
-                    rows="3"
-                    required=""
-                    placeholder="Ex: Je vends cette poussette avec habillage pluie ..."
-                    onChange={(e) => setDescription(e.target.value)}
-                  ></textarea>
-                </div>
-                <div>
-                  <div className="dropdown show">
-                    <label htmlFor="etat">Etat</label>
-                    <br />
-                    <div className="select-box-sell">
+                <div className="row">
+                  <div className="col-lg-6 col-sm-6 ">
+                    <div>
+                      <label htmlFor="name">Objet à vendre </label>
+                      <input
+                        id="name"
+                        name="name"
+                        type="text"
+                        className="form-control"
+                        placeholder="Ex: Nounours, Robot mécanique, Robe rouge ..."
+                        required
+                        onChange={(e) => setNomProduit(e.target.value)}
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="description">Description</label>
+                      <textarea
+                        className="form-control validate"
+                        rows="10"
+                        required
+                        placeholder="Ex: Je vends cette poussette avec habillage pluie ..."
+                        onChange={(e) => setDescription(e.target.value)}
+                      ></textarea>
+                    </div>
+                  </div>
+                  <div className="col-lg-6 col-sm-6 ">
+                    <div>
+                      <label htmlFor="etat">Sexe</label>
+                      <br />
                       <select
                         id="etat"
+                        className="form-control form-select"
+                        onChange={(e) => {
+                          setSex(e.target.value);
+                        }}
+                        required
+                      >
+                        <option value="" disabled selected hidden>
+                          Séléctionner ...
+                        </option>
+                        <option value="mixte">Mixte</option>
+                        <option value="garçon">Garçon</option>
+                        <option value="fille">Fille</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label htmlFor="etat">Etat</label>
+                      <br />
+                      <select
+                        id="etat"
+                        className="form-control form-select"
                         onChange={(e) => {
                           setEtat(e.target.value);
                         }}
+                        required
                       >
-                        <option selected="">
+                        <option value="" disabled selected hidden>
                           Séléctionner l&apos;état de l&apos;article
                         </option>
-                        <option value="1">Neuf sans étiquette</option>
-                        <option value="2">Trés bon état</option>
-                        <option value="3">Bon état</option>
-                        <option value="4">Satisfaisant</option>
+                        <option value="Neuf avec étiquette">
+                          Neuf avec étiquette
+                        </option>
+                        <option value="Neuf sans étiquette">
+                          Neuf sans étiquette
+                        </option>
+                        <option value="Trés bon état">Trés bon état</option>
+                        <option value="Bon état">Bon état</option>
+                        <option value="Satisfaisant">Satisfaisant</option>
                       </select>
                     </div>
-                  </div>
-                  <div className="dropdown show">
-                    <label htmlFor="category" className="pt-2">
-                      Catégorie
-                    </label>
-                    <br />
-                    <div className="select-box-sell">
+                    <div>
+                      <label htmlFor="category">Catégorie</label>
+                      <br />
                       <select
                         id="category"
+                        className="form-control form-select"
                         onChange={(e) => {
                           setCategorie(e.target.value);
                         }}
+                        required
                       >
-                        <option selected="">Séléctionner une catégorie</option>
-                        <option value="1">Naissance</option>
-                        <option value="2">Jeux d&apos;éveil</option>
-                        <option value="3">Jeux éducatifs</option>
-                        <option value="4">Jeux créatifs</option>
-                        <option value="5">Jeux de construction</option>
-                        <option value="6">
-                          Sport et activités en plein air
+                        <option value="" disabled selected hidden>
+                          Séléctionner une catégorie
                         </option>
-                        <option value="7">Média et jeux vidéo</option>
-                        <option value="8">Scolaire</option>
-                        <option value="9">Décoration</option>
-                        <option value="10">Livres</option>
-                        <option value="11">Vêtements</option>
+                        <option value="naissance">Naissance</option>
+                        <option value="jouets">Jouets</option>
+                        <option value="médiaEtJeux">Média et jeux vidéo</option>
+                        <option value="scolaire">Scolaire</option>
+                        <option value="décoration">Décoration</option>
+                        <option value="livres">Livres</option>
+                        <option value="vêtements">Vêtements</option>
                       </select>
                     </div>
-                  </div>
-                  <div className="dropdown show">
-                    <label htmlFor="age" className="pt-2">
-                      Age
-                    </label>
-                    <br />
-                    <div className="select-box-sell">
+                    {categorie === "jouets" ? (
+                      <div>
+                        <label htmlFor="category">Sous Catégorie</label>
+                        <br />
+                        <select
+                          id="category"
+                          className="form-control form-select"
+                          onChange={(e) => {
+                            setSousCategorieJeux(e.target.value);
+                          }}
+                          required
+                        >
+                          <option value="" disabled selected hidden>
+                            Séléctionner une Sous Catégorie
+                          </option>
+                          <option value="jeux d'éveil">
+                            Jeux d&apos;éveil
+                          </option>
+                          <option value="jeux éducatifs">Jeux éducatifs</option>
+                          <option value="jeux créatifs">Jeux créatifs</option>
+                          <option value="jeux de construction">
+                            Jeux de construction
+                          </option>
+                          <option value="Sport et activités en plein air">
+                            Sport et activités en plein air
+                          </option>
+                        </select>
+                      </div>
+                    ) : categorie === "vêtements" ? (
+                      <div>
+                        <label htmlFor="category">Sous Catégorie</label>
+                        <br />
+                        <select
+                          id="category"
+                          className="form-control form-select"
+                          onChange={(e) => {
+                            setSousCategorieVetements(e.target.value);
+                          }}
+                          required
+                        >
+                          <option value="" disabled selected hidden>
+                            Séléctionner une Sous Catégorie
+                          </option>
+                          <option value="Vêtements bébé">Vêtements bébé</option>
+                          <option value="Manteaux et vestes">
+                            Manteaux et vestes
+                          </option>
+                          <option value="robe">Maillots de bain</option>
+                          <option value="hauts">Hauts</option>
+                          <option value="bas">Bas</option>
+                          <option value="robe">Robe</option>
+                          <option value="robe">Pyjama</option>
+                          <option value="robe">Chaussures </option>
+                          <option value="robe">Accessoires</option>
+                        </select>
+                      </div>
+                    ) : (
+                      ""
+                    )}
+                    <div>
+                      <label htmlFor="age">Age</label>
+                      <br />
                       <select
                         id="age"
+                        className="form-control form-select"
                         onChange={(e) => {
                           setAge(e.target.value);
                         }}
+                        required
                       >
-                        <option selected="">
+                        <option value="" disabled selected hidden>
                           Séléctionner une tranche d&apos;âge
                         </option>
                         <option value="1">De 0 à 6 Mois</option>
@@ -141,12 +224,6 @@ export default function Vendre() {
                         <option value="10">14 +</option>
                       </select>
                     </div>
-                  </div>
-                  <div className="pt-2">
-                    <span className="span-vente">
-                      *ETAT CATEGORIE ET ÂGE (choisir parmi les listes
-                      ci-dessus)
-                    </span>
                   </div>
                 </div>
                 <div className="about-text text-center mt-3">
@@ -163,14 +240,19 @@ export default function Vendre() {
                       type="number"
                       className="form-control"
                       aria-label="Dollar amount (with dot and two decimal places)"
-                      required=""
+                      required
                       onChange={(e) => setprix(e.target.value)}
                     />
                     <span className="input-group-text">DT</span>
                   </div>
-                  <span className="span-vente">
-                    Tu gagnes 80% du prix si vendu
-                  </span>
+                  <div className="pt-2">
+                    <i className="icon-long-arrow-right"></i>
+                    <span>
+                      {" "}
+                      Tu gagnes si vendu :{" "}
+                      {prix ? (prix * 0.8).toFixed(2) : "0 "} DT (80% du prix)
+                    </span>
+                  </div>
                 </div>
                 <div className="col-12 pb-4">
                   <button

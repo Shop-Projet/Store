@@ -44,7 +44,7 @@ function MainMenu() {
           </ALink>
         </li>
         <li
-          className={`megamenu-container ${path === "/comment-ça-marche" ? "active" : ""}`}
+          className={`megamenu-container ${path === "/comment-ca-marche" ? "active" : ""}`}
           id="menu-home"
         >
           

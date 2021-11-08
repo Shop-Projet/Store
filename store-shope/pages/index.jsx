@@ -1,15 +1,7 @@
 import HomeProduct from "../componenets/parts/home/products.jsx";
-import {
-  homeData,
-  introSlider,
-  brandSlider,
-  fadeInUpShorter,
-  fadeInLeftShorter,
-  fadeInRightShorter,
-  fadeIn,
-} from "../utils/data";
+import { fadeInLeftShorter, fadeInRightShorter, fadeIn } from "../utils/data";
 import Reveal from "react-awesome-reveal";
-import OwlCarousel from "../componenets/features/owl-carousel.jsx";
+import Into from "../componenets/features/home/into.jsx";
 import ALink from "../componenets/features/alink.jsx";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
@@ -24,104 +16,7 @@ export default function Home() {
           <div className="row">
             <div className="col-lg-8">
               <div className="intro-slider-container slider-container-ratio slider-container-1 mb-2 mb-lg-0">
-                <OwlCarousel
-                  adClass="intro-slider intro-slider-1 owl-simple owl-light owl-nav-inside"
-                  options={introSlider}
-                >
-                  <div
-                    className="intro-slide"
-                    style={{ backgroundColor: "#b2bec3" }}
-                  >
-                    <figure className="slide-image mb-0">
-                      <picture>
-                        <img
-                          src="images/home/banners/banner4.png"
-                          alt="Banner"
-                          style={{ marginLeft: "25%", marginTop: "2%" }}
-                        />
-                      </picture>
-                    </figure>
-
-                    <div className="intro-content">
-                      <Reveal
-                        keyframes={fadeInUpShorter}
-                        delay={100}
-                        duration={1000}
-                      >
-                        <>
-                          <div className="pb-5 col-10">
-                            <h3 className="intro-title">
-                              {" "}
-                              Accompagner son enfant dans son développement.{" "}
-                            </h3>
-                          </div>
-                        </>
-                      </Reveal>
-                    </div>
-                  </div>
-                  <div
-                    className="intro-slide"
-                    style={{ backgroundColor: "#e77f67" }}
-                  >
-                    <figure className="slide-image mb-0">
-                      <picture>
-                        <img
-                          src="images/home/banners/banner5.png"
-                          alt="Banner"
-                          style={{ marginLeft: "38%", marginTop: "1%" }}
-                        />
-                      </picture>
-                    </figure>
-
-                    <div className="intro-content">
-                      <Reveal
-                        keyframes={fadeInUpShorter}
-                        delay={100}
-                        duration={1000}
-                      >
-                        <>
-                          <div className="pb-4 col-10">
-                            <h1 className="intro-title">
-                              {" "}
-                              Gagner de l&apos;argent.{" "}
-                            </h1>
-                          </div>
-                        </>
-                      </Reveal>
-                    </div>
-                  </div>
-                  <div
-                    className="intro-slide"
-                    style={{ backgroundColor: "#574b90" }}
-                  >
-                    <figure className="slide-image mb-0">
-                      <picture>
-                        <img
-                          src="images/home/banners/banner10.png"
-                          alt="Banner"
-                          style={{ marginLeft: "18%", marginTop: "-100%" }}
-                        />
-                      </picture>
-                    </figure>
-
-                    <div className="intro-content">
-                      <Reveal
-                        keyframes={fadeInUpShorter}
-                        delay={100}
-                        duration={1000}
-                      >
-                        <>
-                          <div className="pt-1 col-10">
-                            <h3 className="intro-title">
-                              {" "}
-                              S&apos;inscrire dans une démarche éco-responsable.{" "}
-                            </h3>
-                          </div>
-                        </>
-                      </Reveal>
-                    </div>
-                  </div>
-                </OwlCarousel>
+                <Into />
               </div>
             </div>
             <div className="col-lg-4">
@@ -148,7 +43,7 @@ export default function Home() {
                           height="auto"
                         />
 
-                        <div className="intro-content">
+                        <div className="btn-product-gallery2 ">
                           <ALink href="/vendre" className="btn btn-white">
                             <span>JE VENDS</span>
                             <i className="icon-long-arrow-right"></i>
@@ -172,7 +67,7 @@ export default function Home() {
                           height="auto"
                         />
 
-                        <div className="intro-content">
+                        <div className="btn-product-gallery2 ">
                           <ALink href="/list" className="btn btn-white">
                             <span>J&apos;ACHÈTE</span>
                             <i className="icon-long-arrow-right"></i>
@@ -211,12 +106,12 @@ export default function Home() {
                     effect="blur"
                   />
                 </figure>
-                <div className="banner-content banner-content-center">
+                <div className="btn-product-gallery3">
                   <ALink
                     className="banner-link"
                     href="/list?categorie=Jeux+d%27éveil"
                   >
-                    <h3 className="banner-title mb-0">Jeux</h3>
+                    <h3 className="banner-title mb-0">Jouets</h3>
                     <span className="banner-link-text">
                       Boutique<i className="icon-long-arrow-right ml-2"></i>{" "}
                     </span>
@@ -241,19 +136,16 @@ export default function Home() {
                         effect="blur"
                       />
                     </figure>
-                    <div className="banner-content banner-content-center">
-                      <div className="banner-content banner-content-center">
-                        <ALink
-                          className="banner-link"
-                          href="/list?categorie=Vêtements"
-                        >
-                          <h3 className="banner-title mb-0">Vêtements</h3>
-                          <span className="banner-link-text">
-                            Boutique
-                            <i className="icon-long-arrow-right ml-2"></i>
-                          </span>
-                        </ALink>
-                      </div>
+                    <div className="btn-product-gallery3">
+                      <ALink
+                        className="banner-link"
+                        href="/list?categorie=Vêtements"
+                      >
+                        <h3 className="banner-title mb-0">Vêtements</h3>
+                        <span className="banner-link-text">
+                          Boutique<i className="icon-long-arrow-right ml-2"></i>
+                        </span>
+                      </ALink>
                     </div>
                   </div>
                 </div>
@@ -270,7 +162,7 @@ export default function Home() {
                         effect="blur"
                       />
                     </figure>
-                    <div className="banner-content banner-content-center">
+                    <div className="btn-product-gallery3">
                       <ALink
                         className="banner-link"
                         href="/list?categorie=Décoration"
@@ -302,19 +194,16 @@ export default function Home() {
                         effect="blur"
                       />
                     </figure>
-                    <div className="banner-content banner-content-center">
-                      <div className="banner-content banner-content-center">
-                        <ALink
-                          className="banner-link"
-                          href="/list?categorie=Naissance"
-                        >
-                          <h3 className="banner-title mb-0">Naissance</h3>
-                          <span className="banner-link-text">
-                            Boutique
-                            <i className="icon-long-arrow-right ml-2"></i>
-                          </span>
-                        </ALink>
-                      </div>
+                    <div className="btn-product-gallery3">
+                      <ALink
+                        className="banner-link"
+                        href="/list?categorie=Naissance"
+                      >
+                        <h3 className="banner-title mb-0">Naissance</h3>
+                        <span className="banner-link-text">
+                          Boutique<i className="icon-long-arrow-right ml-2"></i>
+                        </span>
+                      </ALink>
                     </div>
                   </div>
                 </div>
@@ -332,7 +221,7 @@ export default function Home() {
                         effect="blur"
                       />
                     </figure>
-                    <div className="banner-content banner-content-center">
+                    <div className="btn-product-gallery3">
                       <ALink
                         className="banner-link"
                         href="/list?categorie=Scolaire"
@@ -366,19 +255,6 @@ export default function Home() {
             >
               <div className="icon-box px-0 icon-box-card text-center bg-white">
                 <span className="icon-box-icon text-dark">
-                  <i className="icon-heartbeat"></i>
-                </span>
-                <div className="icon-box-content">
-                  <h3 className="icon-box-title">Garantie hygiène </h3>
-                  <p>Protocole strict de désinfection de chaque article</p>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-          <div className="col-md-4 col-sm-6">
-            <Reveal keyframes={fadeIn} delay={150} duration={1000} triggerOnce>
-              <div className="icon-box px-0 icon-box-card text-center bg-white">
-                <span className="icon-box-icon text-dark">
                   <i className="icon-rotate-left"></i>
                 </span>
                 <div className="icon-box-content">
@@ -393,7 +269,7 @@ export default function Home() {
           </div>
           <div className="col-md-4 col-sm-6">
             <Reveal
-              keyframes={fadeInLeftShorter}
+              keyframes={fadeInRightShorter}
               delay={150}
               duration={1000}
               triggerOnce

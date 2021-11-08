@@ -8,6 +8,7 @@ import WishlistMenu from "../header/partials/wishlist-menu";
 import CartMenu from "../header/partials/cart-menu";
 import MainMenu from "../header/partials/main-menu";
 import StickyHeader from "../features/sticky-header";
+import Notification from "./partials/notification";
 
 function Header() {
   const router = useRouter();
@@ -62,6 +63,7 @@ function Header() {
             </div>
             <div className="header-right">
               {/* <HeaderSearch /> */}
+              <Notification/>
               <CartMenu />
             </div>
           </div>

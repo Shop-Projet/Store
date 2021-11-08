@@ -76,7 +76,7 @@ function DetailTwo ( props ) {
             <div className="product-details-footer">
                 <div className="product-cat">
                     <span>Categorie:</span>
-                    { product.categorie }
+                    { product.categorie }, {product.sousCategorie? product.sousCategorie:""}
                 </div >
 
                 <div className="social-icons social-icons-sm">

@@ -2,7 +2,6 @@ import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
 import StickyBox from "react-sticky-box";
 
-
 import ALink from "../componenets/features/alink";
 import PageHeader from "../componenets/features/page-header";
 import ShopList from "../componenets/parts/shop/shopListe";
@@ -26,7 +25,7 @@ function Achete() {
   //Get  postes
   const indexLastPost = currentPage * perPage;
   const indexFirstPost = indexLastPost - perPage;
-  const products = myProduct.slice(indexFirstPost, indexLastPost);  
+  const products = myProduct.slice(indexFirstPost, indexLastPost);
   const totalCount = myProduct.length;
   let filtred_items = [];
   useEffect(() => {
@@ -44,16 +43,24 @@ function Achete() {
 
   function filter(variables) {
     filtred_items = product.filter((item, index) => {
-      if (variables.age.length && variables.categorie) {
+      if (variables.age.length && variables.categorie && variables.sexe.length) {
         return (
-          item.categorie === variables.categorie &&
-          variables.age.includes(item.age)
+          (item.categorie === variables.categorie || item.sousCategorie === variables.categorie) &&
+          variables.age.includes(item.age) && variables.sexe.includes
         );
-      } else if (!variables.age.length && variables.categorie) {
-        return item.categorie === variables.categorie;
-      } else if (variables.age.length && !variables.categorie) {
+      } else if (!variables.age.length && variables.categorie && !variables.sexe.length) {
+        return item.categorie === variables.categorie || item.sousCategorie === variables.categorie;
+      } else if (variables.age.length && !variables.categorie && !variables.sexe.length) {
         return variables.age.includes(item.age);
-      }
+      } else if (!variables.age.length && !variables.categorie && variables.sexe.length) {
+        return variables.sexe.includes(item.sexe);
+      } else if (variables.age.length && !variables.categorie && variables.sexe.length) {
+        return (variables.age.includes(item.age) && variables.sexe.includes(item.sexe))
+      } else if (variables.age.length && variables.categorie && !variables.sexe.length) {
+        return (variables.age.includes(item.age) && (item.categorie === variables.categorie || item.sousCategorie === variables.categorie))
+      } else if (!variables.age.length && variables.categorie && variables.sexe.length) {
+        return (variables.sexe.includes(item.sexe) && (item.categorie === variables.categorie || item.sousCategorie === variables.categorie))
+      } 
     });
     setMyProduct(filtred_items);
   }
@@ -61,18 +68,17 @@ function Achete() {
   useEffect(() => {
     let variables = {
       age: query.age ? query.age.split(",") : [],
-      // etat: query.etat ? query.etat.split( ',' ) : [],
+      sexe: query.sexe ? query.sexe.split( ',' ) : [],
       categorie: query.categorie,
       page: query.page ? parseInt(query.page) : 1,
       perPage: perPage,
     };
-    if (variables.age.length || variables.categorie) {
+    console.log(variables);
+    if (variables.age.length || variables.categorie || variables.sexe.length) {
       filter(variables);
     } else {
       setMyProduct(product);
     }
-    console.log(filtred_items);
-    console.log(variables);
     scrollToPageContent();
   }, [query, perPage]);
 

@@ -10,6 +10,7 @@ import { vente } from "../dummyData";
 import productAccount from "../componenets/parts/dashboard/productAccount";
 import { utilisateur } from "../dummyData";
 import ImageUploading from "react-images-uploading";
+import NbrDenfants from "../componenets/parts/dashboard/nbrDenfants";
 
 function DashBoard() {
   const router = useRouter();
@@ -114,6 +115,12 @@ function DashBoard() {
                       </Tab>
                       <Tab className="nav-item">
                         <span className="nav-link">justicatif d identité</span>
+                      </Tab>
+
+                      <Tab className="nav-item">
+                        <span className="nav-link">
+                          Information supplémentaire
+                        </span>
                       </Tab>
 
                       <Tab className="nav-item">
@@ -525,6 +532,10 @@ function DashBoard() {
                             <i className="icon-long-arrow-right"></i>
                           </button>
                         </form>
+                      </TabPanel>
+                      <TabPanel>
+                        {" "}
+                        <NbrDenfants />{" "}
                       </TabPanel>
                     </div>
                   </div>

@@ -41,7 +41,7 @@ function HomeProduct ( props ) {
                             <span className="nav-link" >All</span>
                         </Tab>
                         <Tab className="nav-item">
-                            <span className="nav-link">Jeux</span>
+                            <span className="nav-link">Jouets</span>
                         </Tab>
                         <Tab className="nav-item">
                             <span className="nav-link">SPORT ET ACTIVITÉS EN PLEIN AIR</span>
