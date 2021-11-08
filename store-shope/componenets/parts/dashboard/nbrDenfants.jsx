@@ -2,13 +2,15 @@ import { React, useState, useEffect } from "react";
 
 export default function NbrDenfants() {
   const [nbrEnfants, setNbrEnfants] = useState(1);
+  const [id, setId] = useState(null);
   const [age, setAge] = useState(null);
-  const [unite, setUnite] = useState("");
-  const [enfants, setEnfants] = useState([]);
+  const [unite, setUnite] = useState(null);
+  const [enfants, setEnfants] = useState(null);
 
   useEffect(() => {
-    setEnfants([...enfants, { id: null, age: age, unite: unite }]);
-  }, [age, unite]);
+    setEnfants({ ...enfants, [id]: { age, unite } });
+  }, [unite, age]);
+
   return (
     <div>
       <form action="#">
@@ -48,6 +50,7 @@ export default function NbrDenfants() {
                       className="form-control"
                       onChange={(e) => {
                         setAge(e.target.value);
+                        setId(index + 1);
                       }}
                       maxLength={2}
                       required
@@ -66,6 +69,7 @@ export default function NbrDenfants() {
                       }}
                       required
                     >
+                      <option disabled selected value={null}>Unité</option>
                       <option value="mois">mois</option>
                       <option value="ans">ans</option>
                     </select>
