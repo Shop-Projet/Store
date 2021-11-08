@@ -64,7 +64,7 @@ export default function CommentCaMarche() {
               className="icon-box-icon"
             >
               <img
-                src="images/comment_ça_marche/icon11.png"
+                src="images/comment_ça_marche/icon14.png"
                 className="icon-trial"
               />
             </span>
