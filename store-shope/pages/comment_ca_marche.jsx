@@ -107,9 +107,9 @@ export default function CommentCaMarche() {
               />
             </span>
             <div className="icon-box-content">
-              <h3 className="icon-box-title">Profitez des jouets!</h3>
+              <h3 className="icon-box-title">Recommencez</h3>
               <p>
-                Recommencez !
+              Plein d&apos;autres jouet vous attends !
               </p>
             </div>
           </div>
