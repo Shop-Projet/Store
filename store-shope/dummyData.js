@@ -458,7 +458,7 @@ export const utilisateur = {
     "",
   typeId: "human",
   CINNum: "21345678",
-  CINPhoto: "https://www.tunisienumerique.com/wp-content/uploads/carte_identite.001.jpg",
+  CINPhoto: "",
 };
 
 export const categories = [
