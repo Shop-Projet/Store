@@ -19,10 +19,6 @@ function DashBoard() {
   const [accountType, setAccountType] = useState("RIB");
   const [idType, setIdType] = useState("CIN");
 
-  const onChange = (imageList, addUpdateIndex) => {
-    // data for submit
-    setImages(imageList);
-  };
 
   return (
     <div className="main">
@@ -361,6 +357,7 @@ function DashBoard() {
                               <Image_profile
                                 setImages={setImages}
                                 images={images}
+                                photo = {user.RIBPhoto}
                               />
                               <span style={{ fontSize: "0.8rem" }}>
                                 *Photo du RIB avec votre nom et votre numéro de
@@ -453,6 +450,7 @@ function DashBoard() {
                               <Image_profile
                                 setImages={setImage_CIN}
                                 images={image_CIN}
+                                photo={user.CINPhoto}
                               />
                             </div>
                           </div>

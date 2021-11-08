@@ -455,7 +455,7 @@ export const utilisateur = {
   RIB: "1234567890",
   EDINAR:"",
   RIBPhoto:
-    "https://upload.wikimedia.org/wikipedia/commons/f/f4/User_Avatar_2.png",
+    "",
   typeId: "human",
   CINNum: "21345678",
   CINPhoto: "https://www.tunisienumerique.com/wp-content/uploads/carte_identite.001.jpg",
