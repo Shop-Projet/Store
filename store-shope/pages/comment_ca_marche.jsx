@@ -5,7 +5,7 @@ import PageHeader from "../componenets/features/page-header";
 export default function CommentCaMarche() {
   return (
     <>
-      <PageHeader title="Comment ça marche" />
+      <PageHeader title="Comment ça marche ?" />
 
       <nav className="breadcrumb-nav">
         <div className="container"></div>
@@ -48,7 +48,7 @@ export default function CommentCaMarche() {
             <span className="icon-box-icon">
               <img
                 className="icon-trial"
-                src="https://cdn-icons-png.flaticon.com/512/3067/3067260.png"
+                src="images/comment_ça_marche/icon1.png"
               />
             </span>
             <div className="icon-box-content">
@@ -61,11 +61,10 @@ export default function CommentCaMarche() {
         <div className="col-lg-3 col-sm-6">
           <div className="icon-box icon-box-sm text-center">
             <span
-              src=" https://cdn-icons-png.flaticon.com/512/650/650953.png"
               className="icon-box-icon"
             >
               <img
-                src=" https://cdn-icons-png.flaticon.com/512/650/650953.png"
+                src="images/comment_ça_marche/icon2.png"
                 className="icon-trial"
               />
             </span>
