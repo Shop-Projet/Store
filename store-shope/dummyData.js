@@ -18,6 +18,7 @@ export const product = [
     age: "8-11 ans",
     sexe: "Mixte"
   },
+
   {
     id: 2,
     image: [

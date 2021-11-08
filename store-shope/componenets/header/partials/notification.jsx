@@ -25,11 +25,13 @@ function Notification() {
           <p>Aucune notification.</p>
         ) : (
           <>
-            {
-              notifications.map((notification, index) => {
-               return <div className="dropdown-cart-products pb-2" key={index}>{notification}</div>
-              })
-            }
+            {notifications.map((notification, index) => {
+              return (
+                <div className="dropdown-cart-products pb-2" key={index}>
+                  {notification}
+                </div>
+              );
+            })}
           </>
         )}
       </div>
