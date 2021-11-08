@@ -1,6 +1,9 @@
 import React from "react";
-import ALink from "../componenets/features/alink";
 import PageHeader from "../componenets/features/page-header";
+import Reveal from "react-awesome-reveal";
+import { fadeInLeftShorter, fadeInRightShorter, fadeIn } from "../utils/data";
+
+
 
 export default function CommentCaMarche() {
   return (
@@ -42,7 +45,14 @@ export default function CommentCaMarche() {
 
         <hr className="mt-4 mb-5" />
       </div>
+      <Reveal
+              keyframes={fadeInRightShorter}
+              delay={150}
+              duration={1000}
+              triggerOnce
+            >
       <div className="row justify-content-center">
+      
         <div className="col-lg-3 col-sm-6">
           <div className="icon-box icon-box-sm text-center">
             <span className="icon-box-icon">
@@ -115,6 +125,7 @@ export default function CommentCaMarche() {
           </div>
         </div>
       </div>
+      </Reveal>
       <div className="page-content pb-0"></div>
     </>
   );

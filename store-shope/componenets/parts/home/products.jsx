@@ -96,7 +96,7 @@ function HomeProduct ( props ) {
                                         </div>
                                     )
                                     :
-                                    catFilter( items, [ 'Jeux de construction', 'Jeux créatifs', 'Jeux éducatifs', "Jeux d'éveil" ] ).map( ( item, index ) =>
+                                    catFilter( items, [ 'Jouets' ] ).map( ( item, index ) =>
                                         <div className="col-6 col-md-4 col-lg-3" key={ index }>
                                             <ProductHomePage
                                                 product={ item } />

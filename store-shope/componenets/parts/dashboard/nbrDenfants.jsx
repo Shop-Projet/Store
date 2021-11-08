@@ -75,7 +75,7 @@ export default function NbrDenfants() {
             })}
           </div>
         </div>
-        <div className="pl-3 pt-3">
+        <div className="pl-2 pt-3">
           <button type="submit" className="btn btn-outline-primary-2 ">
             <span>SAUVEGARDER LES MODIFICATIONS</span>
             <i className="icon-long-arrow-right"></i>
