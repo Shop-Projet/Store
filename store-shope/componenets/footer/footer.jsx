@@ -74,13 +74,10 @@ function Footer () {
 
                                 <ul className="widget-list">
                                     <li>
-                                        <ALink href="/monCompte">Mes Produits</ALink>
+                                        <ALink href="/monCompte">Mes Articles</ALink>
                                     </li>
                                     <li>
                                         <ALink href="/vendre">Je vends</ALink>
-                                    </li>
-                                    <li>
-                                        <ALink href="/cart">Panier</ALink>
                                     </li>
                                 </ul>
                             </div>

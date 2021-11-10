@@ -12,7 +12,7 @@ export const product = [
     description: "couleur : marron, ils sont doux et adorables <3",
     prix: 5,
     categorie: "Jouets",
-    sousCategorie: "Jeux de construction",
+    sousCategorie:"Jeux constructifs",
     status: "vendu",
     etat: "Trés bon état",
     age: "8-11 ans",
@@ -30,7 +30,7 @@ export const product = [
     description: "Poupée pour enfant, sans danger",
     prix: 25,
     categorie: "Jouets",
-    sousCategorie: "Jeux de construction",
+    sousCategorie:"Jeux constructifs",
     status: "disponible",
     age: "5-7 ans",
     etat: "Trés bon état",
@@ -69,7 +69,8 @@ export const product = [
     age: "8-11 ans",
     etat: "Bon état",
     sexe: "Garçon",
-    sousCategorie: "Jeux de construction",
+    sousCategorie:"Jeux constructifs"
+
   },
   {
     id: 5,
@@ -86,7 +87,8 @@ export const product = [
     age: "12-14 ans",
     etat: "Bon état",
     sexe: "Fille",
-    sousCategorie: "Jeux de construction",
+    sousCategorie:"Jeux constructifs"
+
   },
   {
     id: 6,
@@ -103,7 +105,8 @@ export const product = [
     age: "8-11 ans",
     etat: "Neuf sans étiquette",
     sexe: "Fille",
-    sousCategorie: "Jeux de construction",
+    sousCategorie:"Jeux constructifs"
+
   },
   {
     id: 7,
@@ -310,8 +313,8 @@ export const achat = [
   {
     id: 1,
     image:
-      "https://contents.mediadecathlon.com/p1691845/k$ea7ac2b43e3d08cb55754cd7a6d353aa/sous-vetement-de-ski-femme-100-haut-noir.jpg?&f=452x452",
-    nom_du_produit: "Sous-vêtement de ski/ femme",
+      "https://media.vertbaudet.com/Pictures/vertbaudet/103593/coffret-de-3-jeux-deveil-en-bois-fsc.jpg?width=457",
+    nom_du_produit: "Jouet",
     description: "couleur : noir, taille : s",
     prix: 5,
     categorie: "toys",
@@ -323,8 +326,8 @@ export const achat = [
   {
     id: 2,
     image:
-      "https://i.pinimg.com/236x/46/f9/f6/46f9f6a13227253b8535e6c6c888823f.jpg",
-    nom_du_produit: "Sweet",
+      "https://thumbs.dreamstime.com/b/bloque-le-lego-color%C3%A9-9465874.jpg",
+    nom_du_produit: "Lego",
     description: "Sweat zippé london blanc femme/taille M",
     prix: 25,
     categorie: "feeding",
@@ -336,8 +339,8 @@ export const achat = [
   {
     id: 3,
     image:
-      "https://i.pinimg.com/originals/7d/9b/b6/7d9bb6b39a7e8e9f6adf2abcf4dc3e44.png",
-    nom_du_produit: "collection",
+      "https://m.media-amazon.com/images/I/817mDUbk1PL._AC_SX425_.jpg",
+    nom_du_produit: "Poussette",
     description:
       "Quality silverware, this 40 piece flatware set is made of premium high quality stainless steel which ensures your health, rust resistant, sturdy and durable for years to come",
     prix: 35,
@@ -350,8 +353,8 @@ export const achat = [
   {
     id: 4,
     image:
-      "https://i.pinimg.com/236x/30/d1/f9/30d1f99bfced5c8bf43882f35c8b6863.jpg",
-    nom_du_produit: "Robe",
+      "https://www.cdiscount.com/pdt2/7/2/3/1/700x700/auc8233903635723/rw/trotteur-bebe-fille-garcon-jouet-enfant-troteur-ma.jpg",
+    nom_du_produit: "Jouet",
     description: 'It"s just a dummy data I do"t have to write description',
     prix: 55,
     categorie: "femme",
@@ -363,8 +366,8 @@ export const achat = [
   {
     id: 5,
     image:
-      "https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/3d0133cc40a74fd8824ead12014ca896_9366/pantalon-de-survetement-adicolor-classics-primeblue-sst.jpg",
-    nom_du_produit: "pantalon de survetement",
+      "https://images-na.ssl-images-amazon.com/images/I/81WAUFf0rwL.jpg",
+    nom_du_produit: "Livre",
     description: "pantalon-de-survetement-adicolor-classics-primeblue",
     prix: 95,
     categorie: "homme",
@@ -379,8 +382,8 @@ export const vente = [
   {
     id: 1,
     image:
-      "https://contents.mediadecathlon.com/p1691845/k$ea7ac2b43e3d08cb55754cd7a6d353aa/sous-vetement-de-ski-femme-100-haut-noir.jpg?&f=452x452",
-    nom_du_produit: "Sous-vêtement de ski/ femme",
+      "https://media.vertbaudet.com/Pictures/vertbaudet/103593/coffret-de-3-jeux-deveil-en-bois-fsc.jpg?width=457",
+    nom_du_produit: "Jouet",
     description: "couleur : noir, taille : s",
     prix: 5,
     categorie: "toys",
@@ -395,8 +398,8 @@ export const vente = [
   {
     id: 2,
     image:
-      "https://i.pinimg.com/236x/46/f9/f6/46f9f6a13227253b8535e6c6c888823f.jpg",
-    nom_du_produit: "Sweet",
+      "https://thumbs.dreamstime.com/b/bloque-le-lego-color%C3%A9-9465874.jpg",
+    nom_du_produit: "Lego",
     description: "Sweat zippé london blanc femme/taille M",
     prix: 25,
     categorie: "feeding",
@@ -411,8 +414,8 @@ export const vente = [
   {
     id: 3,
     image:
-      "https://i.pinimg.com/originals/7d/9b/b6/7d9bb6b39a7e8e9f6adf2abcf4dc3e44.png",
-    nom_du_produit: "collection",
+      "https://www.baby-mcm.tn/2374-large_default/poussette-reversible-citadine-.jpg",
+    nom_du_produit: "Poussette",
     description:
       "Quality silverware, this 40 piece flatware set is made of premium high quality stainless steel which ensures your health, rust resistant, sturdy and durable for years to come",
     prix: 35,
@@ -433,13 +436,14 @@ export const utilisateur = {
   userName: "JohnDoe",
   telephone: "+216 22 222 222 ",
   mail: "johndoe@gmail.com",
-  adress: "Lorem Ipsum",
-  code: "0000",
-  ville: "dolor sit amet",
-  TypeRIB: "i dunno",
+  adress: "7 rue des Jasmins",
+  code: "2023",
+  ville: "Tunis",
+  TypeRIB: "RIB",
   RIB: "1234567890",
+  EDINAR:"",
   RIBPhoto:
-    "https://upload.wikimedia.org/wikipedia/commons/f/f4/User_Avatar_2.png",
+    "",
   typeId: "human",
   CINNum: "21345678",
   CINPhoto: "",
@@ -447,18 +451,11 @@ export const utilisateur = {
 
 export const categories = [
   { id: 1, categorie: "Naissance", count: 0 },
-  {
-    id: 2,
-    categorie: "Jouets",
-    count: 0,
-    sousCategorie: [
-      { slug: 1, sousCategorie: "Jeux d'éveil", count: 3 },
-      { slug: 2, sousCategorie: "Jeux éducatifs", count: 3 },
-      { slug: 3, sousCategorie: "Jeux créatifs", count: 5 },
-      { slug: 4, sousCategorie: "Jeux de construction", count: 2 },
-      { slug: 5, sousCategorie: "Sport et activités en plein air", count: 1 },
-    ],
-  },
+  { id: 2, categorie: "Jouets", count: 0, sousCategorie: [
+    {slug:1, sousCategorie: "Jeux d'éveil", count:3}, {slug:2, sousCategorie:"Jeux éducatifs", count:3},{ slug: 3, sousCategorie: "Jeux créatifs", count: 5 }, 
+    { slug: 4, sousCategorie: "Jeux constructifs", count: 2 },
+    { slug: 5, sousCategorie: "Sport et activités en plein air", count: 1 },
+  ]},
   { id: 7, categorie: "Média et jeux vidéo", count: 12 },
   { id: 8, categorie: "Scolaire", count: 3 },
   { id: 9, categorie: "Décoration", count: 3 },

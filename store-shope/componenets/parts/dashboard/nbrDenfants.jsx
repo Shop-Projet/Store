@@ -69,8 +69,7 @@ export default function NbrDenfants() {
                       }}
                       required
                     >
-                      <option disabled selected value></option>
-
+                      <option disabled selected value={null}>Unité</option>
                       <option value="mois">mois</option>
                       <option value="ans">ans</option>
                     </select>
