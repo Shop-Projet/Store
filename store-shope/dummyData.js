@@ -12,7 +12,7 @@ export const product = [
     description: "couleur : marron, ils sont doux et adorables <3",
     prix: 5,
     categorie: "Jouets",
-    sousCategorie:"Jeux de construction",
+    sousCategorie:"Jeux constructifs",
     status: "vendu",
     etat: "Trés bon état",
     age: "8-11 ans",
@@ -30,7 +30,7 @@ export const product = [
     description: "Poupée pour enfant, sans danger",
     prix: 25,
     categorie: "Jouets",
-    sousCategorie:"Jeux de construction",
+    sousCategorie:"Jeux constructifs",
     status: "disponible",
     age: "5-7 ans",
     etat: "Trés bon état",
@@ -71,7 +71,7 @@ export const product = [
     age: "8-11 ans",
     etat: "Bon état",
     sexe: "Garçon",
-    sousCategorie:"Jeux de construction"
+    sousCategorie:"Jeux constructifs"
 
   },
   {
@@ -89,7 +89,7 @@ export const product = [
     age: "12-14 ans",
     etat: "Bon état",
     sexe: "Fille",
-    sousCategorie:"Jeux de construction"
+    sousCategorie:"Jeux constructifs"
 
   },
   {
@@ -107,7 +107,7 @@ export const product = [
     age: "8-11 ans",
     etat: "Neuf sans étiquette",
     sexe: "Fille",
-    sousCategorie:"Jeux de construction"
+    sousCategorie:"Jeux constructifs"
 
   },
   {
@@ -465,7 +465,7 @@ export const categories = [
   { id: 1, categorie: "Naissance", count: 0 },
   { id: 2, categorie: "Jouets", count: 0, sousCategorie: [
     {slug:1, sousCategorie: "Jeux d'éveil", count:3}, {slug:2, sousCategorie:"Jeux éducatifs", count:3},{ slug: 3, sousCategorie: "Jeux créatifs", count: 5 }, 
-    { slug: 4, sousCategorie: "Jeux de construction", count: 2 },
+    { slug: 4, sousCategorie: "Jeux constructifs", count: 2 },
     { slug: 5, sousCategorie: "Sport et activités en plein air", count: 1 },
   ]},
   { id: 7, categorie: "Média et jeux vidéo", count: 12 },

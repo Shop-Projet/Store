@@ -159,8 +159,8 @@ export default function Vendre() {
                           </option>
                           <option value="jeux éducatifs">Jeux éducatifs</option>
                           <option value="jeux créatifs">Jeux créatifs</option>
-                          <option value="jeux de construction">
-                            Jeux de construction
+                          <option value="jeux constructifs">
+                            Jeux constructifs
                           </option>
                           <option value="Sport et activités en plein air">
                             Sport et activités en plein air
@@ -228,30 +228,57 @@ export default function Vendre() {
                 </div>
                 <div className="about-text text-center mt-3">
                   <h6 className="mb-1 edit-vente-color pb-2 pt-4">
-                    <i className="icon-long-arrow-down"></i>Fixe ton prix{" "}
+                    <i className="icon-long-arrow-down"></i>Fixe ton prix de
+                    vente
                   </h6>
                 </div>
                 <div className="form-group mb-3">
-                  <label htmlFor="name">Prix de vente </label> <br />
-                  <div className="input-group">
-                    <input
-                      id="price"
-                      name="name"
-                      type="number"
-                      className="form-control"
-                      aria-label="Dollar amount (with dot and two decimal places)"
-                      required
-                      onChange={(e) => setprix(e.target.value)}
-                    />
-                    <span className="input-group-text">DT</span>
+                  <div className="row pl-4">
+                    <label htmlFor="name">Prix de vente </label>
+                    <div className="input-group col-lg-2 col-sm-3 col-5 ">
+                      <input
+                        id="price"
+                        name="name"
+                        type="number"
+                        className="form-control"
+                        aria-label="Dollar amount (with dot and two decimal places)"
+                        required
+                        onChange={(e) => setprix(e.target.value)}
+                      />
+                      <span className="input-group-text">DT</span>
+                    </div>
                   </div>
                   <div className="pt-2">
-                    <i className="icon-long-arrow-right"></i>
-                    <span>
-                      {" "}
-                      Tu gagnes si vendu :{" "}
-                      {prix ? (prix * 0.8).toFixed(2) : "0 "} DT (80% du prix)
-                    </span>
+                    <div className="row pl-4">
+                      <span> Tu gagnes 80% du prix si vendu</span>
+                      <div className="col-lg-2 col-sm-3 col-5">
+                        <input
+                          name="name"
+                          type="number"
+                          className="form-control "
+                          aria-label="Dollar amount (with dot and two decimal places)"
+                          disabled
+                          placeholder={
+                            prix ? (prix * 0.8).toFixed(2) + "DT" : "0 DT"
+                          }
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="pt-2">
+                    <div className="row pl-4">
+                      <span> Le prix affiché sera</span>
+                      <div className="col-lg-2 col-sm-3 col-5">
+                        <input
+                          name="name"
+                          type="number"
+                          className="form-control "
+                          aria-label="Dollar amount (with dot and two decimal places)"
+                          disabled
+                          placeholder={prix ?(prix)+ "DT" : ""}
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div className="col-12 pb-4">

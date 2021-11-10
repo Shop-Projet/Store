@@ -246,6 +246,26 @@ export default function Home() {
       <div className="container">
         <hr />
         <div className="row justify-content-center">
+        <div className="col-md-4 col-sm-6">
+            <Reveal
+              keyframes={fadeInRightShorter}
+              delay={150}
+              duration={1000}
+              triggerOnce
+            >
+              <div className="icon-box px-0 icon-box-card text-center bg-white">
+                <span className="icon-box-icon text-dark">
+                  <i className="icon-heartbeat"></i>
+                </span>
+                <div className="icon-box-content">
+                  <h3 className="icon-box-title">Garantie hygiène </h3>
+                  <p>
+                    Protocol strict de désinfection de chaque article.
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+          </div>
           <div className="col-md-4 col-sm-6">
             <Reveal
               keyframes={fadeInRightShorter}
