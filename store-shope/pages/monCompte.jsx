@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
 import { Tabs, TabList, TabPanel, Tab } from "react-tabs";
 import ProductAccount from "../componenets/parts/dashboard/productAccount";
@@ -19,10 +20,6 @@ function DashBoard() {
   const [accountType, setAccountType] = useState("RIB");
   const [idType, setIdType] = useState("CIN");
 
-  const onChange = (imageList, addUpdateIndex) => {
-    // data for submit
-    setImages(imageList);
-  };
 
   return (
     <div className="main">
@@ -74,7 +71,7 @@ function DashBoard() {
                         </span>
                       </Tab>
                       <Tab className="nav-item">
-                        <span className="nav-link">Justicatif d&apos;identité</span>
+                        <span className="nav-link">Informations supplémentaires</span>
                       </Tab>
                       <Tab className="nav-item">
                         <ALink href="/" className="nav-link">
@@ -232,7 +229,7 @@ function DashBoard() {
                                 type="text"
                                 className="form-control"
                                 required
-                                placeholder={user.nom}
+                                placeholder={user.nom? user.nom : ""}
                               />
                             </div>
 
@@ -251,7 +248,7 @@ function DashBoard() {
                                 type="text"
                                 className="form-control"
                                 required
-                                placeholder={user.userName}
+                                placeholder={user.userName? user.userName : ""}
                               />
                             </div>
                             <div className="col-sm-6">
@@ -260,7 +257,7 @@ function DashBoard() {
                                 type="number"
                                 className="form-control"
                                 required
-                                placeholder={user.telephone}
+                                placeholder={user.telephone? user.telephone : ""}
                               />
                             </div>
                           </div>
@@ -269,14 +266,14 @@ function DashBoard() {
                             type="email"
                             className="form-control"
                             required
-                            placeholder={user.mail}
+                            placeholder={user.mail? user.mail : ""}
                           />
 
                           <label>Adresse *</label>
                           <input
                             type="string"
                             className="form-control"
-                            placeholder={user.adress}
+                            placeholder={user.adress ? user.adress : ""}
                           />
                           <div className="row">
                             <div className="col-sm-6">
@@ -284,7 +281,7 @@ function DashBoard() {
                               <input
                                 type="string"
                                 className="form-control"
-                                placeholder={user.code}
+                                placeholder={user.code? user.code : ""}
                               />
                             </div>
                             <div className="col-sm-6">
@@ -292,7 +289,7 @@ function DashBoard() {
                               <input
                                 type="string"
                                 className="form-control mb-2"
-                                placeholder={user.ville}
+                                placeholder={user.ville? user.ville : ""}
                               />
                             </div>
                           </div>
@@ -341,7 +338,7 @@ function DashBoard() {
                                     type="tel"
                                     className="form-control"
                                     required
-                                    placeholder="XX-XXX-XXXXXXXXXXXXX-XX"
+                                    placeholder={user.RIB ? user.RIB : "XX-XXX-XXXXXXXXXXXXX-XX"}
                                   />{" "}
                                 </>
                               ) : (
@@ -352,7 +349,7 @@ function DashBoard() {
                                     maxLength="16"
                                     className="form-control"
                                     required
-                                    placeholder="5359 XXXX XXXX XXXX"
+                                    placeholder={user.EDINAR ? user.EDINAR: "5359 XXXX XXXX XXXX"}
                                   />
                                 </>
                               )}
@@ -361,6 +358,7 @@ function DashBoard() {
                               <Image_profile
                                 setImages={setImages}
                                 images={images}
+                                photo = {user.RIBPhoto}
                               />
                               <span style={{ fontSize: "0.8rem" }}>
                                 *Photo du RIB avec votre nom et votre numéro de
@@ -396,7 +394,7 @@ function DashBoard() {
                                 type="text"
                                 className="form-control"
                                 required
-                                placeholder={user.nom}
+                                placeholder={user.nom ? user.nom : ""}
                               />
                             </div>
 
@@ -406,7 +404,7 @@ function DashBoard() {
                                 type="text"
                                 className="form-control"
                                 required
-                                placeholder={user.prenom}
+                                placeholder={user.prenom? user.prenom  : ""}
                               />
                             </div>
                           </div>
@@ -453,6 +451,7 @@ function DashBoard() {
                               <Image_profile
                                 setImages={setImage_CIN}
                                 images={image_CIN}
+                                photo={user.CINPhoto}
                               />
                             </div>
                           </div>

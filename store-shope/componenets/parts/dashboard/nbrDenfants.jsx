@@ -2,13 +2,15 @@ import { React, useState, useEffect } from "react";
 
 export default function NbrDenfants() {
   const [nbrEnfants, setNbrEnfants] = useState(1);
+  const [id, setId] = useState(null);
   const [age, setAge] = useState(null);
-  const [unite, setUnite] = useState("");
-  const [enfants, setEnfants] = useState([]);
+  const [unite, setUnite] = useState(null);
+  const [enfants, setEnfants] = useState(null);
 
   useEffect(() => {
-    setEnfants([...enfants, { id: null, age: age, unite: unite }]);
-  }, [age, unite]);
+    setEnfants({ ...enfants, [id]: { age, unite } });
+  }, [unite, age]);
+
   return (
     <div>
       <form action="#">
@@ -48,6 +50,7 @@ export default function NbrDenfants() {
                       className="form-control"
                       onChange={(e) => {
                         setAge(e.target.value);
+                        setId(index + 1);
                       }}
                       maxLength={2}
                       required
@@ -66,6 +69,7 @@ export default function NbrDenfants() {
                       }}
                       required
                     >
+                      <option disabled selected value={null}>Unité</option>
                       <option value="mois">mois</option>
                       <option value="ans">ans</option>
                     </select>
@@ -75,7 +79,7 @@ export default function NbrDenfants() {
             })}
           </div>
         </div>
-        <div className="pl-3 pt-3">
+        <div className="pl-2 pt-3">
           <button type="submit" className="btn btn-outline-primary-2 ">
             <span>SAUVEGARDER LES MODIFICATIONS</span>
             <i className="icon-long-arrow-right"></i>
