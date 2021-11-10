@@ -12,11 +12,11 @@ export const product = [
     description: "couleur : marron, ils sont doux et adorables <3",
     prix: 5,
     categorie: "Jouets",
-    sousCategorie:"Jeux de construction",
+    sousCategorie: "Jeux de construction",
     status: "vendu",
     etat: "Trés bon état",
     age: "8-11 ans",
-    sexe: "Mixte"
+    sexe: "Mixte",
   },
 
   {
@@ -30,12 +30,11 @@ export const product = [
     description: "Poupée pour enfant, sans danger",
     prix: 25,
     categorie: "Jouets",
-    sousCategorie:"Jeux de construction",
+    sousCategorie: "Jeux de construction",
     status: "disponible",
     age: "5-7 ans",
     etat: "Trés bon état",
-    sexe: "Mixte"
-
+    sexe: "Mixte",
   },
   {
     id: 3,
@@ -49,12 +48,11 @@ export const product = [
       "Quality silverware, this 40 piece flatware set is made of premium high quality stainless steel which ensures your health, rust resistant, sturdy and durable for years to come",
     prix: 35,
     categorie: "Jouets",
-    sousCategorie:"Jeux d'éveil",
+    sousCategorie: "Jeux d'éveil",
     status: "disponible",
     age: "De 6 Mois à 12 Mois",
     etat: "Bon état",
-    sexe: "Fille"
-
+    sexe: "Fille",
   },
   {
     id: 4,
@@ -71,8 +69,7 @@ export const product = [
     age: "8-11 ans",
     etat: "Bon état",
     sexe: "Garçon",
-    sousCategorie:"Jeux de construction"
-
+    sousCategorie: "Jeux de construction",
   },
   {
     id: 5,
@@ -89,8 +86,7 @@ export const product = [
     age: "12-14 ans",
     etat: "Bon état",
     sexe: "Fille",
-    sousCategorie:"Jeux de construction"
-
+    sousCategorie: "Jeux de construction",
   },
   {
     id: 6,
@@ -107,8 +103,7 @@ export const product = [
     age: "8-11 ans",
     etat: "Neuf sans étiquette",
     sexe: "Fille",
-    sousCategorie:"Jeux de construction"
-
+    sousCategorie: "Jeux de construction",
   },
   {
     id: 7,
@@ -124,8 +119,7 @@ export const product = [
     status: "disponible",
     age: "De 0 à 6 Mois",
     etat: "Satisfaisant",
-    sexe: "Mixte"
-
+    sexe: "Mixte",
   },
   {
     id: 8,
@@ -142,8 +136,7 @@ export const product = [
     status: "disponible",
     age: "De 6 Mois à 12 Mois",
     etat: "Neuf sans étiquette",
-    sexe: "Fille"
-
+    sexe: "Fille",
   },
   {
     id: 9,
@@ -160,8 +153,7 @@ export const product = [
     status: "vendu",
     age: "De 0 à 6 Mois",
     etat: "Neuf sans étiquette",
-    sexe: "Fille"
-
+    sexe: "Fille",
   },
   {
     id: 10,
@@ -178,8 +170,7 @@ export const product = [
     age: "3-4 ans",
     etat: "Bon état",
     sexe: "Mixte",
-    sousCategorie:"Jeux éducatifs"
-    
+    sousCategorie: "Jeux éducatifs",
   },
   {
     id: 11,
@@ -196,8 +187,7 @@ export const product = [
     age: "5-7 ans",
     etat: "Satisfaisant",
     sexe: "Mixte",
-    sousCategorie:"Jeux éducatifs"
-
+    sousCategorie: "Jeux éducatifs",
   },
   {
     id: 12,
@@ -213,8 +203,7 @@ export const product = [
     status: "disponible",
     age: "14 plus",
     etat: "Trés bon état",
-    sexe: "Fille"
-
+    sexe: "Fille",
   },
   {
     id: 13,
@@ -227,12 +216,11 @@ export const product = [
     description: "No description",
     prix: 5,
     categorie: "Vêtements",
-    sousCategorie:"Hauts",
+    sousCategorie: "Hauts",
     status: "disponible",
     age: "De 24 Mois à 36 Mois",
     etat: "Trés bon état",
-    sexe: "Fille"
-
+    sexe: "Fille",
   },
   {
     id: 14,
@@ -245,18 +233,17 @@ export const product = [
     description: "Jamais utilisés, believe me",
     prix: 53,
     categorie: "Vêtements",
-    sousCategorie:"Hauts",
+    sousCategorie: "Hauts",
     status: "disponible",
     age: "De 24 Mois à 36 Mois",
     etat: "Trés bon état",
-    sexe: "Fille"
-
+    sexe: "Fille",
   },
   {
     id: 15,
     image: [
       "data:image/jpeg;base64,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",
-      "https://www.unique-editions.com/362-medium_horizontal/livre-personnalise-le-jardin-enchante-enfant-et-proche.jpg", 
+      "https://www.unique-editions.com/362-medium_horizontal/livre-personnalise-le-jardin-enchante-enfant-et-proche.jpg",
       "https://www.coolparentsmakehappykids.com/wp-content/uploads/2018/06/Livre-%C3%A9motion-enfant-cpmhk.jpg",
     ],
     nom_du_produit: "Livre",
@@ -266,8 +253,7 @@ export const product = [
     status: "disponible",
     age: "De 24 Mois à 36 Mois",
     etat: "Trés bon état",
-    sexe: "Mixte"
-
+    sexe: "Mixte",
   },
   {
     id: 16,
@@ -284,8 +270,7 @@ export const product = [
     status: "disponible",
     age: "14 +",
     etat: "Satisfaisant",
-    sexe: "Mixte"
-
+    sexe: "Mixte",
   },
   {
     id: 17,
@@ -301,15 +286,14 @@ export const product = [
     status: "disponible",
     age: "De 0 à 6 Mois",
     etat: "Neuf sans étiquette",
-    sexe: "Garçon"
-
+    sexe: "Garçon",
   },
   {
     id: 18,
-    image:
-      ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC2MOfqivj2RHSpG8I9B9o44af_SO7PX59UIohr3Nekosuw4-Mw0RlQtWCY9b-JGPFnJ4&usqp=CAU",
+    image: [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC2MOfqivj2RHSpG8I9B9o44af_SO7PX59UIohr3Nekosuw4-Mw0RlQtWCY9b-JGPFnJ4&usqp=CAU",
       "https://www.doudouplanet.com/media/product/bebe_lilliputiens-86304-walter-plumier_17350.jpg",
-      "https://sc04.alicdn.com/kf/HTB1ymypdi6guuRkSmLyq6AulFXaG.jpg"
+      "https://sc04.alicdn.com/kf/HTB1ymypdi6guuRkSmLyq6AulFXaG.jpg",
     ],
     nom_du_produit: "Cartable dragon",
     description: "Utilisée deux fois, de taille L",
@@ -318,8 +302,7 @@ export const product = [
     status: "disponible",
     age: "8-11 ans",
     etat: "Bon état",
-    sexe: "Garçon"
-
+    sexe: "Garçon",
   },
 ];
 
@@ -336,7 +319,6 @@ export const achat = [
     date: "01/11/21",
     vendeur: "Marwa Zahar",
     numeroDeLivraison: 12,
-
   },
   {
     id: 2,
@@ -405,6 +387,7 @@ export const vente = [
     status: "vendu",
     date: "01/11/21",
     acheteur: "Marwa Zahar",
+    numeroDeLivraison: 12,
 
     gain: "20dt",
     progression: "livré",
@@ -420,6 +403,7 @@ export const vente = [
     status: "vendu",
     date: "01/11/21",
     acheteur: "Marwa Zahar",
+    numeroDeLivraison: 12,
 
     gain: "20dt",
     progression: "livré",
@@ -436,6 +420,7 @@ export const vente = [
     status: "vendu",
     date: "01/11/21",
     acheteur: "Marwa Zahar",
+    numeroDeLivraison: 12,
 
     gain: "20dt",
     progression: "livré",
@@ -462,26 +447,38 @@ export const utilisateur = {
 
 export const categories = [
   { id: 1, categorie: "Naissance", count: 0 },
-  { id: 2, categorie: "Jouets", count: 0, sousCategorie: [
-    {slug:1, sousCategorie: "Jeux d'éveil", count:3}, {slug:2, sousCategorie:"Jeux éducatifs", count:3},{ slug: 3, sousCategorie: "Jeux créatifs", count: 5 }, 
-    { slug: 4, sousCategorie: "Jeux de construction", count: 2 },
-    { slug: 5, sousCategorie: "Sport et activités en plein air", count: 1 },
-  ]},
+  {
+    id: 2,
+    categorie: "Jouets",
+    count: 0,
+    sousCategorie: [
+      { slug: 1, sousCategorie: "Jeux d'éveil", count: 3 },
+      { slug: 2, sousCategorie: "Jeux éducatifs", count: 3 },
+      { slug: 3, sousCategorie: "Jeux créatifs", count: 5 },
+      { slug: 4, sousCategorie: "Jeux de construction", count: 2 },
+      { slug: 5, sousCategorie: "Sport et activités en plein air", count: 1 },
+    ],
+  },
   { id: 7, categorie: "Média et jeux vidéo", count: 12 },
   { id: 8, categorie: "Scolaire", count: 3 },
   { id: 9, categorie: "Décoration", count: 3 },
   { id: 10, categorie: "Livres", count: 15 },
-  { id: 11, categorie: "Vêtements", count: 22, sousCategorie: [
-    { slug: 6, sousCategorie: "Vêtements bébé", count: 5 },
-    { slug: 7, sousCategorie: "Manteaux et vestes", count: 2 },
-    { slug: 8, sousCategorie: "Hauts", count: 1 },
-    { slug: 9, sousCategorie: "Bas", count: 1 },
-    { slug: 10, sousCategorie: "Robe", count: 1 },
-    { slug: 11, sousCategorie: "Pyjama", count: 1 },
-    { slug: 12, sousCategorie: "Maillots de bain", count: 1 },
-    { slug: 13, sousCategorie: "Chaussures ", count: 1 },
-    { slug: 14, sousCategorie: "Accessoires", count: 1 }
-  ] },
+  {
+    id: 11,
+    categorie: "Vêtements",
+    count: 22,
+    sousCategorie: [
+      { slug: 6, sousCategorie: "Vêtements bébé", count: 5 },
+      { slug: 7, sousCategorie: "Manteaux et vestes", count: 2 },
+      { slug: 8, sousCategorie: "Hauts", count: 1 },
+      { slug: 9, sousCategorie: "Bas", count: 1 },
+      { slug: 10, sousCategorie: "Robe", count: 1 },
+      { slug: 11, sousCategorie: "Pyjama", count: 1 },
+      { slug: 12, sousCategorie: "Maillots de bain", count: 1 },
+      { slug: 13, sousCategorie: "Chaussures ", count: 1 },
+      { slug: 14, sousCategorie: "Accessoires", count: 1 },
+    ],
+  },
 ];
 
 export const age = [
@@ -509,10 +506,10 @@ export const sexe = [
   { id: 1, sexe: "Mixte" },
   { id: 2, sexe: "Garçon" },
   { id: 3, sexe: "Fille" },
-]
+];
 
 export const notifications = [
   "Livraison complete",
   "Livraison annulée",
-  "Livraison de l'article N°12 en cours"
-]
+  "Livraison de l'article N°12 en cours",
+];

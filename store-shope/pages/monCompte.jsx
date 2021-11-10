@@ -9,7 +9,6 @@ import { utilisateur } from "../dummyData";
 import Image_profile from "../componenets/features/dashboard/image";
 import NbrDenfants from "../componenets/parts/dashboard/nbrDenfants";
 
-
 function DashBoard() {
   const [mesAchat, setAchat] = useState(achat);
   const [mesVente, setVente] = useState(vente);
@@ -53,29 +52,24 @@ function DashBoard() {
                   <aside className="col-md-4 col-lg-3 mb-md-0 mb-2">
                     <TabList>
                       <Tab className="nav-item">
-                        <span className="nav-link">Mes Articles</span>
+                        <span className="nav-link">Mon profil</span>
                       </Tab>
 
                       <Tab className="nav-item">
-                        <span className="nav-link">Mes Achats</span>
+                        <span className="nav-link">
+                          Mes informations bancaires
+                        </span>
+                      </Tab>
+                      <Tab className="nav-item">
+                        <span className="nav-link">Mes achats</span>
                       </Tab>
                       <Tab className="nav-item">
                         <span className="nav-link">Mes Ventes</span>
                       </Tab>
                       <Tab className="nav-item">
-                        <span className="nav-link">Mon Profil</span>
+                        <span className="nav-link">Mes Articles</span>
                       </Tab>
-                      <Tab className="nav-item">
-                        <span className="nav-link">Compte Bancaire</span>
-                      </Tab>
-                      <Tab className="nav-item">
-                        <span className="nav-link">
-                          Justificatif D&apos;identité
-                        </span>
-                      </Tab>
-                      <Tab className="nav-item">
-                        <span className="nav-link">Justicatif d&apos;identité</span>
-                      </Tab>
+
                       <Tab className="nav-item">
                         <ALink href="/" className="nav-link">
                           Se déconnecter
@@ -89,140 +83,6 @@ function DashBoard() {
                     style={{ marginTop: "1rem" }}
                   >
                     <div className="tab-pane">
-                      <TabPanel>
-                        <ProductAccount />
-                      </TabPanel>
-                      <TabPanel>
-                        {!mesAchat.length ? (
-                          <div>Aucun article.</div>
-                        ) : (
-                          <div className="col-lg-12">
-                            <table className="table table-cart table-mobile ">
-                              <thead>
-                                <tr style={{ textAlign: "center" }}>
-                                  <th>Article</th>
-                                  <th>Prix</th>
-                                  <th>Date</th>
-                                  <th>Vendeur</th>
-                                  <th className="col-lg-2">
-                                    Numéro de livraison
-                                  </th>
-                                  <th className="col-lg-2">Progression</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                {mesAchat.map((item, index) => (
-                                  <tr key={index}>
-                                    <td className="product-col">
-                                      <div className="product">
-                                        <figure className="product-media">
-                                          <img src={item.image} alt="product" />
-                                        </figure>
-                                        <h4 className="product-title">
-                                          {item.nom_du_produit}
-                                        </h4>
-                                      </div>
-                                    </td>
-                                    <td className="total-col">
-                                      {item.prix.toLocaleString(undefined, {
-                                        minimumFractionDigits: 2,
-                                        maximumFractionDigits: 2,
-                                      })}
-                                      DT
-                                    </td>
-
-                                    <td className="total-col">{item.date}</td>
-                                    <td className="total-col">
-                                      {item.vendeur}
-                                    </td>
-                                    <td
-                                      className="total-col"
-                                      style={{ textAlign: "center" }}
-                                    >
-                                      N°{item.numeroDeLivraison}
-                                    </td>
-                                    <td
-                                      className="total-col"
-                                      style={{ textAlign: "center" }}
-                                    >
-                                      {item.progression
-                                        ? item.progression
-                                        : "en attente"}
-                                    </td>
-                                  </tr>
-                                ))}
-                              </tbody>
-                            </table>
-                          </div>
-                        )}
-                      </TabPanel>
-                      <TabPanel>
-                        {!mesAchat.length ? (
-                          <p>Auncun article.</p>
-                        ) : (
-                          <div className="col-lg-12">
-                            <table className="table table-cart table-mobile">
-                              <thead>
-                                <tr style={{ textAlign: "center" }}>
-                                  <th>Article</th>
-                                  <th>Date</th>
-                                  <th>Acheteur</th>
-                                  <th>Gain</th>
-                                  <th className="col-lg-2">
-                                    Numéro de livraison
-                                  </th>
-                                  <th className="col-lg-2">Progression</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                {mesVente.map((item, index) => (
-                                  <tr key={index}>
-                                    <td className="product-col">
-                                      <div className="product">
-                                        <figure className="product-media">
-                                          <img src={item.image} alt="product" />
-                                        </figure>
-                                        <h4 className="product-title">
-                                          {item.nom_du_produit}
-                                        </h4>
-                                      </div>
-                                    </td>
-                                    <td className="total-col">{item.date}</td>
-                                    <td className="total-col">
-                                      {item.acheteur}
-                                    </td>
-                                    <td className="total-col">
-                                      {(item.prix * 0.8).toLocaleString(
-                                        undefined,
-                                        {
-                                          minimumFractionDigits: 2,
-                                          maximumFractionDigits: 2,
-                                        }
-                                      )}
-                                      DT
-                                    </td>
-                                    <td
-                                      className="total-col"
-                                      style={{ textAlign: "center" }}
-                                    >
-                                      N°
-                                      {item.numeroDeLivraison
-                                        ? item.numeroDeLivraison
-                                        : "12"}
-                                    </td>
-                                    <td
-                                      className="total-col"
-                                      style={{ textAlign: "center" }}
-                                    >
-                                      {item.progression}
-                                    </td>
-                                  </tr>
-                                ))}
-                              </tbody>
-                            </table>
-                          </div>
-                        )}
-                      </TabPanel>
                       <TabPanel>
                         <form action="#">
                           <div className="row">
@@ -262,6 +122,9 @@ function DashBoard() {
                                 required
                                 placeholder={user.telephone}
                               />
+                            </div>
+                            <div className="col-sm-6">
+                              <NbrDenfants />
                             </div>
                           </div>
                           <label>Adresse Email *</label>
@@ -368,94 +231,89 @@ function DashBoard() {
                               </span>
                             </div>
                           </div>
-                          <div className="pb-2 pt-2">
-                            <i className="icon-info-circle"></i>
-                            <span>
-                              {" "}
-                              En cas de vente, vous recevrez votre virement sur
-                              ce compte. <br />
-                              <i className="icon-info-circle"></i>
-                              Vos informations resteront confidentielles.{" "}
-                            </span>
-                          </div>
-                          <button
-                            type="submit"
-                            className="btn btn-outline-primary-2"
-                          >
-                            <span>SAUVEGARDER LES MODIFICATIONS</span>
-                            <i className="icon-long-arrow-right"></i>
-                          </button>
-                        </form>
-                      </TabPanel>
-                      <TabPanel>
-                        <form action="#">
-                          <div className="row">
-                            <div className="col-sm-6">
-                              <label>Nom *</label>
-                              <input
-                                type="text"
-                                className="form-control"
-                                required
-                                placeholder={user.nom}
-                              />
-                            </div>
 
-                            <div className="col-sm-6">
-                              <label>Prénom *</label>
-                              <input
-                                type="text"
-                                className="form-control"
-                                required
-                                placeholder={user.prenom}
-                              />
+                          <form action="#">
+                            <div className="row">
+                              <div className="col-sm-6">
+                                <label>Nom *</label>
+                                <input
+                                  type="text"
+                                  className="form-control"
+                                  required
+                                  placeholder={user.nom}
+                                />
+                              </div>
+
+                              <div className="col-sm-6">
+                                <label>Prénom *</label>
+                                <input
+                                  type="text"
+                                  className="form-control"
+                                  required
+                                  placeholder={user.prenom}
+                                />
+                              </div>
                             </div>
-                          </div>
-                          <div className="row">
-                            <div className="col-sm-6">
-                              <label>Type d&apos;identité *</label>
-                              <br />
-                              <select
-                                id="type_du_compte"
-                                className="form-control"
-                                onChange={(e) => {
-                                  setIdType(e.target.value);
-                                }}
-                              >
-                                <option selected="CIN">CIN</option>
-                                <option value="PASSPORT">PASSEPORT</option>
-                              </select>
+                            <div className="row">
+                              <div className="col-sm-6">
+                                <label>Type d&apos;identité *</label>
+                                <br />
+                                <select
+                                  id="type_du_compte"
+                                  className="form-control"
+                                  onChange={(e) => {
+                                    setIdType(e.target.value);
+                                  }}
+                                >
+                                  <option selected="CIN">CIN</option>
+                                  <option value="PASSPORT">PASSEPORT</option>
+                                </select>
+                              </div>
+                              <div className="col-sm-6">
+                                {idType === "CIN" ? (
+                                  <>
+                                    <label>Numéro CIN *</label>
+                                    <input
+                                      type="tel"
+                                      className="form-control"
+                                      required
+                                      placeholder="01234567"
+                                      maxLength={8}
+                                    />{" "}
+                                  </>
+                                ) : (
+                                  <>
+                                    <label>Numéro Passeport *</label>
+                                    <input
+                                      type="text"
+                                      className="form-control"
+                                      required
+                                      placeholder="E0123456"
+                                    />
+                                  </>
+                                )}
+                              </div>
+                              <div className=" col-lg-12 pb-1">
+                                <Image_profile
+                                  setImages={setImage_CIN}
+                                  images={image_CIN}
+                                />
+                                <span style={{ fontSize: "0.8rem" }}>
+                                  *Photo de la CIN ou du passport
+                                </span>
+                              </div>
                             </div>
-                            <div className="col-sm-6">
-                              {idType === "CIN" ? (
-                                <>
-                                  <label>Numéro CIN *</label>
-                                  <input
-                                    type="tel"
-                                    className="form-control"
-                                    required
-                                    placeholder="01234567"
-                                    maxLength={8}
-                                  />{" "}
-                                </>
-                              ) : (
-                                <>
-                                  <label>Numéro Passeport *</label>
-                                  <input
-                                    type="text"
-                                    className="form-control"
-                                    required
-                                    placeholder="E0123456"
-                                  />
-                                </>
-                              )}
+                            <div className="pb-2 pt-2">
+                              <i className="icon-info-circle"></i>
+                              <span>
+                                {" "}
+                                En cas de vente, vous recevrez votre virement
+                                sur ce compte. <br />
+                                <i className="icon-info-circle"></i>
+                                Vos informations resteront confidentielles.{" "}
+                              </span>
                             </div>
-                            <div className=" col-lg-12 pb-1">
-                              <Image_profile
-                                setImages={setImage_CIN}
-                                images={image_CIN}
-                              />
-                            </div>
-                          </div>
+                          </form>
                           <button
                             type="submit"
                             className="btn btn-outline-primary-2"
@@ -466,9 +324,148 @@ function DashBoard() {
                         </form>
                       </TabPanel>
                       <TabPanel>
-                        {" "}
-                        <NbrDenfants />{" "}
+                        {!mesAchat.length ? (
+                          <div>Aucun article.</div>
+                        ) : (
+                          <div className="col-lg-12">
+                            <table className="table table-cart table-mobile ">
+                              <thead>
+                                <tr style={{ textAlign: "center" }}>
+                                  <th>Date</th>
+                                  <th className="col-lg-2">
+                                    Numéro de livraison
+                                  </th>
+                                  <th>Article</th>
+                                  <th>Prix</th>
+                                  <th>Vendeur</th>
+                                  <th className="col-lg-2">Progression</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {mesAchat.map((item, index) => (
+                                  <tr key={index}>
+                                    <td className="total-col">{item.date}</td>
+
+                                    <td
+                                      className="total-col"
+                                      style={{ textAlign: "center" }}
+                                    >
+                                      N°{item.numeroDeLivraison}
+                                    </td>
+
+                                    <td className="product-col">
+                                      <div className="product">
+                                        <figure className="product-media">
+                                          <img src={item.image} alt="product" />
+                                        </figure>
+                                        <h4 className="product-title">
+                                          {item.nom_du_produit}
+                                        </h4>
+                                      </div>
+                                    </td>
+                                    <td className="total-col">
+                                      {item.prix.toLocaleString(undefined, {
+                                        minimumFractionDigits: 2,
+                                        maximumFractionDigits: 2,
+                                      })}
+                                      DT
+                                    </td>
+
+                                    <td className="total-col">
+                                      {item.vendeur}
+                                    </td>
+
+                                    <td
+                                      className="total-col"
+                                      style={{ textAlign: "center" }}
+                                    >
+                                      {item.progression
+                                        ? item.progression
+                                        : "en attente"}
+                                    </td>
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+                          </div>
+                        )}
                       </TabPanel>
+                      <TabPanel>
+                        {!mesVente.length ? (
+                          <p>Auncun article.</p>
+                        ) : (
+                          <div className="col-lg-12">
+                            <table className="table table-cart table-mobile">
+                              <thead>
+                                <tr style={{ textAlign: "center" }}>
+                                  <th>Date</th>
+                                  <th className="col-lg-2">
+                                    Numéro de livraison
+                                  </th>
+                                  <th>Article</th>
+                                  <th>Acheteur</th>
+                                  <th>Gain</th>
+
+                                  <th className="col-lg-2">Progression</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {mesVente.map((item, index) => (
+                                  <tr key={index}>
+                                    <td className="total-col">{item.date}</td>
+
+                                    <td
+                                      className="total-col"
+                                      style={{ textAlign: "center" }}
+                                    >
+                                      N°
+                                      {item.numeroDeLivraison
+                                        ? item.numeroDeLivraison
+                                        : "12"}
+                                    </td>
+                                    <td className="product-col">
+                                      <div className="product">
+                                        <figure className="product-media">
+                                          <img src={item.image} alt="product" />
+                                        </figure>
+                                        <h4 className="product-title">
+                                          {item.nom_du_produit}
+                                        </h4>
+                                      </div>
+                                    </td>
+                                    <td className="total-col">
+                                      {item.acheteur}
+                                    </td>
+                                    <td className="total-col">
+                                      {(item.prix * 0.8).toLocaleString(
+                                        undefined,
+                                        {
+                                          minimumFractionDigits: 2,
+                                          maximumFractionDigits: 2,
+                                        }
+                                      )}
+                                      DT
+                                    </td>
+
+                                    <td
+                                      className="total-col"
+                                      style={{ textAlign: "center" }}
+                                    >
+                                      {item.progression}
+                                    </td>
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+                          </div>
+                        )}
+                      </TabPanel>
+
+                      <TabPanel>
+                        <ProductAccount />
+                      </TabPanel>
+
+                      <TabPanel></TabPanel>
                     </div>
                   </div>
                 </div>
