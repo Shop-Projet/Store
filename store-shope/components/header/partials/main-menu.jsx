@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import WishlistMenu from "./wishlist-menu.jsx";
-import ALink from "../../../componenets/features/alink.jsx";
+import ALink from "../../features/alink.jsx";
 import { product } from "../../../dummyData";
 import React, { useState, useEffect } from "react";
 

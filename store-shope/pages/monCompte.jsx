@@ -1,14 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
 import { Tabs, TabList, TabPanel, Tab } from "react-tabs";
-import ProductAccount from "../componenets/parts/dashboard/productAccount";
-import ALink from "../componenets/features/alink";
-import PageHeader from "../componenets/features/page-header";
+import ProductAccount from "../components/parts/dashboard/productAccount";
+import ALink from "../components/features/alink";
+import PageHeader from "../components/features/page-header";
 import { achat } from "../dummyData";
 import { vente } from "../dummyData";
 import { utilisateur } from "../dummyData";
-import Image_profile from "../componenets/features/dashboard/image";
-import NbrDenfants from "../componenets/parts/dashboard/nbrDenfants";
+import Image_profile from "../components/features/dashboard/image";
+import NbrDenfants from "../components/parts/dashboard/nbrDenfants";
 
 
 function DashBoard() {

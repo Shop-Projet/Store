@@ -1,5 +1,5 @@
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
-import ALink from "../componenets/features/alink";
+import ALink from "../components/features/alink";
 
 function Login() {
   return (

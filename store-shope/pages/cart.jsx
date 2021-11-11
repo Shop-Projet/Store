@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 
-import ALink from "../componenets/features/alink";
-import PageHeader from "../componenets/features/page-header";
+import ALink from "../components/features/alink";
+import PageHeader from "../components/features/page-header";
 import { actions as cartAction } from "../store/cart";
 import { cartPriceTotal } from "../utils/index";
 
 function Cart(props) {
   const [cartList, setCartList] = useState([]);
+  const [auth, setAth] = useState(true)
 
   useEffect(() => {
     setCartList(props.cartItems);
@@ -24,7 +25,7 @@ function Cart(props) {
         .classList.remove("load-more-rotating");
     }, 400);
   }
-
+  
   return (
     <div className="main">
       <PageHeader title="Mon panier" subTitle="caisse" />
@@ -50,9 +51,12 @@ function Cart(props) {
                   <table className="table table-cart table-mobile">
                     <thead>
                       <tr>
+                        <th>Transaction</th>
                         <th>Produit</th>
                         <th>Status</th>
-                        <th>Prix</th>
+                        <th>Prix de l&apos;article</th>
+                        <th>Prix de ramaçage</th>
+                        <th>Total</th>
                         <th></th>
                       </tr>
                     </thead>
@@ -60,6 +64,7 @@ function Cart(props) {
                       {cartList.length > 0 ? (
                         cartList.map((item, index) => (
                           <tr key={index}>
+                            <td>N°{index+1}</td>
                             <td className="product-col">
                               <div className="product">
                                 <figure className="product-media">
@@ -73,13 +78,14 @@ function Cart(props) {
 
                                 <h4 className="product-title">
                                   <ALink href={`product/${item.id}`}>
-                                    {item.nom_du_produit}
                                   </ALink>
                                 </h4>
                               </div>
                             </td>
-                            <td className="price-col">{item.status}</td>
-                            <td className="price-col">{item.prix}</td>
+                            <td className="price-col" >{item.status}</td>
+                            <td className="price-col" >{item.prix}DT</td>
+                            <td className="price-col">7DT</td>
+                            <td className="price-col">{item.prix + 7}DT</td>
                             <td className="remove-col">
                               <button
                                 className="btn-remove"
@@ -99,6 +105,10 @@ function Cart(props) {
                       )}
                     </tbody>
                   </table>
+                  <span style={{ fontSize: "1rem" }}>
+                    *Total: Prix de l&apos;article + Prix de la récupération de
+                    l&apos;article.
+                  </span>
                   <div className="cart-bottom">
                     <button
                       className="btn btn-outline-dark-2"
@@ -111,27 +121,10 @@ function Cart(props) {
                 </div>
                 <aside className="col-lg-3">
                   <div className="summary summary-cart">
-                    <h3 className="summary-title">Total</h3>
-                    <table className="table table-summary">
-                      <tbody>
-                        <tr className="summary-total">
-                          <td>Total:</td>
-                          <td>
-                            {cartPriceTotal(props.cartItems).toLocaleString(
-                              undefined,
-                              {
-                                minimumFractionDigits: 2,
-                                maximumFractionDigits: 2,
-                              }
-                            )}
-                            DT
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    <h3 className="summary-title"></h3>
                     <ALink
                       className="btn btn-outline-primary-2 btn-order btn-block"
-                      href="/paiement"
+                      href={auth?"/paiement": "/login"}
                     >
                       PASSER À LA CAISSE
                     </ALink>

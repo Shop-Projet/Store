@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { product } from "../../../dummyData";
 
-import ALink from "../../../componenets/features/alink.jsx";
+import ALink from "../../features/alink.jsx";
 
 function HeaderSearch() {
   const router = useRouter("");

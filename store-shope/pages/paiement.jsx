@@ -1,12 +1,7 @@
 import { useEffect } from "react";
 import { connect } from "react-redux";
-import SlideToggle from "react-slide-toggle";
-
-import ALink from "../componenets/features/alink";
-import Accordion from "../componenets/features/accordion/accordion";
-import Card from "../componenets/features/accordion/card";
-// import PageHeader from '~/components/features/page-header';
-
+import ALink from "../components/features/alink";
+import PageHeader from "../components/features/page-header";
 import { cartPriceTotal } from "../utils/index";
 
 function Checkout(props) {
@@ -14,7 +9,7 @@ function Checkout(props) {
 
   return (
     <div className="main">
-      {/* <PageHeader title="Checkout" subTitle="Shop" /> */}
+      <PageHeader title="Paiement" subTitle="" />
       <nav className="breadcrumb-nav">
         <div className="container">
           <ol className="breadcrumb">
@@ -46,20 +41,11 @@ function Checkout(props) {
                       <input type="text" className="form-control" required />
                     </div>
                   </div>
-                  <label>Région *</label>
-                  <input type="text" className="form-control" required />
-
                   <label>Addresse *</label>
                   <input
                     type="text"
                     className="form-control"
                     placeholder="102 rue des jasmins"
-                    required
-                  />
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Appartment 12 ..."
                     required
                   />
                   <div className="row">
@@ -73,13 +59,6 @@ function Checkout(props) {
                       <input type="tel" className="form-control" required />
                     </div>
                   </div>
-                  <label>Notes (optionnel)</label>
-                  <textarea
-                    className="form-control"
-                    cols="30"
-                    rows="4"
-                    placeholder="Notes sur votre commande, par ex. notes spéciales pour la livraison"
-                  ></textarea>
                 </div>
 
                 <aside className="col-lg-3">
@@ -90,76 +69,55 @@ function Checkout(props) {
                       <thead>
                         <tr>
                           <th>Produit</th>
-                          <th>Total</th>
+                          <th>Soustotal</th>
                         </tr>
                       </thead>
 
                       <tbody>
                         {cartlist.map((item, index) => (
-                          <tr key={index}>
-                            <td>{item.nom_du_produit}</td>
-                            <td>
-                              {" "}
-                              {item.prix.toLocaleString(undefined, {
-                                minimumFractionDigits: 2,
-                                maximumFractionDigits: 2,
-                              })}
-                              DT
-                            </td>
-                          </tr>
+                          <>
+                            <tr key={index}>
+                              <td style={{ borderBottom: "none" }}>
+                                {item.nom_du_produit}
+                              </td>
+                              <td style={{ borderBottom: "none" }}>
+                                {" "}
+                                {(item.prix + 7).toLocaleString(undefined, {
+                                  minimumFractionDigits: 2,
+                                  maximumFractionDigits: 2,
+                                })}
+                                DT
+                              </td>
+                            </tr>
+                          </>
                         ))}
-                        <tr className="summary-subtotal">
-                          <td>Subtotal:</td>
-                          <td>
-                            {cartPriceTotal(cartlist).toLocaleString(
-                              undefined,
-                              {
-                                minimumFractionDigits: 2,
-                                maximumFractionDigits: 2,
-                              }
-                            )}
-                            DT
-                          </td>
-                        </tr>
                         <tr className="summary-total">
                           <td>Total:</td>
                           <td>
-                            {cartPriceTotal(cartlist).toLocaleString(
-                              undefined,
-                              {
-                                minimumFractionDigits: 2,
-                                maximumFractionDigits: 2,
-                              }
-                            )}
+                            {(
+                              cartPriceTotal(cartlist) +
+                              7 * cartlist.length
+                            ).toLocaleString(undefined, {
+                              minimumFractionDigits: 2,
+                              maximumFractionDigits: 2,
+                            })}
                             DT
                           </td>
                         </tr>
                       </tbody>
                     </table>
-
-                    <Accordion type="checkout">
-                      <Card title=" Paiement à la livraison" expanded={true}>
-                        Payez en espèces à la réception de votre colis
-                      </Card>
-
-                      <Card title=" Carte e-dinar">
-                        Le moyen le plus simple, sécurisé et rapide
-                      </Card>
-
-                      <Card title="Carte bancaire">
-                        Le moyen le plus fiable, sécurisé et rapide
-                      </Card>
-                    </Accordion>
-
-                    <button
-                      type="submit"
-                      className="btn btn-outline-primary-2 btn-order btn-block"
-                    >
-                      <span className="btn-text">Passer la commande</span>
-                      <span className="btn-hover-text">
-                        Confirmer la commande
-                      </span>
-                    </button>
+                    <span>Paiement à la livraison</span>
+                    <div className="pt-2">
+                      <button
+                        type="submit"
+                        className="btn btn-outline-primary-2 btn-order btn-block"
+                      >
+                        <span className="btn-text">Passer la commande</span>
+                        <span className="btn-hover-text">
+                          Confirmer la commande
+                        </span>
+                      </button>
+                    </div>
                   </div>
                 </aside>
               </div>

@@ -2,11 +2,11 @@ import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
 import StickyBox from "react-sticky-box";
 
-import ALink from "../componenets/features/alink";
-import PageHeader from "../componenets/features/page-header";
-import ShopList from "../componenets/parts/shop/shopListe";
-import Pagination from "../componenets/features/pagination";
-import ShopSidebarOne from "../componenets/parts/shop/shopSideBar";
+import ALink from "../components/features/alink";
+import PageHeader from "../components/features/page-header";
+import ShopList from "../components/parts/shop/shopListe";
+import Pagination from "../components/features/pagination";
+import ShopSidebarOne from "../components/parts/shop/shopSideBar";
 import { age, etat, product } from "../dummyData";
 
 import { scrollToPageContent } from "../utils/index";

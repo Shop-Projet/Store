@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { product } from "../dummyData";
-import ALink from "../componenets/features/alink.jsx";
-import PageHeader from "../componenets/features/page-header";
+import ALink from "../components/features/alink.jsx";
+import PageHeader from "../components/features/page-header";
 
 import { actions as wishlistAction } from "../store/wishlist";
 import { actions as cartAction } from "../store/cart";

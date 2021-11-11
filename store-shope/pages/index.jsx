@@ -1,8 +1,8 @@
-import HomeProduct from "../componenets/parts/home/products.jsx";
+import HomeProduct from "../components/parts/home/products.jsx";
 import { fadeInLeftShorter, fadeInRightShorter, fadeIn } from "../utils/data";
 import Reveal from "react-awesome-reveal";
-import Into from "../componenets/features/home/into.jsx";
-import ALink from "../componenets/features/alink.jsx";
+import Into from "../components/features/home/into.jsx";
+import ALink from "../components/features/alink.jsx";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export default function Home() {

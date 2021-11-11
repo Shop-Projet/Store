@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useRouter } from "next/router";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import ALink from "../../../componenets/features/alink";
+import ALink from "../alink";
 
 function ProductDashboard(props) {
   const { product, remove, setRemovedproductId, removedProductId } = props;
-  const router = useRouter();
 
   return (
     <div className="product">
@@ -19,7 +17,7 @@ function ProductDashboard(props) {
         ) : (
           <span className="product-label label-out">{product.status}</span>
         )}
-        <ALink href={`product/${product.id}`}>
+        
           <LazyLoadImage
             alt="product"
             src={product.image[0]}
@@ -27,7 +25,7 @@ function ProductDashboard(props) {
             effect="black and white"
             wrapperClassName="product-image"
           />
-        </ALink>
+        
         {remove ? (
           <div className="product-action action-icon-top">
             <button
@@ -41,18 +39,23 @@ function ProductDashboard(props) {
             >
               <span>Supprimer</span>
             </button>
+            <button className="btn-product icon-edit">
+              <ALink href={`product/modifier_article/${product.id - 1}`}>
+                <span>Modifier</span>
+              </ALink>
+            </button>
           </div>
         ) : (
           ""
         )}
       </figure>
-      <div className="product-body product-action-inner">
+      <div className="product-body" style={{textAlign:'center' }}>
         <div className="product-cat">{product.categorie}</div>
         <h3 className="product-title">
           <ALink href={`product/${product.id}`}>{product.nom_du_produit}</ALink>
         </h3>
-        <div className="product-price">
-          <span className="out-price">{product.prix.toFixed(2)}DT</span>
+        <div className="pt-1" >
+          <span className="product-title" style={{color:'#c96' }}>{product.prix} DT</span>
         </div>
       </div>
     </div>

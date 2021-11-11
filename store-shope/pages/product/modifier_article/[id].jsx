@@ -1,35 +1,47 @@
-import React, { useState } from "react";
-import { ImagePicker } from "../components/features/dashboard/JeVends/imagePicker";
-import ALink from "../components/features/alink";
-import PageHeader from "../components/features/page-header";
-import { categories } from "../dummyData";
+import React, { useState, useEffect} from "react";
+import { useRouter } from "next/router";
+import { ImagePicker } from "../../../components/features/dashboard/JeVends/imagePicker";
+import ALink from "../../../components/features/alink";
+import PageHeader from "../../../components/features/page-header";
+import { product } from "../../../dummyData";
+import { categories } from "../../../dummyData";
 
-export default function Vendre() {
+export default function ModifierArticle() {
+  const slug = useRouter().query.id;
   const [nomProduit, setNomProduit] = useState("");
   const [description, setDescription] = useState("");
   const [prix, setprix] = useState(0);
-  const [categorie, setCategorie] = useState("");
+  const [categorie, setCategorie] = useState(product[slug].categorie);
   const [age, setAge] = useState("");
   const [etat, setEtat] = useState("");
   const [sex, setSex] = useState("");
   const [sousCategoriejeux, setSousCategorieJeux] = useState("");
   const [vetements, setSousCategorieVetements] = useState("");
 
+useEffect(() => {
+  $('#sexe').val((product[slug].sexe).toLowerCase()).prop('selected', true);
+  $('#etat').val((product[slug].etat)).prop('selected', true);
+  $('#category').val((product[slug].categorie).toLowerCase()).prop('selected', true);
+  if (product[slug].sousCategorie) $('#souscategory').val((product[slug].sousCategorie).toLowerCase()).prop('selected', true);
+  $('#age').val((product[slug].age)).prop('selected', true);    
+}, [])
+    
+
   return (
     <div className="main">
-      <PageHeader title="Vente" subTitle="Mon article à vendre" />
+      <PageHeader title="Mon article" subTitle="" />
       <nav className="breadcrumb-nav">
         <div className="container">
           <ol className="breadcrumb">
             <li className="breadcrumb-item">
               <ALink href="/">Accueil</ALink>
             </li>
-            <li className="breadcrumb-item active">Je vends</li>
+            <li className="breadcrumb-item active">Je modifie mon article </li>
           </ol>
         </div>
       </nav>
       <div className="page-content pb-3 ">
-        <h2 className="title text-center mb-2">Je vend un article !</h2>
+        <h2 className="title text-center mb-2">Je modifie mon article !</h2>
         <div className="container bg-light-2 ">
           <div className="row">
             <div className="col-lg-10 offset-lg-1">
@@ -38,7 +50,7 @@ export default function Vendre() {
                   <i className="icon-long-arrow-down"></i>Prends trois photos
                   chacune d&apos;un angle différent{" "}
                 </h6>
-                <ImagePicker />
+                <ImagePicker imagesToModify={product[slug].image} />
               </div>
               <form>
                 <div className="about-text text-center mt-3 ">
@@ -55,7 +67,11 @@ export default function Vendre() {
                         name="name"
                         type="text"
                         className="form-control"
-                        placeholder="Ex: Nounours, Robot mécanique, Robe rouge ..."
+                        placeholder={
+                          product[slug].nom_du_produit
+                            ? product[slug].nom_du_produit
+                            : "Ex: Nounours, Robot mécanique, Robe rouge ..."
+                        }
                         required
                         onChange={(e) => setNomProduit(e.target.value)}
                       />
@@ -66,7 +82,11 @@ export default function Vendre() {
                         className="form-control validate"
                         rows="10"
                         required
-                        placeholder="Ex: Je vends cette poussette avec habillage pluie ..."
+                        placeholder={
+                          product[slug].description
+                            ? product[slug].description
+                            : "Ex: Je vends cette poussette avec habillage pluie ..."
+                        }
                         onChange={(e) => setDescription(e.target.value)}
                       ></textarea>
                     </div>
@@ -76,17 +96,19 @@ export default function Vendre() {
                       <label htmlFor="etat">Sexe</label>
                       <br />
                       <select
-                        id="etat"
+                        id="sexe"
+                        name="sexe"
                         className="form-control form-select"
                         onChange={(e) => {
                           setSex(e.target.value);
                         }}
                         required
                       >
+                        
                         <option value="" disabled selected hidden>
                           Séléctionner ...
                         </option>
-                        <option value="mixte">Mixte</option>
+                        <option value="mixte" >Mixte</option>
                         <option value="garçon">Garçon</option>
                         <option value="fille">Fille</option>
                       </select>
@@ -139,12 +161,12 @@ export default function Vendre() {
                         <option value="vêtements">Vêtements</option>
                       </select>
                     </div>
-                    {categorie === "jouets" ? (
+                    {(( product[slug].categorie == "Jouets" || product[slug].categorie ) && categorie.toLowerCase() === "jouets")? (
                       <div>
-                        <label htmlFor="category">Sous Catégorie</label>
+                        <label htmlFor="souscategory">Sous Catégorie</label>
                         <br />
                         <select
-                          id="category"
+                          id="souscategory"
                           className="form-control form-select"
                           onChange={(e) => {
                             setSousCategorieJeux(e.target.value);
@@ -167,12 +189,12 @@ export default function Vendre() {
                           </option>
                         </select>
                       </div>
-                    ) : categorie === "vêtements" ? (
+                    ) : ((product[slug].categorie == "Vêtements" || product[slug].categorie) && categorie.toLowerCase() === "vêtements" ) ? (
                       <div>
-                        <label htmlFor="category">Sous Catégorie</label>
+                        <label htmlFor="souscategory">Sous Catégorie</label>
                         <br />
                         <select
-                          id="category"
+                          id="souscategory"
                           className="form-control form-select"
                           onChange={(e) => {
                             setSousCategorieVetements(e.target.value);
@@ -182,11 +204,13 @@ export default function Vendre() {
                           <option value="" disabled selected hidden>
                             Séléctionner une Sous Catégorie
                           </option>
-                          <option value="Vêtements bébé">Vêtements bébé</option>
-                          <option value="Manteaux et vestes">
+                          <option value="vêtements bébé">Vêtements bébé</option>
+                          <option value="manteaux et vestes">
                             Manteaux et vestes
                           </option>
-                          <option value="robe">Maillots de bain</option>
+                          <option value="robe" selected>
+                            Maillots de bain
+                          </option>
                           <option value="hauts">Hauts</option>
                           <option value="bas">Bas</option>
                           <option value="robe">Robe</option>
@@ -243,6 +267,9 @@ export default function Vendre() {
                         className="form-control"
                         aria-label="Dollar amount (with dot and two decimal places)"
                         required
+                        placeholder={
+                          product[slug].prix ? product[slug].prix : ""
+                        }
                         onChange={(e) => setprix(e.target.value)}
                       />
                       <span className="input-group-text">DT</span>
@@ -259,7 +286,9 @@ export default function Vendre() {
                           aria-label="Dollar amount (with dot and two decimal places)"
                           disabled
                           placeholder={
-                            prix ? (prix * 0.8).toFixed(2) + "DT" : "0 DT"
+                            !prix
+                              ? (product[slug].prix * 0.8).toFixed(2) + "DT"
+                              : (prix * 0.8).toFixed(2) + "DT"
                           }
                         />
                       </div>
@@ -275,7 +304,9 @@ export default function Vendre() {
                           className="form-control "
                           aria-label="Dollar amount (with dot and two decimal places)"
                           disabled
-                          placeholder={prix ?(prix)+ "DT" : ""}
+                          placeholder={
+                            !prix ? product[slug].prix + "DT" : prix + "DT"
+                          }
                         />
                       </div>
                     </div>
@@ -286,7 +317,7 @@ export default function Vendre() {
                     type="submit"
                     className="btn btn-primary btn-lg  text-uppercase btn-vente-position"
                   >
-                    Je vends
+                    Je valide
                   </button>
                 </div>
               </form>
