@@ -19,7 +19,6 @@ function DashBoard() {
   const [accountType, setAccountType] = useState("RIB");
   const [idType, setIdType] = useState("CIN");
 
-
   return (
     <div className="main">
       <PageHeader title="Mon Compte" subTitle="" />
@@ -89,7 +88,7 @@ function DashBoard() {
                                 type="text"
                                 className="form-control"
                                 required
-                                placeholder={user.nom? user.nom : ""}
+                                placeholder={user.nom ? user.nom : ""}
                               />
                             </div>
 
@@ -108,7 +107,7 @@ function DashBoard() {
                                 type="text"
                                 className="form-control"
                                 required
-                                placeholder={user.userName? user.userName : ""}
+                                placeholder={user.userName ? user.userName : ""}
                               />
                             </div>
                             <div className="col-sm-6">
@@ -117,7 +116,9 @@ function DashBoard() {
                                 type="number"
                                 className="form-control"
                                 required
-                                placeholder={user.telephone? user.telephone : ""}
+                                placeholder={
+                                  user.telephone ? user.telephone : ""
+                                }
                               />
                             </div>
                             <div className="col-sm-6">
@@ -129,7 +130,7 @@ function DashBoard() {
                             type="email"
                             className="form-control"
                             required
-                            placeholder={user.mail? user.mail : ""}
+                            placeholder={user.mail ? user.mail : ""}
                           />
 
                           <label>Adresse *</label>
@@ -144,7 +145,7 @@ function DashBoard() {
                               <input
                                 type="string"
                                 className="form-control"
-                                placeholder={user.code? user.code : ""}
+                                placeholder={user.code ? user.code : ""}
                               />
                             </div>
                             <div className="col-sm-6">
@@ -152,7 +153,7 @@ function DashBoard() {
                               <input
                                 type="string"
                                 className="form-control mb-2"
-                                placeholder={user.ville? user.ville : ""}
+                                placeholder={user.ville ? user.ville : ""}
                               />
                             </div>
                           </div>
@@ -177,149 +178,196 @@ function DashBoard() {
 
                       <TabPanel>
                         <form action="#">
-                          <div className="row">
-                            <div className="col-sm-6">
-                              <label>Type du compte *</label>
-                              <br />
-                              <select
-                                id="type_du_compte"
-                                className="form-control"
-                                onChange={(e) => {
-                                  setAccountType(e.target.value);
-                                }}
-                              >
-                                <option selected="RIB">RIB</option>
-                                <option value="EDINAR">e-DINAR</option>
-                              </select>
-                            </div>
-                            <div className="col-sm-6">
-                              {accountType === "RIB" ? (
-                                <>
-                                  <label>RIB *</label>
-                                  <input
-                                    maxLength="20"
-                                    type="tel"
-                                    className="form-control"
-                                    required
-                                    placeholder={user.RIB ? user.RIB : "XX-XXX-XXXXXXXXXXXXX-XX"}
-                                  />{" "}
-                                </>
-                              ) : (
-                                <>
-                                  <label>EDINAR *</label>
-                                  <input
-                                    type="tel"
-                                    maxLength="16"
-                                    className="form-control"
-                                    required
-                                    placeholder={user.EDINAR ? user.EDINAR: "5359 XXXX XXXX XXXX"}
-                                  />
-                                </>
-                              )}
-                            </div>
-                            <div className=" col-lg-12">
-                              <Image_profile
-                                setImages={setImages}
-                                images={images}
-                                photo = {user.RIBPhoto}
-                              />
-                              <span style={{ fontSize: "0.8rem" }}>
-                                *Photo du RIB avec votre nom et votre numéro de
-                                compte
-                              </span>
-                            </div>
-                          </div>
+                          <h4
+                            style={{ textAlign: "center", color: "#c96" }}
+                            className="pb-2"
+                          >
+                            Compte Bancaire
+                          </h4>
 
-                          <form action="#">
-                            <div className="row">
-                              <div className="col-sm-6">
-                                <label>Nom *</label>
-                                <input
-                                  type="text"
-                                  className="form-control"
-                                  required
-                                  placeholder={user.nom? user.nom : ""}
-                                />
-                              </div>
-
-                              <div className="col-sm-6">
-                                <label>Prénom *</label>
-                                <input
-                                  type="text"
-                                  className="form-control"
-                                  required
-                                  placeholder={user.prenom? user.prenom : ""}
-                                />
-                              </div>
-                            </div>
-                            <div className="row">
-                              <div className="col-sm-6">
-                                <label>Type d&apos;identité *</label>
+                          <div
+                            style={{ "box-sizing": "border-box" }}
+                            className="row "
+                          >
+                            <div className="col-sm-6 ">
+                              <div className="col-sm-12">
+                                <label>Type du compte *</label>
                                 <br />
                                 <select
                                   id="type_du_compte"
                                   className="form-control"
                                   onChange={(e) => {
-                                    setIdType(e.target.value);
+                                    setAccountType(e.target.value);
                                   }}
                                 >
-                                  <option selected="CIN">CIN</option>
-                                  <option value="PASSPORT">PASSEPORT</option>
+                                  <option selected="RIB">RIB</option>
+                                  <option value="EDINAR">e-DINAR</option>
                                 </select>
                               </div>
-                              <div className="col-sm-6">
-                                {idType === "CIN" ? (
+                              <div className="col-sm-12">
+                                {accountType === "RIB" ? (
                                   <>
-                                    <label>Numéro CIN *</label>
+                                    <label>RIB *</label>
                                     <input
+                                      maxLength="20"
                                       type="tel"
                                       className="form-control"
                                       required
-                                      placeholder="01234567"
-                                      maxLength={8}
+                                      placeholder={
+                                        user.RIB
+                                          ? user.RIB
+                                          : "XX-XXX-XXXXXXXXXXXXX-XX"
+                                      }
                                     />{" "}
                                   </>
                                 ) : (
                                   <>
-                                    <label>Numéro Passeport *</label>
+                                    <label>EDINAR *</label>
                                     <input
-                                      type="text"
+                                      type="tel"
+                                      maxLength="16"
                                       className="form-control"
                                       required
-                                      placeholder="E0123456"
+                                      placeholder={
+                                        user.EDINAR
+                                          ? user.EDINAR
+                                          : "5359 XXXX XXXX XXXX"
+                                      }
                                     />
                                   </>
                                 )}
                               </div>
-                              <div className=" col-lg-12 pb-1">
+                            </div>
+                            <div
+                              className="col-lg-4 "
+                              style={{
+                                display: "flex",
+                                "align-items": "center",
+                                "justify-content": "center",
+                                // textAlign: "center",
+                              }}
+                            >
+                              <div className=" col-lg-12 ">
+                                <Image_profile
+                                  setImages={setImages}
+                                  images={images}
+                                  photo={user.RIBPhoto}
+                                />
+                                <span style={{ fontSize: "1.2rem" }}>
+                                  *Photo du RIB avec votre nom et votre numéro
+                                  de compte
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <h4
+                            style={{ textAlign: "center", color: "#c96" }}
+                            className="pb-2 pt-4"
+                          >
+                            Justificatif d'identité
+                          </h4>
+
+                          <div className="row">
+                            <div className="col-sm-6">
+                              <div className="col-sm-12">
+                                <label>Nom *</label>
+                                <input
+                                  type="text"
+                                  className="form-control"
+                                  required
+                                  placeholder={user.nom ? user.nom : ""}
+                                />
+                              </div>
+
+                              <div className="col-sm-12">
+                                <label>Prénom *</label>
+                                <input
+                                  type="text"
+                                  className="form-control"
+                                  required
+                                  placeholder={user.prenom ? user.prenom : ""}
+                                />
+                              </div>
+                              <div className="">
+                                <div className="col-sm-12">
+                                  <label>Type d&apos;identité *</label>
+                                  <br />
+                                  <select
+                                    id="type_du_compte"
+                                    className="form-control"
+                                    onChange={(e) => {
+                                      setIdType(e.target.value);
+                                    }}
+                                  >
+                                    <option selected="CIN">CIN</option>
+                                    <option value="PASSPORT">PASSEPORT</option>
+                                  </select>
+                                </div>
+                                <div className="col-sm-12">
+                                  {idType === "CIN" ? (
+                                    <>
+                                      <label>Numéro CIN *</label>
+                                      <input
+                                        type="tel"
+                                        className="form-control"
+                                        required
+                                        placeholder="01234567"
+                                        maxLength={8}
+                                      />{" "}
+                                    </>
+                                  ) : (
+                                    <>
+                                      <label>Numéro Passeport *</label>
+                                      <input
+                                        type="text"
+                                        className="form-control"
+                                        required
+                                        placeholder="E0123456"
+                                      />
+                                    </>
+                                  )}
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              className="col-lg-6"
+                              style={{
+                                display: "flex",
+                                "align-items": "center",
+                                "justify-content": "center",
+                              }}
+                              // style={{ textAlign: "right" }}
+                            >
+                              <div className="col-lg-12  ">
                                 <Image_profile
                                   setImages={setImage_CIN}
                                   images={image_CIN}
                                 />
-                                <span style={{ fontSize: "0.8rem" }}>
+                                <span style={{ fontSize: "1.2rem" }}>
                                   *Photo de la CIN ou du passport
                                 </span>
                               </div>
                             </div>
-                            <div className="pb-2 pt-2">
+                          </div>
+
+                          <div className="pb-2 pt-2">
+                            <i className="icon-info-circle"></i>
+                            <span>
+                              {" "}
+                              En cas de vente, vous recevrez votre virement sur
+                              ce compte. <br />
                               <i className="icon-info-circle"></i>
-                              <span>
-                                {" "}
-                                En cas de vente, vous recevrez votre virement
-                                sur ce compte. <br />
-                                <i className="icon-info-circle"></i>
-                                Vos informations resteront confidentielles.{" "}
-                              </span>
-                            </div>
-                          </form>
-                          <button
-                            type="submit"
-                            className="btn btn-outline-primary-2"
-                          >
-                            <span>SAUVEGARDER LES MODIFICATIONS</span>
-                            <i className="icon-long-arrow-right"></i>
-                          </button>
+                              Vos informations resteront confidentielles.{" "}
+                            </span>
+                          </div>
                         </form>
+                        <button
+                          type="submit"
+                          className="btn btn-outline-primary-2"
+                        >
+                          <span>SAUVEGARDER LES MODIFICATIONS</span>
+                          <i className="icon-long-arrow-right"></i>
+                        </button>
                       </TabPanel>
                       <TabPanel>
                         {!mesAchat.length ? (
@@ -351,15 +399,18 @@ function DashBoard() {
                                       N°{item.numeroDeLivraison}
                                     </td>
 
-                                    <td className="product-col">
-                                      <div className="product">
-                                        <figure className="product-media">
-                                          <img src={item.image} alt="product" />
-                                        </figure>
-                                        <h4 className="product-title">
-                                          {item.nom_du_produit}
-                                        </h4>
-                                      </div>
+                                    <td
+                                      className="product-col"
+                                      style={{ textAlign: "center" }}
+                                    >
+                                      <figure className="product-media">
+                                        <img src={item.image} alt="product" />
+                                        {/* <h4 className="product-title">
+                                          {item.nom_du_produit
+                                            ? item.nom_du_produit
+                                            : ""}
+                                        </h4> */}
+                                      </figure>
                                     </td>
                                     <td className="total-col">
                                       {item.prix.toLocaleString(undefined, {
@@ -421,15 +472,13 @@ function DashBoard() {
                                         ? item.numeroDeLivraison
                                         : "12"}
                                     </td>
-                                    <td className="product-col">
-                                      <div className="product">
-                                        <figure className="product-media">
-                                          <img src={item.image} alt="product" />
-                                        </figure>
-                                        <h4 className="product-title">
-                                          {item.nom_du_produit}
-                                        </h4>
-                                      </div>
+                                    <td
+                                      className="product-col"
+                                      style={{ textAlign: "center" }}
+                                    >
+                                      <figure className="product-media">
+                                        <img src={item.image} alt="product" />
+                                      </figure>
                                     </td>
                                     <td className="total-col">
                                       {item.acheteur}
