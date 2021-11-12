@@ -69,7 +69,9 @@ export default function NbrDenfants() {
                       }}
                       required
                     >
-                      <option disabled selected value={null}>Unité</option>
+                      <option disabled selected value={null}>
+                        Unité
+                      </option>
                       <option value="mois">mois</option>
                       <option value="ans">ans</option>
                     </select>
@@ -78,12 +80,6 @@ export default function NbrDenfants() {
               );
             })}
           </div>
-        </div>
-        <div className="pl-2 pt-3">
-          <button type="submit" className="btn btn-outline-primary-2 ">
-            <span>SAUVEGARDER LES MODIFICATIONS</span>
-            <i className="icon-long-arrow-right"></i>
-          </button>
         </div>
       </form>
     </div>
