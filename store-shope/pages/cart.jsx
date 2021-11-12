@@ -105,10 +105,6 @@ function Cart(props) {
                       )}
                     </tbody>
                   </table>
-                  <span style={{ fontSize: "1rem" }}>
-                    *Total: Prix de l&apos;article + Prix de la récupération de
-                    l&apos;article.
-                  </span>
                   <div className="cart-bottom">
                     <button
                       className="btn btn-outline-dark-2"
