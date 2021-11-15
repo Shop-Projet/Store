@@ -3,8 +3,9 @@ import { connect } from "react-redux";
 
 import ALink from "../components/features/alink";
 import PageHeader from "../components/features/page-header";
+import { product } from "../dummyData";
 import { actions as cartAction } from "../store/cart";
-import { cartPriceTotal } from "../utils/index";
+import { cartPriceTotal, thePrice } from "../utils/index";
 
 function Cart(props) {
   const [cartList, setCartList] = useState([]);
@@ -52,8 +53,7 @@ function Cart(props) {
                     <thead>
                       <tr>
                         <th>Transaction</th>
-                        <th>Produit</th>
-                        <th>Status</th>
+                        <th>Article</th>
                         <th>Prix de l&apos;article</th>
                         <th>Prix de ramaçage</th>
                         <th>Total</th>
@@ -67,25 +67,16 @@ function Cart(props) {
                             <td>N°{index+1}</td>
                             <td className="product-col">
                               <div className="product">
-                                <figure className="product-media">
-                                  <ALink
-                                    href={`product/${item.id}`}
-                                    className="product-image"
-                                  >
-                                    <img src={item.image[0]} alt="product" />
-                                  </ALink>
-                                </figure>
-
                                 <h4 className="product-title">
                                   <ALink href={`product/${item.id}`}>
+                                  {item.nom_du_produit}
                                   </ALink>
                                 </h4>
                               </div>
                             </td>
-                            <td className="price-col" >{item.status}</td>
-                            <td className="price-col" >{item.prix}DT</td>
-                            <td className="price-col">7DT</td>
-                            <td className="price-col">{item.prix + 7}DT</td>
+                            <td className="product-col" >{thePrice(item.prix)}DT</td>
+                            <td className="product-col">7DT</td>
+                            <td className="price-col">{thePrice(item.prix, true) }DT</td>
                             <td className="remove-col">
                               <button
                                 className="btn-remove"
@@ -129,7 +120,7 @@ function Cart(props) {
                     href="/list"
                     className="btn btn-outline-dark-2 btn-block mb-3"
                   >
-                    <span>CONTINUER VOS ACHATS</span>
+                    <span>CONTINUER MES ACHATS</span>
                     <i className="icon-refresh"></i>
                   </ALink>
                 </aside>

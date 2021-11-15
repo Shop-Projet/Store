@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import ALink from "../alink";
+import {thePrice} from "../../../utils/index";
 
 function ProductDashboard(props) {
   const { product, remove, setRemovedproductId, removedProductId } = props;
@@ -55,7 +56,7 @@ function ProductDashboard(props) {
           <ALink href={`product/${product.id}`}>{product.nom_du_produit}</ALink>
         </h3>
         <div className="pt-1" >
-          <span className="product-title" style={{color:'#c96' }}>{product.prix} DT</span>
+          <span className="product-title" style={{color:'#c96' }}>{thePrice(product.prix)} DT</span>
         </div>
       </div>
     </div>

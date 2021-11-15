@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { product } from "../dummyData";
 import ALink from "../components/features/alink.jsx";
 import PageHeader from "../components/features/page-header";
-
+import { thePrice } from "../utils";
 import { actions as wishlistAction } from "../store/wishlist";
 import { actions as cartAction } from "../store/cart";
 
@@ -30,7 +30,7 @@ function Wishlist(props) {
 
   return (
     <main className="main">
-      <PageHeader title="Mes coups de coeur" subTitle="Boutique" />
+      <PageHeader title="Mes coups de coeur" subTitle="🤍" />
       <nav className="breadcrumb-nav">
         <div className="container">
           <ol className="breadcrumb">
@@ -51,9 +51,10 @@ function Wishlist(props) {
             <table className="table table-wishlist table-mobile">
               <thead>
                 <tr>
-                  <th>Produit</th>
+                  <th>Article</th>
+                  <th>Cible</th>
+                  <th>Etat</th>
                   <th>Prix</th>
-                  <th>Status</th>
                   <th></th>
                   <th></th>
                 </tr>
@@ -80,23 +81,22 @@ function Wishlist(props) {
                         </h4>
                       </div>
                     </td>
-                    <td className="price-col">
-                      <div className="product-price d-inline-block mb-0">
-                        <span className="out-price">{product.prix}DT</span>
-                      </div>
+                    <td className="stock-col">
+                      <span
+                        className= "out-price">
+                          {product.sexe}
+                      </span>
                     </td>
                     <td className="stock-col">
                       <span
-                        className={`${
-                          product.status == "vendu"
-                            ? "out-of-stock"
-                            : "in-stock"
-                        }`}
-                      >
-                        {product.status == "vendu"
-                          ? "Out of stock"
-                          : "In stock"}
+                        className= "out-price">
+                          {product.etat}
                       </span>
+                    </td>
+                    <td className="price-col">
+                      <div className="product-price d-inline-block mb-0">
+                        <span className="out-price">{thePrice(product.prix)}DT</span>
+                      </div>
                     </td>
                     <td className="action-col">
                       <div className="dropdown">

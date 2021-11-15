@@ -4,9 +4,8 @@ import { Tabs, TabList, TabPanel, Tab } from "react-tabs";
 import ProductAccount from "../components/parts/dashboard/productAccount";
 import ALink from "../components/features/alink";
 import PageHeader from "../components/features/page-header";
-import { achat } from "../dummyData";
-import { vente } from "../dummyData";
-import { utilisateur } from "../dummyData";
+import { achat, utilisateur , vente } from "../dummyData";
+import { thePrice } from "../utils";
 import Image_profile from "../components/features/dashboard/image";
 import NbrDenfants from "../components/parts/dashboard/nbrDenfants";
 
@@ -415,10 +414,7 @@ function DashBoard() {
                                       </figure>
                                     </td>
                                     <td className="total-col">
-                                      {item.prix.toLocaleString(undefined, {
-                                        minimumFractionDigits: 2,
-                                        maximumFractionDigits: 2,
-                                      })}
+                                      {thePrice(item.prix)}
                                       DT
                                     </td>
 

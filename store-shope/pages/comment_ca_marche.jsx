@@ -25,12 +25,11 @@ export default function CommentCaMarche() {
           <div className="col-lg-6 mb-2 mb-lg-0">
             <h2 className="title mb-1">VENDEZ </h2>
             <p className="mb-3">
-              1/ Prenez votre article en photo, décrivez le et fixer son prix .
+              1/ Prenez votre article en photo, décrivez le et fixez son prix.
               <br />
-              2/ Commande confirmée : Emballez-le et un livreur va le récupérer
-              devant chez vous. <br />
-              3/ Encaisser : Vous serez encaissé 24H après la réception du
-              colis.
+              2/ Commande confirmée : Emballez-le et un livreur va le récupérer chez vous. 
+              <br />
+              3/ Vous avez 24H pour réclamer en cas de non conformité à la description, et le retour sera effectué chez vous.
             </p>
           </div>
           <div className="col-lg-6">

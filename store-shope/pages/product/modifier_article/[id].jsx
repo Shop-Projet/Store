@@ -4,7 +4,7 @@ import { ImagePicker } from "../../../components/features/dashboard/JeVends/imag
 import ALink from "../../../components/features/alink";
 import PageHeader from "../../../components/features/page-header";
 import { product } from "../../../dummyData";
-import { categories } from "../../../dummyData";
+import { thePrice } from "../../../utils";
 
 export default function ModifierArticle() {
   const slug = useRouter().query.id;
@@ -278,7 +278,7 @@ useEffect(() => {
                   <div className="pt-2">
                     <div className="row pl-4">
                       <span> Tu gagnes 80% du prix si vendu</span>
-                      <div className="col-lg-2 col-sm-3 col-5">
+                      <div className=" input-group col-lg-2 col-sm-3 col-5">
                         <input
                           name="name"
                           type="number"
@@ -287,17 +287,19 @@ useEffect(() => {
                           disabled
                           placeholder={
                             !prix
-                              ? (product[slug].prix * 0.8).toFixed(2) + "DT"
-                              : (prix * 0.8).toFixed(2) + "DT"
+                              ? (product[slug].prix * 0.8).toFixed(2) 
+                              : (prix * 0.8).toFixed(2) 
                           }
                         />
+                      <span className="input-group-text">DT</span>
+
                       </div>
                     </div>
                   </div>
                   <div className="pt-2">
                     <div className="row pl-4">
                       <span> Le prix affiché sera</span>
-                      <div className="col-lg-2 col-sm-3 col-5">
+                      <div className="input-group col-lg-2 col-sm-3 col-5">
                         <input
                           name="name"
                           type="number"
@@ -305,9 +307,10 @@ useEffect(() => {
                           aria-label="Dollar amount (with dot and two decimal places)"
                           disabled
                           placeholder={
-                            !prix ? product[slug].prix + "DT" : prix + "DT"
+                            !prix ? thePrice(+product[slug].prix ): thePrice(+prix) 
                           }
                         />
+                      <span className="input-group-text">DT</span>
                       </div>
                     </div>
                   </div>

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import ALink from '../../features/alink';
 import { actions as wishlistAction } from '../../../store/wishlist';
 import { actions as cartAction } from '../../../store/cart';
-import { canAddToCart, isInWishlist } from '../../../utils/index';
+import { canAddToCart, isInWishlist, thePrice } from '../../../utils/index';
 
 function DetailTwo ( props ) {
     const router = useRouter();
@@ -40,7 +40,7 @@ function DetailTwo ( props ) {
                 product.status == "disponible" ?
                     <div className="product-price">
                         <span className="out-price">
-                            <span>{ product.prix.toFixed( 2 ) }DT</span>
+                            <span>{ thePrice(product.prix) }DT</span>
                         </span>
                     </div>
                     :

@@ -132,7 +132,9 @@ export default function Vendre() {
                         </option>
                         <option value="naissance">Naissance</option>
                         <option value="jouets">Jouets</option>
-                        <option value="média et jeux vidéo">Média et jeux vidéo</option>
+                        <option value="média et jeux vidéo">
+                          Média et jeux vidéo
+                        </option>
                         <option value="scolaire">Scolaire</option>
                         <option value="décoration">Décoration</option>
                         <option value="livres">Livres</option>
@@ -213,10 +215,18 @@ export default function Vendre() {
                           Séléctionner une tranche d&apos;âge
                         </option>
                         <option value="De 0 à 6 Mois">De 0 à 6 Mois</option>
-                        <option value="De 6 Mois à 12 Mois">De 6 Mois à 12 Mois</option>
-                        <option value="De 12 Mois à 18 Mois">De 12 Mois à 18 Mois</option>
-                        <option value="De 18 Mois à 24 Mois">De 18 Mois à 24 Mois</option>
-                        <option value="De 24 Mois à 36 Mois">De 24 Mois à 36 Mois </option>
+                        <option value="De 6 Mois à 12 Mois">
+                          De 6 Mois à 12 Mois
+                        </option>
+                        <option value="De 12 Mois à 18 Mois">
+                          De 12 Mois à 18 Mois
+                        </option>
+                        <option value="De 18 Mois à 24 Mois">
+                          De 18 Mois à 24 Mois
+                        </option>
+                        <option value="De 24 Mois à 36 Mois">
+                          De 24 Mois à 36 Mois{" "}
+                        </option>
                         <option value="3-4 ans">3-4 ans</option>
                         <option value="5-7 ans">5-7 ans</option>
                         <option value="8-11 ans">8-11 ans</option>
@@ -234,7 +244,7 @@ export default function Vendre() {
                 </div>
                 <div className="form-group mb-3">
                   <div className="row pl-4">
-                    <label htmlFor="name">Prix de vente </label>
+                    <label htmlFor="name">Prix de vente :</label>
                     <div className="input-group col-lg-2 col-sm-3 col-5 ">
                       <input
                         id="price"
@@ -248,10 +258,13 @@ export default function Vendre() {
                       <span className="input-group-text">DT</span>
                     </div>
                   </div>
+                  <span className="mini-size-span">
+                    *Fixe ton prix de vente
+                  </span>
                   <div className="pt-2">
                     <div className="row pl-4">
-                      <span> Tu gagnes 80% du prix si vendu</span>
-                      <div className="col-lg-2 col-sm-3 col-5">
+                      <span> Tu gagnes 80% du prix si vendu : </span>
+                      <div className="input-group col-lg-2 col-sm-3 col-5">
                         <input
                           name="name"
                           type="number"
@@ -259,25 +272,35 @@ export default function Vendre() {
                           aria-label="Dollar amount (with dot and two decimal places)"
                           disabled
                           placeholder={
-                            prix ? (prix * 0.8).toFixed(2) + "DT" : "0 DT"
+                            prix ? (prix * 0.8).toFixed(2)  : "0 "
                           }
                         />
+                      <span className="input-group-text">DT</span>
                       </div>
                     </div>
                   </div>
+                  <span className="mini-size-span">
+                    *Si votre article est vendu, un livreur passera récupérer
+                    l&apos;article chez vous et vous recevrez (prix s&apos;affiche
+                    automatiquement) 24H après la réception du colis.
+                  </span>
                   <div className="pt-2">
                     <div className="row pl-4">
-                      <span> Le prix affiché sera</span>
-                      <div className="col-lg-2 col-sm-3 col-5">
+                      <span> Le prix affiché sera : </span>
+                      {prix ?<div className="input-group col-lg-2 col-sm-3 col-5">
                         <input
                           name="name"
                           type="number"
                           className="form-control "
                           aria-label="Dollar amount (with dot and two decimal places)"
                           disabled
-                          placeholder={prix ?(prix)+ "DT" : ""}
+                          placeholder={(+prix+(prix*0.05)).toFixed(2) }
                         />
-                      </div>
+                      <span className="input-group-text">DT</span>
+                      </div>:
+                      <p style={{fontSize:'1.3rem'}}>&#160;  Augmenté automatiquement de 5% </p>
+                      
+                      }
                     </div>
                   </div>
                 </div>

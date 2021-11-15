@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { connect } from "react-redux";
 import ALink from "../components/features/alink";
 import PageHeader from "../components/features/page-header";
-import { cartPriceTotal } from "../utils/index";
+import { cartPriceTotal, thePrice } from "../utils/index";
 
 function Checkout(props) {
   const { cartlist } = props;
@@ -68,7 +68,7 @@ function Checkout(props) {
                     <table className="table table-summary">
                       <thead>
                         <tr>
-                          <th>Produit</th>
+                          <th>Article</th>
                           <th>Soustotal</th>
                         </tr>
                       </thead>
@@ -82,7 +82,7 @@ function Checkout(props) {
                               </td>
                               <td style={{ borderBottom: "none" }}>
                                 {" "}
-                                {(item.prix + 7).toLocaleString(undefined, {
+                                {(thePrice(item.prix, true)).toLocaleString(undefined, {
                                   minimumFractionDigits: 2,
                                   maximumFractionDigits: 2,
                                 })}

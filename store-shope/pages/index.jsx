@@ -107,10 +107,7 @@ export default function Home() {
                   />
                 </figure>
                 <div className="btn-product-gallery3">
-                  <ALink
-                    className="banner-link"
-                    href="/list?categorie=Jouets"
-                  >
+                  <ALink className="banner-link" href="/list?categorie=Jouets">
                     <h3 className="banner-title mb-0">Jouets</h3>
                     <span className="banner-link-text">
                       Boutique<i className="icon-long-arrow-right ml-2"></i>{" "}
@@ -246,7 +243,7 @@ export default function Home() {
       <div className="container">
         <hr />
         <div className="row justify-content-center">
-        <div className="col-md-4 col-sm-6">
+          <div className="col-md-4 col-sm-6">
             <Reveal
               keyframes={fadeInRightShorter}
               delay={150}
@@ -258,10 +255,8 @@ export default function Home() {
                   <i className="icon-heartbeat"></i>
                 </span>
                 <div className="icon-box-content">
-                  <h3 className="icon-box-title">Garantie hygiène </h3>
-                  <p>
-                    Protocol strict de désinfection de chaque article.
-                  </p>
+                  <h3 className="icon-box-title">Protocole hygiène </h3>
+                  <p>Protocole strict de désinfection de chaque article</p>
                 </div>
               </div>
             </Reveal>
@@ -281,7 +276,7 @@ export default function Home() {
                   <h3 className="icon-box-title">Retour et réclamation</h3>
                   <p>
                     En cas de non conformité, l&apos;acheteur aura 24H pour
-                    réclamer a partir de la date de la livraison.
+                    réclamer à partir de la date de la réception
                   </p>
                 </div>
               </div>
@@ -302,7 +297,7 @@ export default function Home() {
                   <h3 className="icon-box-title">Garantie qualité </h3>
                   <p>
                     La conformité de l&apos;article par rapport à la description
-                    du vendeur est vérifié avant l&apos;envoi à l&apos;acheteur.
+                    du vendeur est vérifiée avant l’expédition
                   </p>
                 </div>
               </div>
