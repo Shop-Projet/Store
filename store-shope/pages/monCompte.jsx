@@ -239,7 +239,7 @@ function DashBoard() {
                               </div>
                             </div>
                             <div
-                              className="col-lg-4 "
+                              className="col-lg-6 "
                               style={{
                                 display: "flex",
                                 "align-items": "center",
