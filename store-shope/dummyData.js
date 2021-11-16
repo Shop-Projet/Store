@@ -504,8 +504,11 @@ export const sexe = [
   { id: 3, sexe: "Fille" },
 ];
 
-export const notifications = [
-  "Livraison complete",
-  "Livraison annulée",
-  "Livraison de l'article N°12 en cours",
-];
+export const notifications = {
+	EnAttente : ['Livraison N°1 en attente','Livraison N°2 en attente ','Livraison N°3 en attente '],
+	Confirmé : ['Livraison N°1 en confirmée','Livraison N°2 en confirmée'],
+	Collecté : ['Livraison N°1 en collectée'],
+	Livré: ['Livraison N°1 en livrée'],
+	Finalisé: ['Livraison N°1 en finalisée'],
+
+};

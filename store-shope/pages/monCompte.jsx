@@ -27,9 +27,6 @@ function DashBoard() {
             <li className="breadcrumb-item">
               <ALink href="/">Accueil</ALink>
             </li>
-            <li className="breadcrumb-item">
-              <ALink href="/shop/sidebar/list">Boutique</ALink>
-            </li>
             <li className="breadcrumb-item active">Mon compte</li>
           </ol>
         </div>

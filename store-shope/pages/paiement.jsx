@@ -1,11 +1,43 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { connect } from "react-redux";
+import { actions as cartAction } from '../store/cart';
+import { useRouter } from 'next/router'
+
 import ALink from "../components/features/alink";
 import PageHeader from "../components/features/page-header";
 import { cartPriceTotal, thePrice } from "../utils/index";
+import Swal from 'sweetalert2'
+import { utilisateur } from "../dummyData";
 
 function Checkout(props) {
+  const router = useRouter()
   const { cartlist } = props;
+  const [nom, setNom] = useState(utilisateur.nom);
+  const [prénom, setPrénom] = useState(utilisateur.prenom);
+  const [adress, setAdresse] = useState(utilisateur.adress);
+  const [codePostal, setCodePostal] = useState(utilisateur.code);
+  const [telephone, setPhone] = useState(utilisateur.telephone);
+
+
+
+  function alert () {
+    if (nom && prénom && adress && codePostal && telephone && cartlist.length) {
+    Swal.fire({
+      icon: 'success',
+      title: 'Commande confirmée',
+      showConfirmButton: false,
+      timer: 3500
+    }).then(router.push('monCompte'))
+    props.deleteCarte()
+    } else {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Remplir les informations manquantes',
+      })
+    }
+  }
+
 
   return (
     <div className="main">
@@ -34,29 +66,30 @@ function Checkout(props) {
                   <div className="row">
                     <div className="col-sm-6">
                       <label>Nom *</label>
-                      <input type="text" className="form-control" required />
+                      <input type="text" className="form-control" onChange={(e)=> setNom(e.target.value)} placeholder={utilisateur.nom? utilisateur.nom :""}  />
                     </div>
                     <div className="col-sm-6">
                       <label>Prénom *</label>
-                      <input type="text" className="form-control" required />
+                      <input type="text" className="form-control" onChange={(e)=> setPrénom(e.target.value)} placeholder={utilisateur.prenom? utilisateur.prenom :""} />
                     </div>
                   </div>
                   <label>Addresse *</label>
                   <input
                     type="text"
                     className="form-control"
-                    placeholder="102 rue des jasmins"
-                    required
+                    placeholder={utilisateur.adress? utilisateur.adress :""}
+                    onChange={(e)=> setAdresse(e.target.value)}
+                    
                   />
                   <div className="row">
                     <div className="col-sm-6">
                       <label>Code Postal *</label>
-                      <input type="text" className="form-control" required />
+                      <input type="text" className="form-control" onChange={(e)=> setCodePostal(e.target.value)} placeholder={utilisateur.code? utilisateur.code :""} />
                     </div>
 
                     <div className="col-sm-6">
                       <label>Numéro de téléphone *</label>
-                      <input type="tel" className="form-control" required />
+                      <input type="tel" className="form-control" onChange={(e)=> setPhone(e.target.value)}  placeholder={utilisateur.telephone? utilisateur.telephone :""} />
                     </div>
                   </div>
                 </div>
@@ -111,6 +144,7 @@ function Checkout(props) {
                       <button
                         type="submit"
                         className="btn btn-outline-primary-2 btn-order btn-block"
+                        onClick={()=>alert()}
                       >
                         <span className="btn-text">Passer la commande</span>
                         <span className="btn-hover-text">
@@ -133,4 +167,4 @@ export const mapStateToProps = (state) => ({
   cartlist: state.cartlist.data,
 });
 
-export default connect(mapStateToProps)(Checkout);
+export default connect(mapStateToProps, {...cartAction})(Checkout);
