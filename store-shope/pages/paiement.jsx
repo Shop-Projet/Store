@@ -1,20 +1,47 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import SlideToggle from "react-slide-toggle";
+import { actions as cartAction } from '../store/cart';
+import { useRouter } from 'next/router'
 
-import ALink from "../componenets/features/alink";
-import Accordion from "../componenets/features/accordion/accordion";
-import Card from "../componenets/features/accordion/card";
-// import PageHeader from '~/components/features/page-header';
-
-import { cartPriceTotal } from "../utils/index";
+import ALink from "../components/features/alink";
+import PageHeader from "../components/features/page-header";
+import { cartPriceTotal, thePrice } from "../utils/index";
+import Swal from 'sweetalert2'
+import { utilisateur } from "../dummyData";
 
 function Checkout(props) {
+  const router = useRouter()
   const { cartlist } = props;
+  const [nom, setNom] = useState(utilisateur.nom);
+  const [prénom, setPrénom] = useState(utilisateur.prenom);
+  const [adress, setAdresse] = useState(utilisateur.adress);
+  const [codePostal, setCodePostal] = useState(utilisateur.code);
+  const [telephone, setPhone] = useState(utilisateur.telephone);
+
+
+
+  function alert () {
+    if (nom && prénom && adress && codePostal && telephone && cartlist.length) {
+    Swal.fire({
+      icon: 'success',
+      title: 'Commande confirmée',
+      showConfirmButton: false,
+      timer: 3500
+    }).then(router.push('monCompte'))
+    props.deleteCarte()
+    } else {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Remplir les informations manquantes',
+      })
+    }
+  }
+
 
   return (
     <div className="main">
-      {/* <PageHeader title="Checkout" subTitle="Shop" /> */}
+      <PageHeader title="Paiement" subTitle="" />
       <nav className="breadcrumb-nav">
         <div className="container">
           <ol className="breadcrumb">
@@ -39,47 +66,32 @@ function Checkout(props) {
                   <div className="row">
                     <div className="col-sm-6">
                       <label>Nom *</label>
-                      <input type="text" className="form-control" required />
+                      <input type="text" className="form-control" onChange={(e)=> setNom(e.target.value)} placeholder={utilisateur.nom? utilisateur.nom :""}  />
                     </div>
                     <div className="col-sm-6">
                       <label>Prénom *</label>
-                      <input type="text" className="form-control" required />
+                      <input type="text" className="form-control" onChange={(e)=> setPrénom(e.target.value)} placeholder={utilisateur.prenom? utilisateur.prenom :""} />
                     </div>
                   </div>
-                  <label>Région *</label>
-                  <input type="text" className="form-control" required />
-
                   <label>Addresse *</label>
                   <input
                     type="text"
                     className="form-control"
-                    placeholder="102 rue des jasmins"
-                    required
-                  />
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Appartment 12 ..."
-                    required
+                    placeholder={utilisateur.adress? utilisateur.adress :""}
+                    onChange={(e)=> setAdresse(e.target.value)}
+                    
                   />
                   <div className="row">
                     <div className="col-sm-6">
                       <label>Code Postal *</label>
-                      <input type="text" className="form-control" required />
+                      <input type="text" className="form-control" onChange={(e)=> setCodePostal(e.target.value)} placeholder={utilisateur.code? utilisateur.code :""} />
                     </div>
 
                     <div className="col-sm-6">
                       <label>Numéro de téléphone *</label>
-                      <input type="tel" className="form-control" required />
+                      <input type="tel" className="form-control" onChange={(e)=> setPhone(e.target.value)}  placeholder={utilisateur.telephone? utilisateur.telephone :""} />
                     </div>
                   </div>
-                  <label>Notes (optionnel)</label>
-                  <textarea
-                    className="form-control"
-                    cols="30"
-                    rows="4"
-                    placeholder="Notes sur votre commande, par ex. notes spéciales pour la livraison"
-                  ></textarea>
                 </div>
 
                 <aside className="col-lg-3">
@@ -89,77 +101,57 @@ function Checkout(props) {
                     <table className="table table-summary">
                       <thead>
                         <tr>
-                          <th>Produit</th>
-                          <th>Total</th>
+                          <th>Article</th>
+                          <th>Soustotal</th>
                         </tr>
                       </thead>
 
                       <tbody>
                         {cartlist.map((item, index) => (
-                          <tr key={index}>
-                            <td>{item.nom_du_produit}</td>
-                            <td>
-                              {" "}
-                              {item.prix.toLocaleString(undefined, {
-                                minimumFractionDigits: 2,
-                                maximumFractionDigits: 2,
-                              })}
-                              DT
-                            </td>
-                          </tr>
+                          <>
+                            <tr key={index}>
+                              <td style={{ borderBottom: "none" }}>
+                                {item.nom_du_produit}
+                              </td>
+                              <td style={{ borderBottom: "none" }}>
+                                {" "}
+                                {(thePrice(item.prix, true)).toLocaleString(undefined, {
+                                  minimumFractionDigits: 2,
+                                  maximumFractionDigits: 2,
+                                })}
+                                DT
+                              </td>
+                            </tr>
+                          </>
                         ))}
-                        <tr className="summary-subtotal">
-                          <td>Subtotal:</td>
-                          <td>
-                            {cartPriceTotal(cartlist).toLocaleString(
-                              undefined,
-                              {
-                                minimumFractionDigits: 2,
-                                maximumFractionDigits: 2,
-                              }
-                            )}
-                            DT
-                          </td>
-                        </tr>
                         <tr className="summary-total">
                           <td>Total:</td>
                           <td>
-                            {cartPriceTotal(cartlist).toLocaleString(
-                              undefined,
-                              {
-                                minimumFractionDigits: 2,
-                                maximumFractionDigits: 2,
-                              }
-                            )}
+                            {(
+                              cartPriceTotal(cartlist) +
+                              7 * cartlist.length
+                            ).toLocaleString(undefined, {
+                              minimumFractionDigits: 2,
+                              maximumFractionDigits: 2,
+                            })}
                             DT
                           </td>
                         </tr>
                       </tbody>
                     </table>
-
-                    <Accordion type="checkout">
-                      <Card title=" Paiement à la livraison" expanded={true}>
-                        Payez en espèces à la réception de votre colis
-                      </Card>
-
-                      <Card title=" Carte e-dinar">
-                        Le moyen le plus simple, sécurisé et rapide
-                      </Card>
-
-                      <Card title="Carte bancaire">
-                        Le moyen le plus fiable, sécurisé et rapide
-                      </Card>
-                    </Accordion>
-
-                    <button
-                      type="submit"
-                      className="btn btn-outline-primary-2 btn-order btn-block"
-                    >
-                      <span className="btn-text">Passer la commande</span>
-                      <span className="btn-hover-text">
-                        Confirmer la commande
-                      </span>
-                    </button>
+                    <span>Paiement à la livraison</span>
+                    <div className="pt-2">
+                      <button
+                        type="submit"
+                        className="btn btn-outline-primary-2 btn-order btn-block"
+                        onClick={()=>alert()}
+                      >
+                        <span className="btn-text">Passer la commande</span>
+                        <span className="btn-hover-text">
+                          Confirmer la commande
+                        </span>
+                      </button>
+                    </div>
                   </div>
                 </aside>
               </div>
@@ -175,4 +167,4 @@ export const mapStateToProps = (state) => ({
   cartlist: state.cartlist.data,
 });
 
-export default connect(mapStateToProps)(Checkout);
+export default connect(mapStateToProps, {...cartAction})(Checkout);

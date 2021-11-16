@@ -1,9 +1,9 @@
 import { useRouter } from 'next/router';
-import GalleryDefault from '../../componenets/parts/products/gallery/gallery';
-import DetailTwo from '../../componenets/parts/products/poductDetails';
+import GalleryDefault from '../../components/parts/products/gallery/gallery';
+import DetailTwo from '../../components/parts/products/poductDetails';
 import {product} from '../../dummyData'
-import ALink from '../../componenets/features/alink';
-import PageHeader from '../../componenets/features/page-header';
+import ALink from '../../components/features/alink';
+import PageHeader from '../../components/features/page-header';
 
 function OneProductPage () {
     const slug = useRouter().query.id;

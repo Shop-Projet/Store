@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
 import { Tabs, TabList, Tab, TabPanel } from 'react-tabs';
 
-import ALink from '../../features/alink';
+import ALink from '../alink';
 
 const customStyles = {
     overlay: {

@@ -1,14 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
 import { Tabs, TabList, TabPanel, Tab } from "react-tabs";
-import ProductAccount from "../componenets/parts/dashboard/productAccount";
-import ALink from "../componenets/features/alink";
-import PageHeader from "../componenets/features/page-header";
-import { achat } from "../dummyData";
-import { vente } from "../dummyData";
-import { utilisateur } from "../dummyData";
-import Image_profile from "../componenets/features/dashboard/image";
-import NbrDenfants from "../componenets/parts/dashboard/nbrDenfants";
+import ProductAccount from "../components/parts/dashboard/productAccount";
+import ALink from "../components/features/alink";
+import PageHeader from "../components/features/page-header";
+import { achat, utilisateur , vente } from "../dummyData";
+import { thePrice } from "../utils";
+import Image_profile from "../components/features/dashboard/image";
+import NbrDenfants from "../components/parts/dashboard/nbrDenfants";
 
 function DashBoard() {
   const [mesAchat, setAchat] = useState(achat);
@@ -27,9 +26,6 @@ function DashBoard() {
           <ol className="breadcrumb">
             <li className="breadcrumb-item">
               <ALink href="/">Accueil</ALink>
-            </li>
-            <li className="breadcrumb-item">
-              <ALink href="/shop/sidebar/list">Boutique</ALink>
             </li>
             <li className="breadcrumb-item active">Mon compte</li>
           </ol>
@@ -121,7 +117,7 @@ function DashBoard() {
                                 }
                               />
                             </div>
-                            <div className="col-sm-6">
+                            <div className="col-sm-12">
                               <NbrDenfants />
                             </div>
                           </div>
@@ -189,7 +185,7 @@ function DashBoard() {
                             style={{ "box-sizing": "border-box" }}
                             className="row "
                           >
-                            <div className="col-sm-6 ">
+                            <div className="col-sm-6 border-box-Compte ">
                               <div className="col-sm-12">
                                 <label>Type du compte *</label>
                                 <br />
@@ -239,14 +235,16 @@ function DashBoard() {
                               </div>
                             </div>
                             <div
-                              className="col-lg-4 "
+                              className="col-lg-6  "
                               style={{
                                 display: "flex",
                                 "align-items": "center",
                                 "justify-content": "center",
-                                // textAlign: "center",
                               }}
                             >
+                              <div
+                                style={{ borderRight: "3px solid #d4dbe0" }}
+                              ></div>
                               <div className=" col-lg-12 ">
                                 <Image_profile
                                   setImages={setImages}
@@ -264,11 +262,11 @@ function DashBoard() {
                             style={{ textAlign: "center", color: "#c96" }}
                             className="pb-2 pt-4"
                           >
-                            Justificatif d'identité
+                            Justificatif d&apos;identité
                           </h4>
 
                           <div className="row">
-                            <div className="col-sm-6">
+                            <div className="col-sm-6 border-box-Compte ">
                               <div className="col-sm-12">
                                 <label>Nom *</label>
                                 <input
@@ -336,12 +334,12 @@ function DashBoard() {
                                 "align-items": "center",
                                 "justify-content": "center",
                               }}
-                              // style={{ textAlign: "right" }}
                             >
                               <div className="col-lg-12  ">
                                 <Image_profile
                                   setImages={setImage_CIN}
                                   images={image_CIN}
+                                  photo={user.CINPhoto}
                                 />
                                 <span style={{ fontSize: "1.2rem" }}>
                                   *Photo de la CIN ou du passport
@@ -413,10 +411,7 @@ function DashBoard() {
                                       </figure>
                                     </td>
                                     <td className="total-col">
-                                      {item.prix.toLocaleString(undefined, {
-                                        minimumFractionDigits: 2,
-                                        maximumFractionDigits: 2,
-                                      })}
+                                      {thePrice(item.prix)}
                                       DT
                                     </td>
 

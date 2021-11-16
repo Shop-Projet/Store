@@ -7,7 +7,7 @@ import { cartQtyTotal, cartPriceTotal } from "../../../utils/index";
 
 function CartMenu(props) {
   const { cartlist } = props;
-
+  const auth= false;
   return (
     <div className="dropdown cart-dropdown">
       <ALink
@@ -62,21 +62,12 @@ function CartMenu(props) {
               ))}
             </div>
             <div className="dropdown-cart-total">
-              <span>Total</span>
-
-              <span className="cart-total-price">
-                {cartPriceTotal(cartlist).toLocaleString(undefined, {
-                  minimumFractionDigits: 2,
-                  maximumFractionDigits: 2,
-                })}DT
-              </span>
             </div>
-
             <div className="dropdown-cart-action">
               <ALink href="/cart" className="btn btn-primary">
               Voir le panier
               </ALink>
-              <ALink href="/paiement" className="btn btn-outline-primary-2">
+              <ALink href={auth?"/paiement": "/login"} className="btn btn-outline-primary-2">
                 <span>Caisse</span>
                 <i className="icon-long-arrow-right"></i>
               </ALink>

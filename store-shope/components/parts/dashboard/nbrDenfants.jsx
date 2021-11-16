@@ -15,11 +15,11 @@ export default function NbrDenfants() {
     <div>
       <form action="#">
         <div className="row">
-          <div className="col-lg-6 col-sm-5 ">
-            <label htmlFor="etat">Nombre d'enfants</label>
+          <div className="col-lg-6 col-md-4  col-xl-7 col-sm-4">
+            <label htmlFor="nbenfant">Nombre d'enfants</label>
             <br />
             <select
-              id="etat"
+              id="nbenfant"
               className="form-control form-select"
               onChange={(e) => {
                 setNbrEnfants(e.target.value);
@@ -43,7 +43,7 @@ export default function NbrDenfants() {
             {[...Array(+nbrEnfants)].map((item, index) => {
               return (
                 <>
-                  <div className="col-lg-6 col-sm-6" key={index}>
+                  <div className="col-lg-7 col-sm-6 col-md-6" key={index}>
                     <label>Age de votre enfant </label>
                     <input
                       type="telephone"
@@ -62,7 +62,7 @@ export default function NbrDenfants() {
                     </label>
 
                     <select
-                      id="etat"
+                      id="unite"
                       className="form-control form-select"
                       onChange={(e) => {
                         setUnite(e.target.value);

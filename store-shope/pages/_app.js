@@ -1,6 +1,6 @@
 import "../public/scss/style.scss";
 import "../public/scss/plugins/owl-carousel/owl.carousel.scss";
-import Layout from "../componenets/layout.jsx";
+import Layout from "../components/layout.jsx";
 import { useStore } from "react-redux";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
