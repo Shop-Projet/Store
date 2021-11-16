@@ -8,6 +8,7 @@ import { achat, utilisateur, vente } from "../dummyData";
 import { thePrice } from "../utils";
 import Image_profile from "../components/features/dashboard/image";
 import NbrDenfants from "../components/parts/dashboard/nbrDenfants";
+// comment 
 
 function DashBoard() {
   const [mesAchat, setAchat] = useState(achat);
