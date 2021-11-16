@@ -8,6 +8,7 @@ export const actionTypes = {
     removeFromCart: "REMOVE_FROM_CART",
     refreshStore: "REFRESH_STORE",
     updateCart: "UPDATE_CART",
+    deleteCarte: "DELETE_CART"
 };
 
 const initialState = {
@@ -71,6 +72,11 @@ const cartReducer = ( state = initialState, action ) => {
             };
         case actionTypes.refreshStore:
             return initialState;
+        
+        case actionTypes.deleteCarte:
+            return {
+                data: []
+            }
 
         default:
             return state;
@@ -98,7 +104,13 @@ export const actions = {
         payload: {
             cartItems: cartItems
         }
-    } )
+    } ),
+    deleteCarte : () => ({
+        type : actionTypes.deleteCarte,
+        payload: {
+            data: []
+        }
+    })
 }
 
 export function* cartSaga () {

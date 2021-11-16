@@ -7,7 +7,7 @@ import ALink from '../alink.jsx';
 import { actions as wishlistAction } from '../../../store/wishlist';
 import { actions as cartAction } from '../../../store/cart';
 
-import { isInWishlist } from '../../../utils/index';
+import { isInWishlist, thePrice } from '../../../utils/index';
 
 function ProductHomePage( props ) {
     const router = useRouter();
@@ -68,7 +68,7 @@ function ProductHomePage( props ) {
                     <ALink href={ `product/${product.id}`  }>{ product.nom_du_produit }</ALink>
                 </h3>
                 <div className="product-price">
-                    <span className="product-price">{ product.prix} DT</span>
+                    <span className="product-price">{ thePrice(product.prix)} DT</span>
                 </div>
             </div>
             <div className="product-action">

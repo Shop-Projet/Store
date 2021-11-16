@@ -56,7 +56,7 @@ function ProductEleven ( props ) {
                 <div className="product-action">
                    
                     <button className="btn-product btn-cart" onClick={ onCartClick }>
-                        <span>Acheter</span>
+                        <span>Ajouter au panier</span>
                     </button>
                 </div>
             </figure>

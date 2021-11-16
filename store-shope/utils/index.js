@@ -5,7 +5,8 @@
  */
 export const cartPriceTotal = cartItems => {
     return cartItems.reduce( ( acc, cur ) => {
-        return acc + cur.sum
+        console.log(cur.sum+(cur.sum*0.05))
+        return acc + (cur.sum+(cur.sum*0.05))
     }, 0 );
 }
 
@@ -233,6 +234,11 @@ export const countTo = function () {
     }
 }
 
+/** price */
+export function thePrice (price, livraison) {
+    if (livraison) return (price+(price*0.05)+7).toFixed(2)
+    else return (price+(price*0.05)).toFixed(2)
+}
 
 /**
  * Prevent Xss Attack

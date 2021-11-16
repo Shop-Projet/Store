@@ -3,10 +3,10 @@ import React, { useState, useEffect } from "react";
 
 import ALink from "../features/alink";
 import LoginModal from "../features/modals/login-modal";
-import HeaderSearch from "../header/partials/header-search";
-import WishlistMenu from "../header/partials/wishlist-menu";
-import CartMenu from "../header/partials/cart-menu";
-import MainMenu from "../header/partials/main-menu";
+import HeaderSearch from "./partials/header-search";
+import WishlistMenu from "./partials/wishlist-menu";
+import CartMenu from "./partials/cart-menu";
+import MainMenu from "./partials/main-menu";
 import StickyHeader from "../features/sticky-header";
 import Notification from "./partials/notification";
 

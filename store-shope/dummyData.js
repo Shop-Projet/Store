@@ -12,7 +12,7 @@ export const product = [
     description: "couleur : marron, ils sont doux et adorables <3",
     prix: 5,
     categorie: "Jouets",
-    sousCategorie:"Jeux constructifs",
+    sousCategorie: "Jeux constructifs",
     status: "vendu",
     etat: "Trés bon état",
     age: "8-11 ans",
@@ -30,7 +30,7 @@ export const product = [
     description: "Poupée pour enfant, sans danger",
     prix: 25,
     categorie: "Jouets",
-    sousCategorie:"Jeux constructifs",
+    sousCategorie: "Jeux constructifs",
     status: "disponible",
     age: "5-7 ans",
     etat: "Trés bon état",
@@ -69,8 +69,7 @@ export const product = [
     age: "8-11 ans",
     etat: "Bon état",
     sexe: "Garçon",
-    sousCategorie:"Jeux constructifs"
-
+    sousCategorie: "Jeux constructifs",
   },
   {
     id: 5,
@@ -87,8 +86,7 @@ export const product = [
     age: "12-14 ans",
     etat: "Bon état",
     sexe: "Fille",
-    sousCategorie:"Jeux constructifs"
-
+    sousCategorie: "Jeux constructifs",
   },
   {
     id: 6,
@@ -105,8 +103,7 @@ export const product = [
     age: "8-11 ans",
     etat: "Neuf sans étiquette",
     sexe: "Fille",
-    sousCategorie:"Jeux constructifs"
-
+    sousCategorie: "Jeux constructifs",
   },
   {
     id: 7,
@@ -321,7 +318,9 @@ export const achat = [
     status: "annulé",
     date: "01/11/21",
     vendeur: "Marwa Zahar",
+
     numeroDeLivraison: 12,
+    progression: "Collecté",
   },
   {
     id: 2,
@@ -335,11 +334,11 @@ export const achat = [
     date: "01/11/21",
     vendeur: "Marwa Zahar",
     numeroDeLivraison: 12,
+    progression: "Livré",
   },
   {
     id: 3,
-    image:
-      "https://m.media-amazon.com/images/I/817mDUbk1PL._AC_SX425_.jpg",
+    image: "https://m.media-amazon.com/images/I/817mDUbk1PL._AC_SX425_.jpg",
     nom_du_produit: "Poussette",
     description:
       "Quality silverware, this 40 piece flatware set is made of premium high quality stainless steel which ensures your health, rust resistant, sturdy and durable for years to come",
@@ -349,6 +348,7 @@ export const achat = [
     date: "01/11/21",
     vendeur: "Marwa Zahar",
     numeroDeLivraison: 12,
+    progression: "finalisé",
   },
   {
     id: 4,
@@ -362,11 +362,11 @@ export const achat = [
     date: "01/11/21",
     vendeur: "Marwa Zahar",
     numeroDeLivraison: 12,
+    progression: "Confirmé",
   },
   {
     id: 5,
-    image:
-      "https://images-na.ssl-images-amazon.com/images/I/81WAUFf0rwL.jpg",
+    image: "https://images-na.ssl-images-amazon.com/images/I/81WAUFf0rwL.jpg",
     nom_du_produit: "Livre",
     description: "pantalon-de-survetement-adicolor-classics-primeblue",
     prix: 95,
@@ -375,6 +375,7 @@ export const achat = [
     date: "01/11/21",
     vendeur: "Marwa Zahar",
     numeroDeLivraison: 12,
+    progression: "finalisé",
   },
 ];
 
@@ -393,7 +394,7 @@ export const vente = [
     numeroDeLivraison: 12,
 
     gain: "20dt",
-    progression: "livré",
+    progression: "Confirmé",
   },
   {
     id: 2,
@@ -409,7 +410,7 @@ export const vente = [
     numeroDeLivraison: 12,
 
     gain: "20dt",
-    progression: "livré",
+    progression: "Collecté",
   },
   {
     id: 3,
@@ -426,7 +427,7 @@ export const vente = [
     numeroDeLivraison: 12,
 
     gain: "20dt",
-    progression: "livré",
+    progression: "Livré",
   },
 ];
 
@@ -441,9 +442,8 @@ export const utilisateur = {
   ville: "Tunis",
   TypeRIB: "RIB",
   RIB: "1234567890",
-  EDINAR:"",
-  RIBPhoto:
-    "",
+  EDINAR: "",
+  RIBPhoto: "",
   typeId: "human",
   CINNum: "21345678",
   CINPhoto: "",
@@ -451,11 +451,18 @@ export const utilisateur = {
 
 export const categories = [
   { id: 1, categorie: "Naissance", count: 0 },
-  { id: 2, categorie: "Jouets", count: 0, sousCategorie: [
-    {slug:1, sousCategorie: "Jeux d'éveil", count:3}, {slug:2, sousCategorie:"Jeux éducatifs", count:3},{ slug: 3, sousCategorie: "Jeux créatifs", count: 5 }, 
-    { slug: 4, sousCategorie: "Jeux constructifs", count: 2 },
-    { slug: 5, sousCategorie: "Sport et activités en plein air", count: 1 },
-  ]},
+  {
+    id: 2,
+    categorie: "Jouets",
+    count: 0,
+    sousCategorie: [
+      { slug: 1, sousCategorie: "Jeux d'éveil", count: 3 },
+      { slug: 2, sousCategorie: "Jeux éducatifs", count: 3 },
+      { slug: 3, sousCategorie: "Jeux créatifs", count: 5 },
+      { slug: 4, sousCategorie: "Jeux constructifs", count: 2 },
+      { slug: 5, sousCategorie: "Sport et activités en plein air", count: 1 },
+    ],
+  },
   { id: 7, categorie: "Média et jeux vidéo", count: 12 },
   { id: 8, categorie: "Scolaire", count: 3 },
   { id: 9, categorie: "Décoration", count: 3 },
@@ -505,8 +512,14 @@ export const sexe = [
   { id: 3, sexe: "Fille" },
 ];
 
-export const notifications = [
-  "Livraison complete",
-  "Livraison annulée",
-  "Livraison de l'article N°12 en cours",
-];
+export const notifications = {
+  EnAttente: [
+    "Livraison N°1 en attente",
+    "Livraison N°2 en attente ",
+    "Livraison N°3 en attente ",
+  ],
+  Confirmé: ["Livraison N°1 en confirmée", "Livraison N°2 en confirmée"],
+  Collecté: ["Livraison N°1 en collectée"],
+  Livré: ["Livraison N°1 en livrée"],
+  Finalisé: ["Livraison N°1 en finalisée"],
+};

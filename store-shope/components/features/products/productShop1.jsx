@@ -77,7 +77,7 @@ function ProductShop1 ( props ) {
                             }
                         </div>
                         <button className="btn-product btn-cart" onClick={ onCartClick }>
-                            <span>Acheter</span>
+                            <span>Ajouter au panier</span>
                         </button>
                     </div>
                 </div>

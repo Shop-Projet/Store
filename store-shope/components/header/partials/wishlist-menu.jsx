@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { useRouter } from "next/router";
 
-import ALink from '../../../componenets/features/alink';
+import ALink from '../../features/alink';
 
 function WishlistMenu ( props ) {
     const { wishlist } = props;
