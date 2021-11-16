@@ -401,13 +401,12 @@ function DashBoard() {
                                       className="product-col"
                                       style={{ textAlign: "center" }}
                                     >
-                                      <figure className="product-media">
-                                        <img src={item.image} alt="product" />
-                                        {/* <h4 className="product-title">
+                                      <figure className="product-col">
+                                        <h4 className="product-title">
                                           {item.nom_du_produit
                                             ? item.nom_du_produit
                                             : ""}
-                                        </h4> */}
+                                        </h4>
                                       </figure>
                                     </td>
                                     <td className="total-col">
@@ -423,9 +422,7 @@ function DashBoard() {
                                       className="total-col"
                                       style={{ textAlign: "center" }}
                                     >
-                                      {item.progression
-                                        ? item.progression
-                                        : "en attente"}
+                                      {item.progression}
                                     </td>
                                   </tr>
                                 ))}
@@ -471,8 +468,12 @@ function DashBoard() {
                                       className="product-col"
                                       style={{ textAlign: "center" }}
                                     >
-                                      <figure className="product-media">
-                                        <img src={item.image} alt="product" />
+                                      <figure className="product-col">
+                                        <h4 className="product-title">
+                                          {item.nom_du_produit
+                                            ? item.nom_du_produit
+                                            : ""}
+                                        </h4>
                                       </figure>
                                     </td>
                                     <td className="total-col">

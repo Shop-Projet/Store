@@ -322,6 +322,7 @@ export const achat = [
     date: "01/11/21",
     vendeur: "Marwa Zahar",
     numeroDeLivraison: 12,
+    progression: "Confirmé"
   },
   {
     id: 2,
@@ -335,6 +336,7 @@ export const achat = [
     date: "01/11/21",
     vendeur: "Marwa Zahar",
     numeroDeLivraison: 12,
+    progression:"Collecté"
   },
   {
     id: 3,
@@ -349,6 +351,7 @@ export const achat = [
     date: "01/11/21",
     vendeur: "Marwa Zahar",
     numeroDeLivraison: 12,
+    progression: "Finalisé"
   },
   {
     id: 4,
@@ -362,6 +365,7 @@ export const achat = [
     date: "01/11/21",
     vendeur: "Marwa Zahar",
     numeroDeLivraison: 12,
+    progression: "Livré"
   },
   {
     id: 5,
@@ -375,6 +379,7 @@ export const achat = [
     date: "01/11/21",
     vendeur: "Marwa Zahar",
     numeroDeLivraison: 12,
+    progression: "Collecté"
   },
 ];
 
@@ -393,7 +398,7 @@ export const vente = [
     numeroDeLivraison: 12,
 
     gain: "20dt",
-    progression: "livré",
+    progression: "Livré",
   },
   {
     id: 2,
@@ -409,7 +414,7 @@ export const vente = [
     numeroDeLivraison: 12,
 
     gain: "20dt",
-    progression: "livré",
+    progression: "En attente",
   },
   {
     id: 3,
@@ -426,7 +431,7 @@ export const vente = [
     numeroDeLivraison: 12,
 
     gain: "20dt",
-    progression: "livré",
+    progression: "Confirmé",
   },
 ];
 
