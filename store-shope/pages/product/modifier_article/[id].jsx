@@ -4,7 +4,7 @@ import { ImagePicker } from "../../../components/features/dashboard/JeVends/imag
 import ALink from "../../../components/features/alink";
 import PageHeader from "../../../components/features/page-header";
 import { product } from "../../../dummyData";
-import { thePrice } from "../../../utils";
+import { thePrice, gain } from "../../../utils";
 
 export default function ModifierArticle() {
   const slug = useRouter().query.id;
@@ -277,7 +277,7 @@ useEffect(() => {
                   </div>
                   <div className="pt-2">
                     <div className="row pl-4">
-                      <span> Tu gagnes 80% du prix si vendu</span>
+                      <span> Tu gagnes si vendu</span>
                       <div className=" input-group col-lg-2 col-sm-3 col-5">
                         <input
                           name="name"
@@ -287,8 +287,8 @@ useEffect(() => {
                           disabled
                           placeholder={
                             !prix
-                              ? (product[slug].prix * 0.8).toFixed(2) 
-                              : (prix * 0.8).toFixed(2) 
+                              ? gain(+product[slug].prix )
+                              : gain(prix) 
                           }
                         />
                       <span className="input-group-text">DT</span>

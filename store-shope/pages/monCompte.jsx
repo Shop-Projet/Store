@@ -417,9 +417,7 @@ function DashBoard() {
                                       className="total-col"
                                       style={{ textAlign: "center" }}
                                     >
-                                      {item.progression
-                                        ? item.progression
-                                        : "en attente"}
+                                      {item.progression}
                                     </td>
                                   </tr>
                                 ))}

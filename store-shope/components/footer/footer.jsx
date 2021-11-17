@@ -31,7 +31,7 @@ function Footer () {
                     <div className="row">
                         <div className="col-sm-6 col-lg-3">
                             <div className="widget widget-about">
-                                <img src="/images/home/logo.PNG" className="footer-logo" alt="Footer Logo" width="85" height="25" />
+                                <img src="/images/home/logo.PNG" className="footer-logo" alt="Footer Logo" width="78" height="24" />
                                 <p>Assurer les besoins de son enfant dans une démarché écoresponsable.</p>
 
                                 <div className="social-icons">
@@ -108,7 +108,7 @@ function Footer () {
                 <div className={ `pb-2 pt-2 ${containerClass}` }>
                     <p
                         className="footer-copyright"
-                    >Copyright © { new Date().getFullYear() } Sghyrna. All Rights Reserved.</p>
+                    >Copyright © { new Date().getFullYear() } Kidzy. All Rights Reserved.</p>
 
                 </div>
             </div>
