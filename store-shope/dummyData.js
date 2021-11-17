@@ -320,11 +320,7 @@ export const achat = [
     vendeur: "Marwa Zahar",
 
     numeroDeLivraison: 12,
-<<<<<<< HEAD
     progression: "Collecté",
-=======
-    progression: "Confirmé"
->>>>>>> 7d735469699d95ee6e9cac745be2039192e9a819
   },
   {
     id: 2,
@@ -338,11 +334,7 @@ export const achat = [
     date: "01/11/21",
     vendeur: "Marwa Zahar",
     numeroDeLivraison: 12,
-<<<<<<< HEAD
     progression: "Livré",
-=======
-    progression:"Collecté"
->>>>>>> 7d735469699d95ee6e9cac745be2039192e9a819
   },
   {
     id: 3,
@@ -356,11 +348,7 @@ export const achat = [
     date: "01/11/21",
     vendeur: "Marwa Zahar",
     numeroDeLivraison: 12,
-<<<<<<< HEAD
     progression: "finalisé",
-=======
-    progression: "Finalisé"
->>>>>>> 7d735469699d95ee6e9cac745be2039192e9a819
   },
   {
     id: 4,
@@ -374,11 +362,7 @@ export const achat = [
     date: "01/11/21",
     vendeur: "Marwa Zahar",
     numeroDeLivraison: 12,
-<<<<<<< HEAD
     progression: "Confirmé",
-=======
-    progression: "Livré"
->>>>>>> 7d735469699d95ee6e9cac745be2039192e9a819
   },
   {
     id: 5,
@@ -391,11 +375,7 @@ export const achat = [
     date: "01/11/21",
     vendeur: "Marwa Zahar",
     numeroDeLivraison: 12,
-<<<<<<< HEAD
     progression: "finalisé",
-=======
-    progression: "Collecté"
->>>>>>> 7d735469699d95ee6e9cac745be2039192e9a819
   },
 ];
 
@@ -414,11 +394,7 @@ export const vente = [
     numeroDeLivraison: 12,
 
     gain: "20dt",
-<<<<<<< HEAD
     progression: "Confirmé",
-=======
-    progression: "Livré",
->>>>>>> 7d735469699d95ee6e9cac745be2039192e9a819
   },
   {
     id: 2,
@@ -434,11 +410,7 @@ export const vente = [
     numeroDeLivraison: 12,
 
     gain: "20dt",
-<<<<<<< HEAD
     progression: "Collecté",
-=======
-    progression: "En attente",
->>>>>>> 7d735469699d95ee6e9cac745be2039192e9a819
   },
   {
     id: 3,
@@ -455,11 +427,7 @@ export const vente = [
     numeroDeLivraison: 12,
 
     gain: "20dt",
-<<<<<<< HEAD
     progression: "Livré",
-=======
-    progression: "Confirmé",
->>>>>>> 7d735469699d95ee6e9cac745be2039192e9a819
   },
 ];
 
