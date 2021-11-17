@@ -26,8 +26,8 @@ function Checkout(props) {
       icon: 'success',
       title: 'Commande confirmée',
       showConfirmButton: false,
-      timer: 3500
-    }).then(router.push('monCompte'))
+      timer: 2500
+    }).then(()=> router.push('monCompte'))
     props.deleteCarte()
     } else {
       Swal.fire({
@@ -142,9 +142,9 @@ function Checkout(props) {
                     <span>Paiement à la livraison</span>
                     <div className="pt-2">
                       <button
-                        type="submit"
+                        type="button"
                         className="btn btn-outline-primary-2 btn-order btn-block"
-                        onClick={()=>alert()}
+                        onClick={()=>{alert(); }}
                       >
                         <span className="btn-text">Passer la commande</span>
                         <span className="btn-hover-text">

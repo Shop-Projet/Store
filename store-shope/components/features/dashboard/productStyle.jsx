@@ -40,11 +40,12 @@ function ProductDashboard(props) {
             >
               <span>Supprimer</span>
             </button>
-            <button className="btn-product icon-edit">
-              <ALink href={`product/modifier_article/${product.id - 1}`}>
+            <ALink  className="btn-product icon-edit"  href={`product/modifier_article/${product.id - 1}`}>
+            <button >
                 <span>Modifier</span>
-              </ALink>
             </button>
+            </ALink>
+
           </div>
         ) : (
           ""
