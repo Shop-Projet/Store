@@ -55,8 +55,8 @@ function Header() {
                 <img
                   src="/images/logo.png"
                   alt="Sghyrna Logo"
-                  width={105}
-                  height={24}
+                  width={78}
+                  height={18}
                 />
               </ALink>
               <MainMenu />

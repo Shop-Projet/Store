@@ -236,8 +236,22 @@ export const countTo = function () {
 
 /** price */
 export function thePrice (price, livraison) {
-    if (livraison) return (price+(price*0.05)+7).toFixed(2)
-    else return (price+(price*0.05)).toFixed(2)
+    if (price < 100) {
+        return (price*1.15).toFixed(2)
+    } else if (price >=100) {
+        return (price*1.10).toFixed(2)
+    }
+
+}
+
+/** Gain */
+export function gain (price) {
+    if (price < 100) {
+        return (price*0.8).toFixed(2)
+    } else if (price >=100) {
+        return (price*0.85).toFixed(2)
+    }
+
 }
 
 /**

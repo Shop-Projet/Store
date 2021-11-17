@@ -3,6 +3,8 @@ import { ImagePicker } from "../components/features/dashboard/JeVends/imagePicke
 import ALink from "../components/features/alink";
 import PageHeader from "../components/features/page-header";
 import { categories } from "../dummyData";
+import { thePrice, gain } from "../utils";
+
 
 export default function Vendre() {
   const [nomProduit, setNomProduit] = useState("");
@@ -263,7 +265,7 @@ export default function Vendre() {
                   </span>
                   <div className="pt-2">
                     <div className="row pl-4">
-                      <span> Tu gagnes 80% du prix si vendu : </span>
+                      <span> Tu gagnes si vendu : </span>
                       <div className="input-group col-lg-2 col-sm-3 col-5">
                         <input
                           name="name"
@@ -272,7 +274,7 @@ export default function Vendre() {
                           aria-label="Dollar amount (with dot and two decimal places)"
                           disabled
                           placeholder={
-                            prix ? (prix * 0.8).toFixed(2)  : "0 "
+                            prix ? gain(prix)  : "0 "
                           }
                         />
                       <span className="input-group-text">DT</span>
@@ -281,26 +283,22 @@ export default function Vendre() {
                   </div>
                   <span className="mini-size-span">
                     *Si votre article est vendu, un livreur passera récupérer
-                    l&apos;article chez vous et vous recevrez (prix s&apos;affiche
-                    automatiquement) 24H après la réception du colis.
+                    l&apos;article chez vous et vous recevrez {(prix * 0.8).toFixed(2)}DT 24H après la réception du colis.
                   </span>
                   <div className="pt-2">
                     <div className="row pl-4">
                       <span> Le prix affiché sera : </span>
-                      {prix ?<div className="input-group col-lg-2 col-sm-3 col-5">
+                      <div className="input-group col-lg-2 col-sm-3 col-5">
                         <input
                           name="name"
                           type="number"
                           className="form-control "
                           aria-label="Dollar amount (with dot and two decimal places)"
                           disabled
-                          placeholder={(+prix+(prix*0.05)).toFixed(2) }
+                          placeholder={prix?thePrice(prix): "0" }
                         />
                       <span className="input-group-text">DT</span>
-                      </div>:
-                      <p style={{fontSize:'1.3rem'}}>&#160;  Augmenté automatiquement de 5% </p>
-                      
-                      }
+                      </div>
                     </div>
                   </div>
                 </div>

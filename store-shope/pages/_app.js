@@ -32,7 +32,7 @@ const WrappedApp = ({ Component, pageProps }) => {
         }
       >
         <Helmet>
-          <title>Sghyrna</title>
+          <title>Kidzy</title>
           <link
             rel="icon"
             type="image/png"
