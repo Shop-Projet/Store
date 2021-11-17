@@ -9,7 +9,7 @@ import { cartPriceTotal, thePrice } from "../utils/index";
 
 function Cart(props) {
   const [cartList, setCartList] = useState([]);
-  const [auth, setAth] = useState(true)
+  const [auth, setAth] = useState(true);
 
   useEffect(() => {
     setCartList(props.cartItems);
@@ -26,7 +26,7 @@ function Cart(props) {
         .classList.remove("load-more-rotating");
     }, 400);
   }
-  
+
   return (
     <div className="main">
       <PageHeader title="Mon panier" subTitle="caisse" />
@@ -55,7 +55,7 @@ function Cart(props) {
                         <th>Transaction</th>
                         <th>Article</th>
                         <th>Prix de l&apos;article</th>
-                        <th>Prix de ramaçage</th>
+                        {/* <th>Prix de livraison</th> */}
                         <th>Total</th>
                         <th></th>
                       </tr>
@@ -64,19 +64,23 @@ function Cart(props) {
                       {cartList.length > 0 ? (
                         cartList.map((item, index) => (
                           <tr key={index}>
-                            <td>N°{index+1}</td>
+                            <td>N°{index + 1}</td>
                             <td className="product-col">
                               <div className="product">
                                 <h4 className="product-title">
                                   <ALink href={`product/${item.id}`}>
-                                  {item.nom_du_produit}
+                                    {item.nom_du_produit}
                                   </ALink>
                                 </h4>
                               </div>
                             </td>
-                            <td className="product-col" >{thePrice(item.prix)}DT</td>
-                            <td className="product-col">7DT</td>
-                            <td className="price-col">{thePrice(item.prix, true) }DT</td>
+                            <td className="product-col">{item.prix}DT</td>
+                            {/* <td className="product-col">
+                              {index === 0 || index % 3 === 0 ? "7DT" : ""}
+                            </td> */}
+                            <td className="price-col">
+                              {thePrice(item.prix, true)}DT
+                            </td>
                             <td className="remove-col">
                               <button
                                 className="btn-remove"
@@ -107,11 +111,11 @@ function Cart(props) {
                   </div>
                 </div>
                 <aside className="col-lg-3">
-                  <div className="summary summary-cart">
+                  {/* <div className="summary summary-cart">
                     <h3 className="summary-title"></h3>
                     <ALink
                       className="btn btn-outline-primary-2 btn-order btn-block"
-                      href={auth?"/paiement": "/login"}
+                      href={auth ? "/paiement" : "/login"}
                     >
                       PASSER À LA CAISSE
                     </ALink>
@@ -122,7 +126,64 @@ function Cart(props) {
                   >
                     <span>CONTINUER MES ACHATS</span>
                     <i className="icon-refresh"></i>
-                  </ALink>
+                  </ALink> */}
+                  <div className="summary summary-cart">
+                    <h3 className="summary-title">Cart Total</h3>
+
+                    <table className="table table-summary">
+                      <tbody>
+                        <tr className="summary-subtotal">
+                          <td>sous-total:</td>
+                          <td>
+                            {cartPriceTotal(props.cartItems).toLocaleString(
+                              undefined,
+                              {
+                                minimumFractionDigits: 2,
+                                maximumFractionDigits: 2,
+                              }
+                            )}
+                            DT
+                          </td>
+                        </tr>
+                        <tr className="summary-shipping">
+                          <td>Livraison:</td>
+                          {/* <td> {(cartList.length / 3 + 1).toFixed() * 7}DT</td> */}
+                          <td>7DT</td>
+                        </tr>
+
+                        <tr className="summary-total">
+                          <td>Total:</td>
+                          <td>
+                            {cartPriceTotal(props.cartItems).toLocaleString(
+                              undefined,
+                              {
+                                minimumFractionDigits: 2,
+                                maximumFractionDigits: 2,
+                              }
+                            )}
+                            DT
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <ALink
+                      className="btn btn-outline-primary-2 btn-order btn-block"
+                      href={auth ? "/paiement" : "/login"}
+                    >
+                      PASSER À LA CAISSE
+                    </ALink>
+                    <p>
+                      <br />
+                    </p>
+                    <ALink
+                      href="/list"
+                      className="btn btn-outline-dark-2 btn-block mb-3 "
+                    >
+                      <span>CONTINUER MES ACHATS</span>
+                      <i className="icon-refresh"></i>
+                    </ALink>
+                  </div>
                 </aside>
               </div>
             ) : (
