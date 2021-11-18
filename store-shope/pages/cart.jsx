@@ -101,7 +101,7 @@ function Cart(props) {
                     </tbody>
                   </table>
                   <span style={{fontSize:'1.2rem'}}>
-                    * Chaque panier est composé de 3 transactions maximum.
+                    * Chaque panier est composé de 3 transactions maximum
                   </span>
                   <div className="cart-bottom">
                     <button
