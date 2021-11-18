@@ -147,13 +147,13 @@ function Checkout(props) {
                         <tr className="summary-total">
                           <td>Total:</td>
                           <td>
-                            {(
-                              cartPriceTotal(cartlist) +
-                              Math.floor((cartlist.length - 1) / 3 + 1) * 7
-                            ).toLocaleString(undefined, {
-                              minimumFractionDigits: 2,
-                              maximumFractionDigits: 2,
-                            })}
+                            {(cartPriceTotal(cartlist) + 7).toLocaleString(
+                              undefined,
+                              {
+                                minimumFractionDigits: 2,
+                                maximumFractionDigits: 2,
+                              }
+                            )}
                             DT
                           </td>
                         </tr>
