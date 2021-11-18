@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 
 import ALink from "../features/alink";
 import LoginModal from "../features/modals/login-modal";
-import HeaderSearch from "./partials/header-search";
 import WishlistMenu from "./partials/wishlist-menu";
 import CartMenu from "./partials/cart-menu";
 import MainMenu from "./partials/main-menu";
@@ -55,7 +54,7 @@ function Header() {
                 <img
                   src="/images/home/logo.PNG"
                   alt="Sghyrna Logo"
-                  width={70}
+                  width={75}
                   height={18}
                 />
               </ALink>

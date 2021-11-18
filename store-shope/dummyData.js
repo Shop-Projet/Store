@@ -43,7 +43,7 @@ export const product = [
       "https://e2c6zvk8i3i.exactdn.com/wp-content/uploads/2021/04/Ma-premiere-cuisine-chariot-de-marche-vertbaudet-400x400.png",
       "https://www.cdiscount.com/pdt2/7/2/3/1/700x700/auc8233903635723/rw/trotteur-bebe-fille-garcon-jouet-enfant-troteur-ma.jpg",
     ],
-    nom_du_produit: "Jeux en bois",
+    nom_du_produit: "jouet ",
     description:
       "Quality silverware, this 40 piece flatware set is made of premium high quality stainless steel which ensures your health, rust resistant, sturdy and durable for years to come",
     prix: 35,

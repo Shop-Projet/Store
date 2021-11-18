@@ -17,6 +17,17 @@ function DashBoard() {
   const [image_CIN, setImage_CIN] = React.useState([]);
   const [accountType, setAccountType] = useState("RIB");
   const [idType, setIdType] = useState("CIN");
+  const [ribAndCin, setRibAndCin] = useState({ CIN: "", RIB: "" });
+  const [info, setInfo] = useState({
+    nom: "",
+    prenom: "",
+    nomUtilisateur: "",
+    mail: "",
+    telephone: "",
+    codePostal: "",
+    adresse: "",
+    ville: "",
+  });
 
   return (
     <div className="main">
@@ -85,6 +96,9 @@ function DashBoard() {
                                 className="form-control"
                                 required
                                 placeholder={user.nom ? user.nom : ""}
+                                onChange={(e) => {
+                                  setInfo({ ...info, nom: e.target.value });
+                                }}
                               />
                             </div>
 
@@ -94,7 +108,10 @@ function DashBoard() {
                                 type="text"
                                 className="form-control"
                                 required
-                                placeholder={user.prenom}
+                                placeholder={user.prenom ? user.prenom : ""}
+                                onChange={(e) => {
+                                  setInfo({ ...info, prenom: e.target.value });
+                                }}
                               />
                             </div>
                             <div className="col-sm-6">
@@ -104,6 +121,12 @@ function DashBoard() {
                                 className="form-control"
                                 required
                                 placeholder={user.userName ? user.userName : ""}
+                                onChange={(e) => {
+                                  setInfo({
+                                    ...info,
+                                    nomUtilisateur: e.target.value,
+                                  });
+                                }}
                               />
                             </div>
                             <div className="col-sm-6">
@@ -115,6 +138,12 @@ function DashBoard() {
                                 placeholder={
                                   user.telephone ? user.telephone : ""
                                 }
+                                onChange={(e) => {
+                                  setInfo({
+                                    ...info,
+                                    telephone: e.target.value,
+                                  });
+                                }}
                               />
                             </div>
                             <div className="col-sm-12">
@@ -127,6 +156,9 @@ function DashBoard() {
                             className="form-control"
                             required
                             placeholder={user.mail ? user.mail : ""}
+                            onChange={(e) => {
+                              setInfo({ ...info, mail: e.target.value });
+                            }}
                           />
 
                           <label>Adresse *</label>
@@ -134,6 +166,9 @@ function DashBoard() {
                             type="string"
                             className="form-control"
                             placeholder={user.adress ? user.adress : ""}
+                            onChange={(e) => {
+                              setInfo({ ...info, adresse: e.target.value });
+                            }}
                           />
                           <div className="row">
                             <div className="col-sm-6">
@@ -142,6 +177,12 @@ function DashBoard() {
                                 type="string"
                                 className="form-control"
                                 placeholder={user.code ? user.code : ""}
+                                onChange={(e) => {
+                                  setInfo({
+                                    ...info,
+                                    codePostal: e.target.value,
+                                  });
+                                }}
                               />
                             </div>
                             <div className="col-sm-6">
@@ -150,6 +191,9 @@ function DashBoard() {
                                 type="string"
                                 className="form-control mb-2"
                                 placeholder={user.ville ? user.ville : ""}
+                                onChange={(e) => {
+                                  setInfo({ ...info, ville: e.target.value });
+                                }}
                               />
                             </div>
                           </div>
@@ -209,6 +253,12 @@ function DashBoard() {
                                       type="tel"
                                       className="form-control"
                                       required
+                                      onChange={(e) => {
+                                        setRibAndCin({
+                                          ...ribAndCin,
+                                          RIB: e.target.value,
+                                        });
+                                      }}
                                       placeholder={
                                         user.RIB
                                           ? user.RIB
@@ -224,6 +274,12 @@ function DashBoard() {
                                       maxLength="16"
                                       className="form-control"
                                       required
+                                      onChange={(e) => {
+                                        setRibAndCin({
+                                          ...ribAndCin,
+                                          RIB: e.target.value,
+                                        });
+                                      }}
                                       placeholder={
                                         user.EDINAR
                                           ? user.EDINAR
@@ -274,6 +330,12 @@ function DashBoard() {
                                   className="form-control"
                                   required
                                   placeholder={user.nom ? user.nom : ""}
+                                  onChange={(e) => {
+                                    setInfo({
+                                      ...info,
+                                      nom: e.target.value,
+                                    });
+                                  }}
                                 />
                               </div>
 
@@ -284,6 +346,12 @@ function DashBoard() {
                                   className="form-control"
                                   required
                                   placeholder={user.prenom ? user.prenom : ""}
+                                  onChange={(e) => {
+                                    setInfo({
+                                      ...info,
+                                      prenom: e.target.value,
+                                    });
+                                  }}
                                 />
                               </div>
                               <div className="">
@@ -311,6 +379,12 @@ function DashBoard() {
                                         required
                                         placeholder="01234567"
                                         maxLength={8}
+                                        onChange={(e) => {
+                                          setRibAndCin({
+                                            ...ribAndCin,
+                                            CIN: e.target.value,
+                                          });
+                                        }}
                                       />{" "}
                                     </>
                                   ) : (
@@ -321,6 +395,12 @@ function DashBoard() {
                                         className="form-control"
                                         required
                                         placeholder="E0123456"
+                                        onChange={(e) => {
+                                          setRibAndCin({
+                                            ...ribAndCin,
+                                            CIN: e.target.value,
+                                          });
+                                        }}
                                       />
                                     </>
                                   )}
