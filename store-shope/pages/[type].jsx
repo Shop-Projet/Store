@@ -73,7 +73,6 @@ function Achete() {
       page: query.page ? parseInt(query.page) : 1,
       perPage: perPage,
     };
-    console.log(variables);
     if (variables.age.length || variables.categorie || variables.sexe.length) {
       filter(variables);
     } else {

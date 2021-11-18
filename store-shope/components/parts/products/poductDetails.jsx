@@ -39,7 +39,7 @@ function DetailTwo ( props ) {
             {
                 product.status == "disponible" ?
                     <div className="product-price">
-                        <span className="out-price">
+                        <span>
                             <span>{ thePrice(product.prix) }DT</span>
                         </span>
                     </div>

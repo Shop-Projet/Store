@@ -5,7 +5,6 @@
  */
 export const cartPriceTotal = cartItems => {
     return cartItems.reduce( ( acc, cur ) => {
-        console.log(cur.sum+(cur.sum*0.05))
         return acc + (cur.sum+(cur.sum*0.05))
     }, 0 );
 }
