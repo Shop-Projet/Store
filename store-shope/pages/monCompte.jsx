@@ -4,7 +4,7 @@ import { Tabs, TabList, TabPanel, Tab } from "react-tabs";
 import ProductAccount from "../components/parts/dashboard/productAccount";
 import ALink from "../components/features/alink";
 import PageHeader from "../components/features/page-header";
-import { achat, utilisateur , vente } from "../dummyData";
+import { achat, utilisateur, vente } from "../dummyData";
 import { thePrice } from "../utils";
 import Image_profile from "../components/features/dashboard/image";
 import NbrDenfants from "../components/parts/dashboard/nbrDenfants";
@@ -398,16 +398,10 @@ function DashBoard() {
                                     </td>
 
                                     <td
-                                      className="product-col"
+                                      className="total-col"
                                       style={{ textAlign: "center" }}
                                     >
-                                      <figure className="product-col">
-                                        <h4 className="product-title">
-                                          {item.nom_du_produit
-                                            ? item.nom_du_produit
-                                            : ""}
-                                        </h4>
-                                      </figure>
+                                      {item.nom_du_produit}
                                     </td>
                                     <td className="total-col">
                                       {thePrice(item.prix)}
@@ -465,16 +459,10 @@ function DashBoard() {
                                         : "12"}
                                     </td>
                                     <td
-                                      className="product-col"
+                                      className="total-col"
                                       style={{ textAlign: "center" }}
                                     >
-                                      <figure className="product-col">
-                                        <h4 className="product-title">
-                                          {item.nom_du_produit
-                                            ? item.nom_du_produit
-                                            : ""}
-                                        </h4>
-                                      </figure>
+                                      {item.nom_du_produit}
                                     </td>
                                     <td className="total-col">
                                       {item.acheteur}
