@@ -10,6 +10,7 @@ import { cartPriceTotal, thePrice } from "../utils/index";
 function Cart(props) {
   const [cartList, setCartList] = useState([]);
   const [auth, setAth] = useState(true);
+  const [livraison, setLivraison] = useState(7);
 
   useEffect(() => {
     setCartList(props.cartItems);
@@ -26,6 +27,10 @@ function Cart(props) {
         .classList.remove("load-more-rotating");
     }, 400);
   }
+
+  useEffect(() => {
+    setLivraison(Math.floor((cartList.length - 1) / 3 + 1) * 7);
+  }, [cartList]);
 
   return (
     <div className="main">
@@ -56,7 +61,6 @@ function Cart(props) {
                         <th>Article</th>
                         <th>Prix de l&apos;article</th>
                         {/* <th>Prix de livraison</th> */}
-                        <th>Total</th>
                         <th></th>
                       </tr>
                     </thead>
@@ -74,10 +78,7 @@ function Cart(props) {
                                 </h4>
                               </div>
                             </td>
-                            <td className="product-col">{item.prix}DT</td>
-                            {/* <td className="product-col">
-                              {index === 0 || index % 3 === 0 ? "7DT" : ""}
-                            </td> */}
+
                             <td className="price-col">
                               {thePrice(item.prix, true)}DT
                             </td>
@@ -148,19 +149,18 @@ function Cart(props) {
                         <tr className="summary-shipping">
                           <td>Livraison:</td>
                           {/* <td> {(cartList.length / 3 + 1).toFixed() * 7}DT</td> */}
-                          <td>7DT</td>
+                          <td>{livraison}DT</td>
                         </tr>
 
                         <tr className="summary-total">
                           <td>Total:</td>
                           <td>
-                            {cartPriceTotal(props.cartItems).toLocaleString(
-                              undefined,
-                              {
-                                minimumFractionDigits: 2,
-                                maximumFractionDigits: 2,
-                              }
-                            )}
+                            {(
+                              cartPriceTotal(props.cartItems) + livraison
+                            ).toLocaleString(undefined, {
+                              minimumFractionDigits: 2,
+                              maximumFractionDigits: 2,
+                            })}
                             DT
                           </td>
                         </tr>

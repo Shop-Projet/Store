@@ -5,8 +5,9 @@
  */
 export const cartPriceTotal = (cartItems) => {
   return cartItems.reduce((acc, cur) => {
-    console.log(cur.sum + cur.sum * 0.05);
-    return acc + (cur.sum + cur.sum * 0.05);
+    console.log(acc + cur.sum, "hahhaaaaaaaaaaaaaaaaaaaaa");
+    if (cur.sum < 100) return acc + cur.sum * 1.15;
+    else if (cur.sum >= 100) return acc + cur.sum * 1.1;
   }, 0);
 };
 
