@@ -28,9 +28,9 @@ function Cart(props) {
     }, 400);
   }
 
-  useEffect(() => {
-    setLivraison(Math.floor((cartList.length - 1) / 3 + 1) * 7);
-  }, [cartList]);
+  // useEffect(() => {
+  //   setLivraison(Math.floor((cartList.length - 1) / 3 + 1) * 7);
+  // }, [cartList]);
 
   return (
     <div className="main">
@@ -101,6 +101,9 @@ function Cart(props) {
                       )}
                     </tbody>
                   </table>
+                  <span>
+                    * Chaque panier est composé de 3 transactions maximum.
+                  </span>
                   <div className="cart-bottom">
                     <button
                       className="btn btn-outline-dark-2"
@@ -156,7 +159,7 @@ function Cart(props) {
                           <td>Total:</td>
                           <td>
                             {(
-                              cartPriceTotal(props.cartItems) + livraison
+                              cartPriceTotal(props.cartItems) + 7
                             ).toLocaleString(undefined, {
                               minimumFractionDigits: 2,
                               maximumFractionDigits: 2,
