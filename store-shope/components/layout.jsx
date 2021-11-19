@@ -2,8 +2,6 @@ import Header from "./header/header.jsx";
 import Footer from "./footer/footer.jsx";
 import { useRouter } from 'next/router';
 import { useEffect } from "react";
-import { connect } from 'react-redux';
-import { ToastContainer } from 'react-toastify';
 import { isSafariBrowser, isEdgeBrowser } from "../utils/index";
 import MobileMenu from "./features/mobile-menu.jsx";
 
@@ -11,7 +9,6 @@ import MobileMenu from "./features/mobile-menu.jsx";
 const Layout = ({ children }) => {
   const router = useRouter( "" );
   let scrollTop;
-
   useEffect( () => {
     scrollTop = document.querySelector( '#scroll-top' );
     window.addEventListener( 'scroll', scrollHandler, false );
@@ -56,11 +53,15 @@ function hideMobileMenu () {
                 <i className="icon-arrow-up"></i>
             </button>
             <MobileMenu />
+          
     <button id="scroll-top" title="Back to top" onClick={ toScrollTop }>
         <i className="icon-arrow-up"></i>
     </button>
    </>
   );
 };
+
+
+
 
 export default Layout;

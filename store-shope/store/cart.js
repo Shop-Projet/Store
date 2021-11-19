@@ -29,7 +29,6 @@ const cartReducer = (state = initialState, action) => {
         );
       }
 
-      console.log(findIndex, "hahaaaaaaaaaaaaaaaaa");
       if (findIndex !== -1) {
         return {
           data: [
@@ -124,7 +123,9 @@ export const actions = {
   }),
 };
 
+
 export function* cartSaga() {
+  
   yield takeEvery(actionTypes.addToCart, function* saga(e) {
     toast.success("Product added to Cart");
   });

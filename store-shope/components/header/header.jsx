@@ -51,9 +51,10 @@ function Header() {
                 <i className="icon-bars"></i>
               </button>
               <ALink href="/" className="logo">
-                <img
+                <img 
+                  className="pb-2"
                   src="/images/home/logo.PNG"
-                  alt="Sghyrna Logo"
+                  alt="kidzy Logo"
                   width={75}
                   height={18}
                 />
@@ -61,7 +62,6 @@ function Header() {
               <MainMenu />
             </div>
             <div className="header-right">
-              {/* <HeaderSearch /> */}
               <Notification/>
               <CartMenu />
             </div>
