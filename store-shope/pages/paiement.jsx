@@ -24,7 +24,7 @@ function Checkout(props) {
         icon: "success",
         title: "Commande confirmée",
         showConfirmButton: false,
-        timer: 1200,
+        timer: 1000,
       }).then(() => router.push("monCompte"));
       props.deleteCarte();
     } else {

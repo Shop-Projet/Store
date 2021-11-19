@@ -8,7 +8,7 @@ import ALink from '../alink';
 import { actions as wishlistAction } from '../../../store/wishlist';
 import { actions as cartAction } from '../../../store/cart';
 
-import { isInWishlist } from '../../../utils/index';
+import { isInWishlist, thePrice } from '../../../utils/index';
 
 function ProductShop1 ( props ) {
     const router = useRouter();
@@ -66,7 +66,7 @@ function ProductShop1 ( props ) {
                 <div className="col-md-3 col-6 order-md-last order-lg-last">
                     <div className="product-list-action " >
                         <div className="product-price "  >
-                            <span >{ product.prix.toFixed( 2 ) }DT</span>
+                            <span >{ thePrice(product.prix) }DT</span>
                         </div>
                         <div className="product-action ">
                             {

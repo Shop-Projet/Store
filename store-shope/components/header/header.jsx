@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 
 import ALink from "../features/alink";
 import LoginModal from "../features/modals/login-modal";
-import HeaderSearch from "./partials/header-search";
 import WishlistMenu from "./partials/wishlist-menu";
 import CartMenu from "./partials/cart-menu";
 import MainMenu from "./partials/main-menu";
@@ -52,17 +51,17 @@ function Header() {
                 <i className="icon-bars"></i>
               </button>
               <ALink href="/" className="logo">
-                <img
-                  src="/images/logo.png"
-                  alt="Sghyrna Logo"
-                  width={78}
+                <img 
+                  className="pb-2"
+                  src="/images/home/logo.PNG"
+                  alt="kidzy Logo"
+                  width={75}
                   height={18}
                 />
               </ALink>
               <MainMenu />
             </div>
             <div className="header-right">
-              {/* <HeaderSearch /> */}
               <Notification/>
               <CartMenu />
             </div>

@@ -1,11 +1,13 @@
 import { useRouter } from 'next/router';
 import React, { useState, useEffect } from 'react';
+import { product } from '../../dummyData';
 
 import ALink from './alink';
 
 function MobileMenu () {
     const router = useRouter();
     const [ searchTerm, setSearchTerm ] = useState( "" );
+
 
     useEffect( () => {
         router.events.on( 'routeChangeComplete', hideMobileMenu );
@@ -20,14 +22,20 @@ function MobileMenu () {
     }
 
     function onSubmitSearchForm ( e ) {
+        let item;
         e.preventDefault();
+        item = product.filter((item, index)=> {
+            if (item.nom_du_produit.toLocaleLowerCase() === searchTerm.toLocaleLowerCase()) return item.id
+        })
+        
+        if (item.length) {
+            console.log(Math.floor(Math.random() * (item.length)));
         router.push( {
-            pathname: '/shop/sidebar/list',
-            query: {
-                searchTerm: searchTerm,
-                category: ""
-            }
+            pathname: `/product/${item[Math.floor(Math.random() * (item.length))].id}`,
         } );
+        } else {
+            setSearchTerm('aucun résultat')
+        }
     }
 
     return (
@@ -37,10 +45,9 @@ function MobileMenu () {
 
                 <form action="#" method="get" onSubmit={ onSubmitSearchForm } className="mobile-search">
                     <label htmlFor="mobile-search" className="sr-only">Search</label>
-                    <input type="text" className="form-control" value={ searchTerm } onChange={ onSearchChange } name="mobile-search" id="mobile-search" placeholder="Search product ..." required />
+                    <input type="text" className="form-control" value={ searchTerm } onChange={ onSearchChange } name="mobile-search" id="mobile-search" placeholder="Recherche ..." required />
                     <button className="btn btn-primary" type="submit"><i className="icon-search"></i></button>
                 </form>
-
                 <nav className="mobile-nav">
                     <ul className="mobile-menu">
                         <li>

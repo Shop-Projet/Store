@@ -60,7 +60,6 @@ function Cart(props) {
                         <th>Transaction</th>
                         <th>Article</th>
                         <th>Prix de l&apos;article</th>
-                        {/* <th>Prix de livraison</th> */}
                         <th></th>
                       </tr>
                     </thead>
@@ -101,8 +100,8 @@ function Cart(props) {
                       )}
                     </tbody>
                   </table>
-                  <span>
-                    * Chaque panier est composé de 3 transactions maximum.
+                  <span style={{fontSize:'1.2rem'}}>
+                    * Chaque panier est composé de 3 transactions maximum
                   </span>
                   <div className="cart-bottom">
                     <button
@@ -151,7 +150,6 @@ function Cart(props) {
                         </tr>
                         <tr className="summary-shipping">
                           <td>Livraison:</td>
-                          {/* <td> {(cartList.length / 3 + 1).toFixed() * 7}DT</td> */}
                           <td>{livraison}DT</td>
                         </tr>
 

@@ -6,7 +6,6 @@ export default function Image_profile(props) {
   const onChange = (imageList, addUpdateIndex) => {
     setImages(imageList);
   };
-  console.log(props);
 
   return (
     <div>
